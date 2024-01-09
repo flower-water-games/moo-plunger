@@ -1,0 +1,64 @@
+# Whenever a tag push matching pattern "v*" then run the job
+on: 
+    push:
+        # only run on branch names /main and /playtest
+        branches:
+            - main
+            - playtest
+            - workflows
+
+jobs:
+    # job id, can be anything
+    export_game:
+      # Always use ubuntu-latest for this action
+      runs-on: ubuntu-latest
+      # Add permission for release creation. Can be made narrower according to your needs
+      permissions: write-all
+      # Job name, can be anything
+      name: Export Game
+      steps:
+        # Always include the checkout step so that 
+        # your project is available for Godot to export
+      - name: checkout
+        uses: actions/checkout@v3.3.0
+    
+      - name: export game
+        id: export
+        # Use latest version (see releases for all versions)
+        uses: firebelley/godot-export@v5.2.0
+        with:
+          # Defining all the required inputs
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.2/Godot_v4.2-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.2/Godot_v4.2-stable_export_templates.tpz
+          relative_project_path: ./
+          archive_output: true
+      - uses: actions/upload-artifact@v3
+        with:
+            name: godot-export
+            path: ${{ steps.export.outputs.archive_directory }}
+      - name: Download Exports
+        uses: actions/download-artifact@v2
+        with:
+            name: godot-export
+            path: ./
+      - name: Deploy - Itch.io 
+        if: github.ref == 'refs/heads/main'
+        uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+            butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+            gameData: ./Web.zip
+            itchUsername: carlos.michael
+            itchGameId: ggj24
+            buildChannel: web
+            buildNumber: ${{ github.run_number }}
+
+    #   - name: Deploy - Itch.io Playtest
+    #     if: github.ref == 'refs/heads/playtest'
+    #     uses: KikimoraGames/itch-publish@v0.0.3
+    #     with:
+    #         butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+    #         gameData: ./Web.zip
+    #         itchUsername: carlos-michael
+    #         itchGameId: infinite-slushie-playtest
+    #         buildChannel: web
+    #         buildNumber: ${{ github.run_number }}
