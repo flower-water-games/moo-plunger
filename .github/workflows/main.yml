@@ -47,7 +47,7 @@ jobs:
         with:
             butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
             gameData: ./Web.zip
-            itchUsername: carlos.michael
+            itchUsername: carlos-michael
             itchGameId: ggj24
             buildChannel: web
             buildNumber: ${{ github.run_number }}
