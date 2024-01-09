@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="GlobalGameJam"
-run/main_scene="res://Levels/Level3D.tscn"
+config/name="Ggj 24"
+run/main_scene="res://welcome.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,14 +19,9 @@ config/icon="res://icon.svg"
 
 FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
 
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
-
 [fmod]
 
-settings/banks_path="res://FMOD"
+settings/banks_path="res://banks/Desktop"
 settings/fmod_output_type=0
 settings/fmod_debug_flags=0
 settings/fmod_debug_mode=1

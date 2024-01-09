@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbpsnku6nuqtq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctpd6"]
+font_size = 29
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1162.0
+offset_bottom = 642.0
+text = "hello fellow jammers this is the global game jam godot repository"
+label_settings = SubResource("LabelSettings_ctpd6")
+horizontal_alignment = 1
+vertical_alignment = 1
