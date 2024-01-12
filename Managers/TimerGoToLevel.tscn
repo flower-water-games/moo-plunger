@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdji3jde6saux"]
+
+[ext_resource type="Script" path="res://Managers/TimerGoToLevel.gd" id="1_31e6d"]
+
+[node name="TimerGoToLevel" type="Timer"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+script = ExtResource("1_31e6d")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

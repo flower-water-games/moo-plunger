@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://blsnncypvtsq5"]
+[gd_scene load_steps=5 format=3 uid="uid://tp71bac306c1"]
 
-[ext_resource type="Script" path="res://UserInterface/MainMenu/MainMenu.gd" id="1_rlbfy"]
 [ext_resource type="PackedScene" uid="uid://dd8euc4die7n" path="res://UserInterface/Components/ResponsiveMarginContainer/ResponsiveMarginContainer.tscn" id="1_vjgyl"]
-[ext_resource type="Texture2D" uid="uid://bnkm66oelaxut" path="res://Assets/Logo/Logo256x512.png" id="3_cylhn"]
+[ext_resource type="Texture2D" uid="uid://8gsh8xej2cys" path="res://Assets/Logo/DefaultLogo256x512.png" id="3_n14oc"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_pywf7"]
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="5_ay4hd"]
 
@@ -13,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rlbfy")
+theme = ExtResource("5_ay4hd")
 
 [node name="MarginContainer" parent="." instance=ExtResource("1_vjgyl")]
 layout_mode = 0
@@ -28,7 +27,7 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VSplitContainer/CenterContainer2"]
 layout_mode = 2
-texture = ExtResource("3_cylhn")
+texture = ExtResource("3_n14oc")
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VSplitContainer"]
 layout_mode = 2
@@ -43,15 +42,12 @@ button = NodePath("../StartButton")
 
 [node name="StartButton" type="Button" parent="MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("5_ay4hd")
 text = "Start"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("5_ay4hd")
 text = "Credits"
 
 [node name="ControlsButton" type="Button" parent="MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("5_ay4hd")
 text = "Controls"

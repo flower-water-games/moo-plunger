@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://blsnncypvtsq5"]
+
+[ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="1_6pvb6"]
+[ext_resource type="PackedScene" uid="uid://dd8euc4die7n" path="res://UserInterface/Components/ResponsiveMarginContainer/ResponsiveMarginContainer.tscn" id="2_7wepx"]
+[ext_resource type="PackedScene" uid="uid://cdji3jde6saux" path="res://Managers/TimerGoToLevel.tscn" id="2_s5bpx"]
+[ext_resource type="Texture2D" uid="uid://8gsh8xej2cys" path="res://Assets/Logo/DefaultLogo256x512.png" id="3_sn4w6"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6pvb6")
+
+[node name="TimerGoToLevel" parent="." instance=ExtResource("2_s5bpx")]
+
+[node name="MarginContainer" parent="." instance=ExtResource("2_7wepx")]
+layout_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("3_sn4w6")
