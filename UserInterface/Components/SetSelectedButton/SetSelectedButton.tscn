@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgcv8upoe41pl"]
+
+[ext_resource type="Script" path="res://SetButtonFocus.gd" id="1_j0psf"]
+
+[node name="SetSelectedButton" type="Node"]
+script = ExtResource("1_j0psf")
