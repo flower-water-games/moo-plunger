@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfaehpteyy7a3"]
+
+[ext_resource type="Script" path="res://UserInterface/Controls/ControlSchemeItem.gd" id="1_mltht"]
+[ext_resource type="Texture2D" uid="uid://br28hvqe8cbrw" path="res://Assets/UIControls/Controller.png" id="1_sp6u1"]
+[ext_resource type="StyleBox" uid="uid://dwl8e31msivdw" path="res://UserInterface/Controls/ControlLabel.tres" id="2_0t4tw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4np0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.172549)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="PanelContainer" type="PanelContainer"]
+offset_right = 276.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4np0")
+script = ExtResource("1_mltht")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_sp6u1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Press"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_0t4tw")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="LabelButton" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelDescription" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "to Jump"
