@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfaehpteyy7a3"]
 
-[ext_resource type="Script" path="res://UserInterface/Controls/ControlSchemeItem.gd" id="1_mltht"]
+[ext_resource type="Script" path="res://UserInterface/Controls/Item/UserControlItem.gd" id="1_mltht"]
 [ext_resource type="Texture2D" uid="uid://br28hvqe8cbrw" path="res://Assets/UIControls/Controller.png" id="1_sp6u1"]
 [ext_resource type="StyleBox" uid="uid://dwl8e31msivdw" path="res://UserInterface/Controls/ControlLabel.tres" id="2_0t4tw"]
 
@@ -16,7 +16,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="UserControlItem" type="PanelContainer"]
 offset_right = 276.0
 offset_bottom = 63.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4np0")
