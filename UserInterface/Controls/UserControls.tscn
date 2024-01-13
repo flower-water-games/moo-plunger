@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjfrsi63ttgta"]
+[gd_scene load_steps=6 format=3 uid="uid://cjfrsi63ttgta"]
 
 [ext_resource type="PackedScene" uid="uid://cuoqoi7sby044" path="res://UserInterface/Components/CloseButton/CloseButton.tscn" id="2_0opbm"]
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_rlntn"]
@@ -7,6 +7,13 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljo58"]
 bg_color = Color(0, 0, 0, 0.262745)
 corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1tr5"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 4
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
@@ -25,6 +32,7 @@ layout_mode = 2
 offset_right = 1280.0
 offset_bottom = 720.0
 theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
@@ -52,42 +60,94 @@ theme_override_font_sizes/font_size = 48
 text = "Controls"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p1tr5")
+
+[node name="Keyboard" type="MarginContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard"]
 layout_mode = 2
 theme_override_constants/separation = 32
 dragger_visibility = 1
 
-[node name="VBoxContainerLeft" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer"]
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer4" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+[node name="PanelContainer4" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
 input_type = 2
 button = "Left Mouse Button"
 description = "to Select"
 
-[node name="PanelContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+[node name="PanelContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
 input_type = 1
 
-[node name="PanelContainer2" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+[node name="PanelContainer2" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
 button = "A"
 
-[node name="VBoxContainerRight" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainerRight" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer"]
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer3" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
+[node name="PanelContainer3" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
 action = "Use the"
 button = "Analog Stick"
 description = "to Move"
 
-[node name="PanelContainer5" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
+[node name="PanelContainer5" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+input_type = 2
+button = "Left Mouse"
+description = "to Select"
+
+[node name="Controller" type="MarginContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller"]
+layout_mode = 2
+theme_override_constants/separation = 32
+dragger_visibility = 1
+
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer4" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+input_type = 2
+button = "Left Mouse Button"
+description = "to Select"
+
+[node name="VBoxContainerRight" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer3" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+action = "Use the"
+button = "Analog Stick"
+description = "to Move"
+
+[node name="PanelContainer5" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
 input_type = 2
 button = "Left Mouse"
@@ -95,9 +155,9 @@ description = "to Select"
 
 [node name="CloseButton" parent="." node_paths=PackedStringArray("parent_container") instance=ExtResource("2_0opbm")]
 layout_mode = 2
-offset_left = 1074.0
-offset_top = 142.0
-offset_right = 1118.0
-offset_bottom = 186.0
+offset_left = 1108.0
+offset_top = 122.0
+offset_right = 1152.0
+offset_bottom = 166.0
 parent_container = NodePath("../MarginContainer/CenterContainer/PanelContainer")
-offset_position = Vector2(12, -8)
+offset_position = Vector2(-16, 16)
