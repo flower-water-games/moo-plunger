@@ -4,7 +4,7 @@ extends PanelContainer
 @export var icon_color : Color = "#ffffff"
 @export var button_color : Color = "#ffffff"
 
-enum InputType { CONTROLLER, KEYBOARD, MOUSE }
+enum InputType { CONTROLLER, KEYBOARD, MOUSE, NONE }
 @export var input_type : InputType
 var current_input_type = input_type
 
@@ -38,6 +38,8 @@ func _update_button():
 				icon.texture = load("res://Assets/UIControls/Keyboard.png")
 			InputType.MOUSE:
 				icon.texture = load("res://Assets/UIControls/Mouse.png")
+			InputType.NONE:
+				icon.texture = null
 		# Set to match
 		current_input_type = input_type
 

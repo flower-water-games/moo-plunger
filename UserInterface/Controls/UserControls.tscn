@@ -83,9 +83,9 @@ size_flags_horizontal = 3
 
 [node name="PanelContainer4" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
-input_type = 2
-button = "Left Mouse Button"
-description = "to Select"
+input_type = 1
+button = "Arrow Keys"
+description = "to Move"
 
 [node name="PanelContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
@@ -93,7 +93,9 @@ input_type = 1
 
 [node name="PanelContainer2" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
-button = "A"
+input_type = 1
+button = "Escape"
+description = "to Show Menu"
 
 [node name="VBoxContainerRight" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer"]
 custom_minimum_size = Vector2(420, 0)
@@ -102,15 +104,15 @@ size_flags_horizontal = 3
 
 [node name="PanelContainer3" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
-action = "Use the"
-button = "Analog Stick"
-description = "to Move"
+input_type = 2
+button = "Left Mouse Button"
+description = "to Select"
 
 [node name="PanelContainer5" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
 input_type = 2
-button = "Left Mouse"
-description = "to Select"
+button = "Right Mouse Button"
+description = "to Hide"
 
 [node name="Controller" type="MarginContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -130,30 +132,27 @@ custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="PanelContainer3" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+action = "Use the"
+button = "Analog Stick"
+description = "to Move"
+
 [node name="PanelContainer4" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
-input_type = 2
-button = "Left Mouse Button"
-description = "to Select"
+button = "A"
 
 [node name="VBoxContainerRight" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer"]
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer3" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
-layout_mode = 2
-action = "Use the"
-button = "Analog Stick"
-description = "to Move"
-
 [node name="PanelContainer5" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
 layout_mode = 2
-input_type = 2
-button = "Left Mouse"
-description = "to Select"
+button = "B"
+description = "to Escape"
 
-[node name="CloseButton" parent="." node_paths=PackedStringArray("parent_container") instance=ExtResource("2_0opbm")]
+[node name="CloseButton" parent="." node_paths=PackedStringArray("parent_container", "close_window") instance=ExtResource("2_0opbm")]
 layout_mode = 2
 offset_left = 1108.0
 offset_top = 122.0
@@ -161,3 +160,4 @@ offset_right = 1152.0
 offset_bottom = 166.0
 parent_container = NodePath("../MarginContainer/CenterContainer/PanelContainer")
 offset_position = Vector2(-16, 16)
+close_window = NodePath("..")
