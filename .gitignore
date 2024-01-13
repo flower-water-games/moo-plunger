@@ -1,2 +1,10 @@
-# Godot 4+ specific ignores
+# shoutout to reddit https://www.reddit.com/r/godot/comments/176z40o/comment/k4pqji5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 .godot/
+.import/
+export.cfg
+data_*/
+dist/
+*.vs
+*.tmp
+*blend1
+*.DS_Store
