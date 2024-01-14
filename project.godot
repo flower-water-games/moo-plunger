@@ -13,6 +13,7 @@ config_version=5
 config/name="Ggj 24"
 run/main_scene="res://welcome.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.266667, 0.0431373, 0.862745, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,7 +22,7 @@ FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
 
 [fmod]
 
-settings/banks_path="res://banks/Desktop"
+settings/banks_path="res://FMOD"
 settings/fmod_output_type=0
 settings/fmod_debug_flags=0
 settings/fmod_debug_mode=1
