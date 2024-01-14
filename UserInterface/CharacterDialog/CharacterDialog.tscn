@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b323n0s4ifhq6"]
+[gd_scene load_steps=14 format=3 uid="uid://b323n0s4ifhq6"]
 
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_c5jg2"]
 [ext_resource type="Script" path="res://UserInterface/CharacterDialog/CharacterDialog.gd" id="1_slvrq"]
@@ -27,6 +27,8 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_7k047"]
 font_size = 24
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p05dl"]
+
 [sub_resource type="Animation" id="Animation_xgp2y"]
 resource_name = "FadeIn"
 tracks/0/type = "value"
@@ -42,21 +44,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_ogwsp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_2b1bd"]
 resource_name = "FadeOut"
 tracks/0/type = "value"
@@ -70,6 +57,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ogwsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h1gg2"]
@@ -144,6 +146,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 label_settings = SubResource("LabelSettings_7k047")
 autowrap_mode = 2
 
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_p05dl")
+
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -162,3 +169,5 @@ libraries = {
 autoplay = "FadeIn"
 
 [connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
