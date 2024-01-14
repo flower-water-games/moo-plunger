@@ -1,0 +1,164 @@
+[gd_scene load_steps=13 format=3 uid="uid://b323n0s4ifhq6"]
+
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_c5jg2"]
+[ext_resource type="Script" path="res://UserInterface/CharacterDialog/CharacterDialog.gd" id="1_slvrq"]
+[ext_resource type="Texture2D" uid="uid://dfqtmnfcnljqd" path="res://icon.svg" id="1_yvyf5"]
+[ext_resource type="Theme" uid="uid://cyxn7d2u1yhdv" path="res://UserInterface/Themes/SmallButton/SmallButtonTheme.tres" id="4_mydrj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66e80"]
+bg_color = Color(0, 0, 0, 0.396078)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xddri"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_il2q8"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7k047"]
+font_size = 24
+
+[sub_resource type="Animation" id="Animation_xgp2y"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ogwsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2b1bd"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h1gg2"]
+_data = {
+"FadeIn": SubResource("Animation_xgp2y"),
+"FadeOut": SubResource("Animation_2b1bd"),
+"RESET": SubResource("Animation_ogwsp")
+}
+
+[node name="CenterContainer" type="CenterContainer"]
+modulate = Color(1, 1, 1, 0)
+offset_top = 550.0
+offset_right = 1280.0
+offset_bottom = 688.0
+script = ExtResource("1_slvrq")
+dialog = "Hello everyone! My name is Steven and I live on a asteroid planet far away from earth. Today, like everyday, my cows have gotten out of their quarters and are floating towards that giant moon. Can you help me capture them?"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_66e80")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = -24
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = -24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="CharacterHead" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CharacterHead"]
+layout_mode = 2
+texture = ExtResource("1_yvyf5")
+expand_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_xddri")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="NameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_il2q8")
+
+[node name="DialogLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+label_settings = SubResource("LabelSettings_7k047")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("4_mydrj")
+text = "Next"
+
+[node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("1_c5jg2")]
+set_node = NodePath("..")
+auto_height = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h1gg2")
+}
+autoplay = "FadeIn"
+
+[connection signal="resized" from="." to="." method="_on_resized"]

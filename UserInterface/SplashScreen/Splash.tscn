@@ -17,8 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6pvb6")
 
-[node name="FitToWindow" parent="." node_paths=PackedStringArray("node_1") instance=ExtResource("2_k1alt")]
-node_1 = NodePath("../PanelContainer")
+[node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("2_k1alt")]
+set_node = NodePath("../PanelContainer")
 
 [node name="TimerGoToLevel" parent="." instance=ExtResource("2_s5bpx")]
 

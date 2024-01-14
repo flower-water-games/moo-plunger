@@ -17,7 +17,6 @@ func _on_size_changed():
 	# Offset to center
 	global_position += -(size * 0.5) + offset_position
 
-
 func _on_pressed():
 	close_window.queue_free()
 	call_deferred("queue_free")

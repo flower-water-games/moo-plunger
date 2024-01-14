@@ -17,8 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_ay4hd")
 
-[node name="FitToWindow" parent="." node_paths=PackedStringArray("node_1") instance=ExtResource("2_45alt")]
-node_1 = NodePath("../PanelContainer")
+[node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("2_45alt")]
+set_node = NodePath("../PanelContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
