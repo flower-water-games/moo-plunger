@@ -63,6 +63,7 @@ text = "Start"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
+level_path = "res://Levels/Level3D.tscn"
 
 [node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
