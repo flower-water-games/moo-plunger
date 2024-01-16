@@ -160,13 +160,13 @@ text = "Next"
 
 [node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("1_c5jg2")]
 set_node = NodePath("..")
-auto_height = false
+fit_height = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "FadeIn"
 libraries = {
 "": SubResource("AnimationLibrary_h1gg2")
 }
-autoplay = "FadeIn"
 
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

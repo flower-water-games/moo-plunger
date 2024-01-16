@@ -1,8 +1,9 @@
 extends Node
 
 @export var set_node : Control
-@export var auto_width : bool = true	
-@export var auto_height : bool = true
+@export var fit_width : bool = true	
+@export var fit_height : bool = true
+@export var reset_size : bool = true
 
 func _ready():
 	# Responsive code to Window Size changes
@@ -11,9 +12,10 @@ func _ready():
 
 func _on_size_changed():
 	# Reset -- Not sure why this is neccessary but it seems to be.
-	set_node.size = Vector2(0,0)
+	if reset_size:
+		set_node.size = Vector2(0,0)
 	# Auto-sizing
-	if auto_width:
+	if fit_width:
 		set_node.size.x = get_viewport().size.x
-	if auto_height:
+	if fit_height:
 		set_node.size.y = get_viewport().size.y

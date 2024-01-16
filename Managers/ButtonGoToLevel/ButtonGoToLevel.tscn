@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce5ymux13mm1x"]
+
+[ext_resource type="Script" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.gd" id="1_0u6y4"]
+
+[node name="ButtonGoToLevel" type="Node"]
+script = ExtResource("1_0u6y4")

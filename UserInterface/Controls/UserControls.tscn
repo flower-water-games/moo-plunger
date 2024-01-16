@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjfrsi63ttgta"]
+[gd_scene load_steps=7 format=3 uid="uid://cjfrsi63ttgta"]
 
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_vq8fx"]
 [ext_resource type="PackedScene" uid="uid://bcnq3vnx0jd51" path="res://UserInterface/Components/ModalWindow/ModalWindow.tscn" id="2_vhhjy"]
 [ext_resource type="PackedScene" uid="uid://dfaehpteyy7a3" path="res://UserInterface/Controls/Item/UserControlItem.tscn" id="3_iiw2k"]
+[ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="3_kgmny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlfck"]
+bg_color = Color(0.258824, 0.694118, 0.505882, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1tr5"]
 bg_color = Color(0.14902, 0.14902, 0.14902, 1)
@@ -16,11 +21,20 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jlfck")
+
+[node name="FitToWindow" parent="PanelContainer" node_paths=PackedStringArray("set_node") instance=ExtResource("1_vq8fx")]
+set_node = NodePath("..")
+reset_size = false
+
 [node name="ModalWindow" parent="." instance=ExtResource("2_vhhjy")]
 window_title = "Controls"
-
-[node name="PanelContainer" parent="ModalWindow/MarginContainer/CenterContainer" index="0"]
-custom_minimum_size = Vector2(936, 480)
 
 [node name="Label" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "Controls"
@@ -120,5 +134,8 @@ description = "to Escape"
 
 [node name="CloseButton" parent="ModalWindow" index="2" node_paths=PackedStringArray("close_window")]
 close_window = NodePath("../..")
+
+[node name="ButtonGoToLevel" parent="ModalWindow/CloseButton" index="0" node_paths=PackedStringArray("button") instance=ExtResource("3_kgmny")]
+button = NodePath("..")
 
 [editable path="ModalWindow"]
