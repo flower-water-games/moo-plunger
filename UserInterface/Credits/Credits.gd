@@ -3,7 +3,7 @@ extends Control
 var name_and_titles : Array[Array] = [
 	["Name", "Title"],
 	["Name 2", "Title 2"],
-	["Name 3", "Title 3"],
+	["CM", "Developer"]
 	]
 
 @onready var hsplit_container : HSplitContainer = $MarginContainer/HBoxContainer/HSplitContainer

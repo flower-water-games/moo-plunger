@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Ggj 24"
-run/main_scene="res://welcome.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+run/main_scene="res://UserInterface/MainMenu/MainMenu.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/bg_color=Color(0.266667, 0.0431373, 0.862745, 1)
 config/icon="res://icon.svg"
 

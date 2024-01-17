@@ -43,6 +43,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
+custom_minimum_size = Vector2(512, 256)
 layout_mode = 2
 texture = ExtResource("3_n14oc")
 
