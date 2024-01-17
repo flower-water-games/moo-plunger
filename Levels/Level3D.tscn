@@ -14,8 +14,10 @@ environment = SubResource("Environment_4bi23")
 [node name="PLAYER" parent="." instance=ExtResource("1_gq5fh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 0)
 
-[node name="Reexport_cowtest" parent="." instance=ExtResource("2_kwfvl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08227, 7.37475, -2.81394)
-
 [node name="MeshInstance3D" parent="." instance=ExtResource("2_xcvej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499695, 4.56451, 0.0175052)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Reexport_cowtest" parent="Node3D" instance=ExtResource("2_kwfvl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08227, 7.37475, -2.81394)
