@@ -24,6 +24,7 @@ FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
