@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://daqghgofmcanc"]
+
+[ext_resource type="Script" path="res://UserInterface/Components/ButtonConnector/ButtonConnector.gd" id="1_72l5d"]
+
+[node name="ButtonConnector" type="Node"]
+script = ExtResource("1_72l5d")
