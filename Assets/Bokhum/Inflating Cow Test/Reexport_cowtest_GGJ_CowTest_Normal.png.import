@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn1g87nyy77fh"
 path.s3tc="res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Normal.png-935fcf0222cd9bf794a1e88d4e52ccc3.s3tc.ctex"
+path.etc2="res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Normal.png-935fcf0222cd9bf794a1e88d4e52ccc3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Bokhum/Inflating Cow Test/Reexport_cowtest_GGJ_CowTest_Normal.png"
-dest_files=["res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Normal.png-935fcf0222cd9bf794a1e88d4e52ccc3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Normal.png-935fcf0222cd9bf794a1e88d4e52ccc3.s3tc.ctex", "res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Normal.png-935fcf0222cd9bf794a1e88d4e52ccc3.etc2.ctex"]
 
 [params]
 
