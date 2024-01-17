@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=3 uid="uid://dicaqroxpvawy"]
+
+[ext_resource type="Script" path="res://UserInterface/Credits/Credits.gd" id="1_bc0py"]
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_modu1"]
+[ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="3_mfeko"]
+[ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="4_gv5di"]
+[ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_nqu3a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74yg0"]
+bg_color = Color(0.580392, 0.184314, 0.415686, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mlyg7"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8fh5"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_u1otc"]
+font_size = 24
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_bc0py")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_74yg0")
+
+[node name="FitToWindow2" parent="PanelContainer" node_paths=PackedStringArray("set_node") instance=ExtResource("1_modu1")]
+set_node = NodePath("..")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="FitToWindow" parent="MarginContainer" node_paths=PackedStringArray("set_node") instance=ExtResource("1_modu1")]
+set_node = NodePath("..")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 96
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Credits"
+label_settings = SubResource("LabelSettings_mlyg7")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+dragger_visibility = 1
+
+[node name="VBoxContainerName" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Name" type="Label" parent="MarginContainer/HBoxContainer/HSplitContainer/VBoxContainerName"]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_a8fh5")
+
+[node name="VBoxContainerTitle" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/HSplitContainer/VBoxContainerTitle"]
+layout_mode = 2
+text = "Title
+"
+label_settings = SubResource("LabelSettings_u1otc")
+horizontal_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 720.0
+offset_right = 126.0
+offset_bottom = 786.0
+
+[node name="Button" type="Button" parent="CenterContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+theme = ExtResource("3_mfeko")
+text = "Go Back"
+
+[node name="ButtonGoToLevel" parent="CenterContainer/Button" node_paths=PackedStringArray("button") instance=ExtResource("4_gv5di")]
+button = NodePath("..")
+
+[node name="SetSelectedButton" parent="CenterContainer/Button" node_paths=PackedStringArray("button") instance=ExtResource("4_nqu3a")]
+button = NodePath("..")
+
+[node name="FitToWindow" parent="CenterContainer/Button" node_paths=PackedStringArray("set_node") instance=ExtResource("1_modu1")]
+set_node = NodePath("../..")
+fit_height = false

@@ -1,0 +1,141 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjfrsi63ttgta"]
+
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_vq8fx"]
+[ext_resource type="PackedScene" uid="uid://bcnq3vnx0jd51" path="res://UserInterface/Components/ModalWindow/ModalWindow.tscn" id="2_vhhjy"]
+[ext_resource type="PackedScene" uid="uid://dfaehpteyy7a3" path="res://UserInterface/Controls/Item/UserControlItem.tscn" id="3_iiw2k"]
+[ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="3_kgmny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlfck"]
+bg_color = Color(0.258824, 0.694118, 0.505882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1tr5"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="UserControls" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jlfck")
+
+[node name="FitToWindow" parent="PanelContainer" node_paths=PackedStringArray("set_node") instance=ExtResource("1_vq8fx")]
+set_node = NodePath("..")
+reset_size = false
+
+[node name="ModalWindow" parent="." instance=ExtResource("2_vhhjy")]
+window_title = "Controls"
+
+[node name="Label" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "Controls"
+
+[node name="TabContainer" type="TabContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+z_index = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p1tr5")
+
+[node name="Keyboard" type="MarginContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HSplitContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard"]
+layout_mode = 2
+theme_override_constants/separation = 32
+dragger_visibility = 1
+
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer4" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+input_type = 1
+button = "Arrow Keys"
+description = "to Move"
+
+[node name="PanelContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+input_type = 1
+
+[node name="PanelContainer2" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+input_type = 1
+button = "Escape"
+description = "to Show Menu"
+
+[node name="VBoxContainerRight" type="VBoxContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer3" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+input_type = 2
+button = "Left Mouse Button"
+description = "to Select"
+
+[node name="PanelContainer5" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Keyboard/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+input_type = 2
+button = "Right Mouse Button"
+description = "to Hide"
+
+[node name="Controller" type="MarginContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HSplitContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller"]
+layout_mode = 2
+theme_override_constants/separation = 32
+dragger_visibility = 1
+
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer3" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+action = "Use the"
+button = "Analog Stick"
+description = "to Move"
+
+[node name="PanelContainer4" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerLeft" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+button = "A"
+
+[node name="VBoxContainerRight" type="VBoxContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer5" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer/Controller/HBoxContainer/VBoxContainerRight" instance=ExtResource("3_iiw2k")]
+layout_mode = 2
+button = "B"
+description = "to Escape"
+
+[node name="CloseButton" parent="ModalWindow" index="2" node_paths=PackedStringArray("close_window")]
+close_window = NodePath("../..")
+
+[node name="ButtonGoToLevel" parent="ModalWindow/CloseButton" index="0" node_paths=PackedStringArray("button") instance=ExtResource("3_kgmny")]
+button = NodePath("..")
+
+[editable path="ModalWindow"]

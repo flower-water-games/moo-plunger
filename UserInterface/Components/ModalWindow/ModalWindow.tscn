@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcnq3vnx0jd51"]
+
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_2wxf5"]
+[ext_resource type="Script" path="res://UserInterface/Components/ModalWindow/ModalWindow.gd" id="1_15f5b"]
+[ext_resource type="PackedScene" uid="uid://cuoqoi7sby044" path="res://UserInterface/Components/CloseButton/CloseButton.tscn" id="3_d1ngg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljo58"]
+bg_color = Color(0, 0, 0, 0.262745)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="ModalWindow" type="Control"]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_15f5b")
+min_size = Vector2(936, 480)
+
+[node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("1_2wxf5")]
+set_node = NodePath("../MarginContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CenterContainer"]
+custom_minimum_size = Vector2(936, 480)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ljo58")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Title"
+horizontal_alignment = 1
+
+[node name="CloseButton" parent="." node_paths=PackedStringArray("parent_container", "close_window") instance=ExtResource("3_d1ngg")]
+z_index = 0
+layout_mode = 2
+offset_left = 1112.0
+offset_top = 72.0
+offset_right = 1156.0
+offset_bottom = 116.0
+parent_container = NodePath("../MarginContainer/CenterContainer/PanelContainer")
+offset_position = Vector2(-16, 16)
+close_window = NodePath("..")

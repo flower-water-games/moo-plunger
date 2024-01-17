@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wq10uq6j3rj0"]
+
+[ext_resource type="Script" path="res://UserInterface/Components/FitToWindow/FitToWindow.gd" id="1_tc0it"]
+
+[node name="FitToWindow" type="Node"]
+script = ExtResource("1_tc0it")

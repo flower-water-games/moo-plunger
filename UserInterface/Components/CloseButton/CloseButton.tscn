@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuoqoi7sby044"]
+
+[ext_resource type="Theme" uid="uid://px53y6ltnb6a" path="res://UserInterface/Themes/RoundButton/RoundButton.tres" id="1_7lpb7"]
+[ext_resource type="Script" path="res://UserInterface/Components/CloseButton/CloseButton.gd" id="1_n2qcu"]
+[ext_resource type="Texture2D" uid="uid://bbcfve6ekw3e6" path="res://Assets/UIControls/Close-X-24x24.png" id="2_b3adh"]
+
+[node name="CloseButton" type="Button"]
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(44, 44)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_7lpb7")
+icon = ExtResource("2_b3adh")
+icon_alignment = 1
+script = ExtResource("1_n2qcu")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
