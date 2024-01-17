@@ -1,13 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://tp71bac306c1"]
 
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_45alt"]
-[ext_resource type="Texture2D" uid="uid://8gsh8xej2cys" path="res://Assets/Logo/DefaultLogo256x512.png" id="3_n14oc"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_pywf7"]
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="5_ay4hd"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="5_h452s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjg5i"]
 bg_color = Color(0.360784, 0.639216, 0.780392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x21xl"]
+font_size = 24
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -45,7 +47,12 @@ size_flags_vertical = 3
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
 custom_minimum_size = Vector2(512, 256)
 layout_mode = 2
-texture = ExtResource("3_n14oc")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
+layout_mode = 2
+text = "cow wrangling game
+godot 4.1.1"
+label_settings = SubResource("LabelSettings_x21xl")
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
 layout_mode = 2
