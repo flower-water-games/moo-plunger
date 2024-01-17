@@ -1,2 +1,27 @@
-# Godot 4+ specific ignores
+# shoutout to reddit https://www.reddit.com/r/godot/comments/176z40o/comment/k4pqji5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 .godot/
+.import/
+export.cfg
+data_*/
+dist/
+*.vs
+*.tmp
+*blend1
+*.DS_Store
+export_presets.cfg
+# Dummy HTML5 export presets file for continuous integration
+!.github/dist/export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/tool-specific ignores
+.directory
+.DS_Store
+*~
+*.blend1

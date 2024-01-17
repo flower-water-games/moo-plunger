@@ -10,19 +10,15 @@ config_version=5
 
 [application]
 
-config/name="GlobalGameJam"
-run/main_scene="res://UserInterface/SplashScreen/Splash.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
+config/name="Ggj 24"
+run/main_scene="res://welcome.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.266667, 0.0431373, 0.862745, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
 FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
-
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
 
 [fmod]
 
