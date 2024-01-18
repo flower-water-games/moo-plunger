@@ -1,38 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqsbqnge121mu"]
+[gd_scene load_steps=3 format=3 uid="uid://dqsbqnge121mu"]
 
 [ext_resource type="PackedScene" uid="uid://d02libxxtk7q0" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest.glb" id="1_qs7o6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wucxp"]
+size = Vector3(2.16, 4.23, 4.45)
+
 [node name="Reexport_cowtest" instance=ExtResource("1_qs7o6")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="Armature" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 0.0563975, -0.998408, 0, 0.998408, 0.0563975, 0, 0.982315, -3.71043)
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(1.11457e-17, -0.1298, -0.155207)
-bones/0/scale = Vector3(2.28311, 2.28311, 2.28311)
-bones/1/position = Vector3(-1.43553, 1.20727, 1.36764)
-bones/1/rotation = Quaternion(0.655772, -0.255947, 0.236345, 0.669772)
-bones/1/scale = Vector3(0.765097, 0.765099, 0.7651)
-bones/4/position = Vector3(4.65436e-16, -1.2104, 0.5459)
-bones/4/rotation = Quaternion(0.945807, 3.85142e-08, 1.12177e-07, 0.324728)
-bones/4/scale = Vector3(0.909648, 0.909648, 0.909648)
-bones/5/rotation = Quaternion(-0.227638, -2.30981e-07, -5.47275e-15, 0.973746)
-bones/6/rotation = Quaternion(-0.134367, -4.61598e-14, 3.18729e-08, 0.990932)
-bones/7/position = Vector3(-4.5968e-16, 2.24434, -0.802354)
-bones/7/rotation = Quaternion(-0.406256, -3.42616e-17, 1.0544e-16, 0.913759)
-bones/7/scale = Vector3(0.818687, 0.818687, 0.818687)
-bones/8/position = Vector3(-1.4413, 0.00981314, 1.32277)
-bones/8/rotation = Quaternion(0.724887, -0.245168, 0.253108, 0.591919)
-bones/8/scale = Vector3(0.7651, 0.7651, 0.7651)
-bones/11/position = Vector3(1.50148, 0.00814915, 1.36182)
-bones/11/rotation = Quaternion(0.736321, 0.213868, -0.219359, 0.603302)
-bones/11/scale = Vector3(0.765098, 0.765099, 0.765098)
-bones/14/position = Vector3(1.47033, 1.2189, 1.36589)
-bones/14/rotation = Quaternion(0.666638, 0.226608, -0.212136, 0.677673)
-bones/14/scale = Vector3(0.765101, 0.7651, 0.7651)
-bones/17/position = Vector3(-5.8043e-17, 0.580415, 1.43174)
-bones/17/rotation = Quaternion(0.750601, 4.27536e-15, 4.69004e-15, 0.660756)
-bones/17/scale = Vector3(1.1777, 1.1777, 1.1777)
-bones/18/position = Vector3(-1.13974e-13, 2.89183, -0.658251)
-bones/18/rotation = Quaternion(0.43537, 4.29275e-07, 2.07601e-07, 0.900252)
-bones/18/scale = Vector3(0.755092, 0.755092, 0.755094)
+bones/0/position = Vector3(0, 0, 0)
+bones/1/position = Vector3(-0.493178, 1.05253, 0.492205)
+bones/2/rotation = Quaternion(-0.0885127, 0.00445882, -0.0263085, 0.995718)
+bones/3/rotation = Quaternion(0.0880713, 0.000312526, -0.0683429, 0.993767)
+bones/4/position = Vector3(3.85912e-16, -0.927153, 0.0801455)
+bones/4/rotation = Quaternion(0.99967, 3.04587e-09, 1.18565e-07, 0.0256809)
+bones/7/position = Vector3(-2.77923e-16, 1.34506, -0.28107)
+bones/7/rotation = Quaternion(-0.225547, -3.65291e-17, 5.85383e-17, 0.974232)
+bones/8/position = Vector3(-0.490237, -0.144659, 0.422862)
+bones/8/rotation = Quaternion(0.768674, -0.0778861, 0.0708178, 0.630919)
+bones/9/rotation = Quaternion(0.0531452, -0.0144356, -0.0259688, 0.998145)
+bones/10/rotation = Quaternion(-0.0984543, 0.00669427, -0.0785572, 0.992013)
+bones/11/position = Vector3(0.487226, -0.143847, 0.421007)
+bones/11/rotation = Quaternion(0.768321, 0.0748852, -0.0683159, 0.631988)
+bones/12/rotation = Quaternion(0.0565915, 0.0052274, 0.0233349, 0.998111)
+bones/13/rotation = Quaternion(-0.100979, -0.000594208, 0.0698743, 0.992432)
+bones/14/position = Vector3(0.484286, 1.052, 0.489621)
+bones/15/rotation = Quaternion(-0.0935931, -0.0135463, 0.0281114, 0.995121)
+bones/16/rotation = Quaternion(0.100601, 0.00588546, 0.0772447, 0.991906)
+bones/17/position = Vector3(-3.91747e-17, 0.456222, 0.545521)
+bones/18/position = Vector3(-4.67601e-14, 1.61624, 0.0953719)
+bones/18/rotation = Quaternion(0.588162, 3.8564e-07, 2.80458e-07, 0.808743)
+
+[node name="AnimationPlayer" parent="." index="4"]
+autoplay = "Idle_Good"
+
+[node name="Area3D" type="Area3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108691, 0.771508, -3.51014)
+shape = SubResource("BoxShape3D_wucxp")
