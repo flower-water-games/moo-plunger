@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
-[ext_resource type="PackedScene" uid="uid://du7bs5ilo4eof" path="res://Assets/Bokhum/Inflating Cow Test/Reexport_cowtest.glb" id="2_kwfvl"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Levels/Objects/Ground.tscn" id="2_xcvej"]
+[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Assets/Bokhum/Inflating Cow Test/cow.tscn" id="3_47edr"]
 
 [sub_resource type="Environment" id="Environment_4bi23"]
 
@@ -17,7 +17,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 0)
 [node name="MeshInstance3D" parent="." instance=ExtResource("2_xcvej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499695, 4.56451, 0.0175052)
 
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="Reexport_cowtest" parent="Node3D" instance=ExtResource("2_kwfvl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08227, 7.37475, -2.81394)
+[node name="Reexport_cowtest" parent="." instance=ExtResource("3_47edr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7263, 7.07708, -2.4251)
