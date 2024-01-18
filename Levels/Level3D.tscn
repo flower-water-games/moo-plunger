@@ -1,11 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=8 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Levels/Objects/Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Assets/Bokhum/InflatingCowTest/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="4_074jo"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ukovm"]
+
+[sub_resource type="Sky" id="Sky_utlqb"]
+sky_material = SubResource("ProceduralSkyMaterial_ukovm")
+
 [sub_resource type="Environment" id="Environment_4bi23"]
+sky = SubResource("Sky_utlqb")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0, 0.266667, 1)
 
 [node name="Level3D" type="Node3D"]
 
@@ -19,7 +27,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499695, 4.56451, 0.0175052)
 
 [node name="Reexport_cowtest" parent="." instance=ExtResource("3_47edr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7263, 7.07708, -0.500026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7263, 5.75477, -0.500026)
 
 [node name="GGJ_HumanNPC_Model" parent="." instance=ExtResource("4_074jo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84064, 6.51917, -6.97052)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.073071, 0.856321, -0.511248, 0.12116, 0.516444, 0.847706, 0.98994, 1.22661e-08, -0.141489, -10.2223, 6.1991, 0)
