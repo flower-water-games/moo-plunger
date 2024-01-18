@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=9 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Levels/Objects/Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Assets/Bokhum/InflatingCowTest/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="4_074jo"]
+[ext_resource type="Script" path="res://Assets/Bokhum/InflatingCowTest/cow.gd" id="4_tdvlh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ukovm"]
 
@@ -23,11 +24,32 @@ environment = SubResource("Environment_4bi23")
 [node name="PLAYER" parent="." instance=ExtResource("1_gq5fh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 0)
 
-[node name="MeshInstance3D" parent="." instance=ExtResource("2_xcvej")]
+[node name="GROUND" parent="." instance=ExtResource("2_xcvej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499695, 4.56451, 0.0175052)
 
 [node name="Reexport_cowtest" parent="." instance=ExtResource("3_47edr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7263, 5.75477, -0.500026)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.87101, 5.75477, -4.88119)
+script = ExtResource("4_tdvlh")
+
+[node name="Reexport_cowtest2" parent="." instance=ExtResource("3_47edr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.5495, 5.75477, -4.88119)
+script = ExtResource("4_tdvlh")
+
+[node name="Reexport_cowtest3" parent="." instance=ExtResource("3_47edr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.67194, 5.75477, -4.88119)
+script = ExtResource("4_tdvlh")
+
+[node name="Reexport_cowtest4" parent="." instance=ExtResource("3_47edr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.80122, 5.75477, -4.88119)
+script = ExtResource("4_tdvlh")
+
+[node name="Reexport_cowtest5" parent="." instance=ExtResource("3_47edr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6.85484, 5.75477, -4.88119)
+script = ExtResource("4_tdvlh")
+
+[node name="Reexport_cowtest6" parent="." instance=ExtResource("3_47edr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.73258, 5.75477, -4.88119)
+script = ExtResource("4_tdvlh")
 
 [node name="GGJ_HumanNPC_Model" parent="." instance=ExtResource("4_074jo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84064, 6.51917, -6.97052)
