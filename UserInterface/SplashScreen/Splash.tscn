@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="1_6pvb6"]
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_k1alt"]
 [ext_resource type="PackedScene" uid="uid://cdji3jde6saux" path="res://Managers/TimerGoToLevel/TimerGoToLevel.tscn" id="2_s5bpx"]
-[ext_resource type="Texture2D" uid="uid://d01daalhn3x8l" path="res://Assets/Logo/DefaultLogo256x512.png" id="3_sn4w6"]
+[ext_resource type="Texture2D" uid="uid://derlsl8os8pbr" path="res://Assets/Logo/DefaultLogo256x512.png" id="3_sn4w6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dxqv"]
 bg_color = Color(0.839216, 0.470588, 0.564706, 1)
