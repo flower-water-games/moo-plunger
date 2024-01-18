@@ -2,14 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx4vhcxjtr74d"
+uid="uid://bh87e1ypalxdh"
 path.s3tc="res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Diffuse2.png-981bf89692b778df827c9ef85cc95117.s3tc.ctex"
 path.etc2="res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Diffuse2.png-981bf89692b778df827c9ef85cc95117.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

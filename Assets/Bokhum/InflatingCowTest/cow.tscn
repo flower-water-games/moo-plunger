@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqsbqnge121mu"]
 
-[ext_resource type="PackedScene" uid="uid://du7bs5ilo4eof" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest.glb" id="1_qs7o6"]
+[ext_resource type="PackedScene" uid="uid://d34cqlys7e2ny" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest.glb" id="1_qs7o6"]
 
 [node name="Reexport_cowtest" instance=ExtResource("1_qs7o6")]
 

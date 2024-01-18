@@ -2,14 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvqreff2ah7on"
+uid="uid://cwqk2n3gea8e8"
 path.s3tc="res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Roughness.png-6e6e9401a4a5d7d2718b7ecd1f050b54.s3tc.ctex"
 path.etc2="res://.godot/imported/Reexport_cowtest_GGJ_CowTest_Roughness.png-6e6e9401a4a5d7d2718b7ecd1f050b54.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
