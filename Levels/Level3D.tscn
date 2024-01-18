@@ -22,4 +22,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499695, 4.56451, 0.0175052)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7263, 7.07708, -2.4251)
 
 [node name="GGJ_HumanNPC_Model" parent="." instance=ExtResource("4_gbpjg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.320022, 7.16657, -5.74972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86391, 7.16657, -5.74972)
