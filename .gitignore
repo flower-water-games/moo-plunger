@@ -9,6 +9,9 @@ dist/
 *blend1
 *.DS_Store
 export_presets.cfg
+
+*.import
+
 # Dummy HTML5 export presets file for continuous integration
 !.github/dist/export_presets.cfg
 
