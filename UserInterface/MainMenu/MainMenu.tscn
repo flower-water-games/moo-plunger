@@ -1,12 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://tp71bac306c1"]
+[gd_scene load_steps=7 format=3 uid="uid://tp71bac306c1"]
 
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_45alt"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_pywf7"]
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="5_ay4hd"]
-[ext_resource type="PackedScene" uid="uid://dokdaiyn0lard" path="res://Levels/Level3D.tscn" id="5_h7s2q"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="5_h452s"]
-[ext_resource type="PackedScene" uid="uid://dicaqroxpvawy" path="res://UserInterface/Credits/Credits.tscn" id="6_onkoi"]
-[ext_resource type="PackedScene" uid="uid://cjfrsi63ttgta" path="res://UserInterface/Controls/UserControls.tscn" id="7_j1g6m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjg5i"]
 bg_color = Color(0.360784, 0.639216, 0.780392, 1)
@@ -74,7 +71,7 @@ text = "Start"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
-level_path = ExtResource("5_h7s2q")
+level_path = "res://Levels/Level3D.tscn"
 
 [node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -82,7 +79,7 @@ text = "Credits"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/CreditsButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
-level_path = ExtResource("6_onkoi")
+level_path = "res://UserInterface/Credits/Credits.tscn"
 
 [node name="ControlsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -90,4 +87,4 @@ text = "Controls"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/ControlsButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
-level_path = ExtResource("7_j1g6m")
+level_path = "res://UserInterface/Controls/UserControls.tscn"
