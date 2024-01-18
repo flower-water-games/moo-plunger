@@ -4,6 +4,9 @@
 
 [node name="Reexport_cowtest" instance=ExtResource("1_qs7o6")]
 
+[node name="Armature" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.0563975, -0.998408, 0, 0.998408, 0.0563975, 0, 0.982315, -3.71043)
+
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/position = Vector3(0, 0, 0)
 bones/1/position = Vector3(-0.493178, 1.05253, 0.492205)
