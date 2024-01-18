@@ -2,7 +2,7 @@ extends Control
 
 var name_and_titles : Array[Array] = [
 	["Name", "Title"],
-	["Name 2", "Title 2"],
+	["PaulB", "Frog God"],
 	["CM", "Developer"],
 	["Bokhum","3D Artist"],
 	["Jesse Sheehan", "QA, etc"]
