@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=8 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Levels/Objects/Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Assets/Bokhum/InflatingCowTest/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="4_074jo"]
-[ext_resource type="Script" path="res://Assets/Bokhum/InflatingCowTest/cow.gd" id="4_tdvlh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ukovm"]
 
@@ -27,32 +26,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 0)
 [node name="GROUND" parent="." instance=ExtResource("2_xcvej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499695, 4.56451, 0.0175052)
 
-[node name="Reexport_cowtest" parent="." instance=ExtResource("3_47edr")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.87101, 5.75477, -4.88119)
-script = ExtResource("4_tdvlh")
+[node name="GROUND2" parent="." instance=ExtResource("2_xcvej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1337, 10.3363, 0.0175052)
 
-[node name="Reexport_cowtest2" parent="." instance=ExtResource("3_47edr")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.5495, 5.75477, -4.88119)
-script = ExtResource("4_tdvlh")
-
-[node name="Reexport_cowtest3" parent="." instance=ExtResource("3_47edr")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.67194, 5.75477, -4.88119)
-script = ExtResource("4_tdvlh")
-
-[node name="Reexport_cowtest4" parent="." instance=ExtResource("3_47edr")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.80122, 5.75477, -4.88119)
-script = ExtResource("4_tdvlh")
-
-[node name="Reexport_cowtest5" parent="." instance=ExtResource("3_47edr")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6.85484, 5.75477, -4.88119)
-script = ExtResource("4_tdvlh")
-
-[node name="Reexport_cowtest6" parent="." instance=ExtResource("3_47edr")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.73258, 5.75477, -4.88119)
-script = ExtResource("4_tdvlh")
+[node name="GROUND3" parent="." instance=ExtResource("2_xcvej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89989, 15.5551, -33.489)
 
 [node name="GGJ_HumanNPC_Model" parent="." instance=ExtResource("4_074jo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84064, 6.51917, -6.97052)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.073071, 0.856321, -0.511248, 0.12116, 0.516444, 0.847706, 0.98994, 1.22661e-08, -0.141489, -10.2223, 6.1991, 0)
+
+[node name="COWS" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89989, 15.5551, -33.489)
+
+[node name="Reexport_cowtest" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, -10.9406, 32.4639)
+
+[node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, -10.9406, 29.6376)
+
+[node name="Reexport_cowtest3" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.66934, -10.9406, 36.0722)
+
+[node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.320339, -10.9406, 29.3565)
+
+[node name="Reexport_cowtest5" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.922106, -10.9406, 35.3024)
+
+[node name="Reexport_cowtest6" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.93626, -10.9406, 29.3565)
+
+[node name="Reexport_cowtest7" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 3.24751, -10.9406, 32.4639)
+
+[node name="Reexport_cowtest8" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.01356, -10.9406, 29.3565)
+
+[node name="Reexport_cowtest9" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.49216, -10.9406, 37.726)
+
+[node name="Reexport_cowtest10" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.40479, -10.9445, 27.3402)
+
+[node name="Reexport_cowtest11" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.30644, -10.9406, 32.4639)
+
+[node name="Reexport_cowtest12" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.813521, -10.9406, 26.9131)
+
+[node name="Reexport_cowtest13" parent="COWS" instance=ExtResource("3_47edr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.813521, -10.9406, 32.4639)
