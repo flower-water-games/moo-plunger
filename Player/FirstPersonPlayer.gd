@@ -1,4 +1,5 @@
 extends CharacterBody3D
+const Cow = preload("res://Objects/cow.gd")
 
 @export_subgroup("Properties")
 @export var movement_speed = 5
@@ -142,7 +143,7 @@ func handle_controls(_delta):
 	
 	# Shooting
 	
-	# action_shoot()
+	action_shoot()
 	
 	# Jumping
 	
@@ -185,9 +186,20 @@ func action_jump():
 
 # Shooting
 
-# func action_shoot():
-	
-# 	if Input.is_action_pressed("shoot"):
+func action_shoot():
+	if Input.is_action_pressed("shoot"):
+		var space = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(camera.global_position,
+		camera.global_position - camera.global_transform.basis.z * 1000)
+		var collision = space.intersect_ray(query)
+		if collision:
+			var cow = collision.collider
+			if (cow is Cow):
+				if cow.floating:
+					cow.stop_floating()
+				$PlayerUI/Label.text = "you shot the cow named: " + collision.collider.name 
+		else:
+			$PlayerUI/Label.text = "you missed"
 	
 # 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
 		
