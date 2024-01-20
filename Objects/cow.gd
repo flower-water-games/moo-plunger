@@ -23,11 +23,18 @@ func _physics_process(delta):
 	move_and_slide()
 
 	last_float_time += delta
-	last_float_time-= randf_range(-.5, .5)
+	last_float_time	-= randf_range(-.5, .5)
 	if is_on_floor() and (delta + last_float_time) > float_interval:
 		last_float_time = 0.0
 		if not floating:
 			pick_random_animation()
+		
+	# Is it out of bounds?
+	out_of_bounds()
+
+func out_of_bounds():
+	if position.y > 100:
+		queue_free() # Remove Cow from scene
 
 func pick_random_animation():
 	if randf_range(0, 1) < 0.5:
