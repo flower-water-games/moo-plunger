@@ -10,7 +10,7 @@ func _ready():
 	get_tree().get_root().size_changed.connect(_on_size_changed)
 	_on_size_changed()
 
-func _process(delta):
+func _process(_delta):
 	# Match the GUN CAMERA to the PLAYER CAMERA
 	# This camera only renders the gun. Which prevents it from clipping into objects in the scene
 	gun_camera.global_transform = player_camera.global_transform
