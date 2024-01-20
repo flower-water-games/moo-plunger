@@ -136,6 +136,11 @@ close_game={
 
 3d_render/layer_1="World"
 3d_render/layer_2="Guns"
+3d_physics/layer_1="World"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="Plunger"
+3d_physics/layer_4="Cows"
+3d_physics/layer_5="Moles"
 
 [rendering]
 
