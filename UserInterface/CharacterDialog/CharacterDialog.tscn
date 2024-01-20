@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b323n0s4ifhq6"]
+[gd_scene load_steps=14 format=3 uid="uid://b323n0s4ifhq6"]
 
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_c5jg2"]
 [ext_resource type="Script" path="res://UserInterface/CharacterDialog/CharacterDialog.gd" id="1_slvrq"]
+[ext_resource type="Texture2D" uid="uid://cnvkknesqxpt2" path="res://icon.svg" id="2_q0ia5"]
 [ext_resource type="Theme" uid="uid://cyxn7d2u1yhdv" path="res://UserInterface/Themes/SmallButton/SmallButtonTheme.tres" id="4_mydrj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66e80"]
@@ -117,6 +118,7 @@ size_flags_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CharacterHead"]
 layout_mode = 2
+texture = ExtResource("2_q0ia5")
 expand_mode = 5
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
