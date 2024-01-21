@@ -77,8 +77,8 @@ func stop_floating():
 	floating = false
 	animation_player.play("De-inflate")
 	cow_collider.scale = Vector3(1.0, 1.0, 1.0)
+	rotation = Vector3(0, 0, 0)
 	current_tween.stop()
-	current_tween.free()
 	current_tween = null
 
 # if this body collides with a plunger gameobject collider, do something
