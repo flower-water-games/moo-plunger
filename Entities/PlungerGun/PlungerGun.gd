@@ -46,6 +46,7 @@ func _input(event:InputEvent):
 func cow_hit(body):
 	current_cow = body
 	current_cow.velocity = Vector3.ZERO
+	current_cow.stop_floating()
 	# current_cow.speed = return_speed 
 	plunger_state = State.STUCK
 

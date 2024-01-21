@@ -13,6 +13,9 @@ var float_speed = 1.0
 var last_float_time = 0.0
 var float_interval = 3.0
 
+#node child under this called "Collider"
+
+@onready var cow_collider = $Collider
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 func _physics_process(delta):
@@ -46,11 +49,13 @@ func pick_random_animation():
 func start_floating():
 	floating = true
 	animation_player.play("Inflate")
+	cow_collider.scale = Vector3(2.0, 2.0, 2.0)
 
 
 func stop_floating():
 	floating = false
 	animation_player.play("De-inflate")
+	cow_collider.scale = Vector3(1.0, 1.0, 1.0)
 
 # if this body collides with a plunger gameobject collider, do something
 
