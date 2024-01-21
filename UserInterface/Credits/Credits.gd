@@ -5,7 +5,8 @@ var name_and_titles : Array[Array] = [
 	["PaulB", "Frog God"],
 	["CM", "Developer"],
 	["Bokhum","3D Artist"],
-	["Jesse Sheehan", "QA, etc"]
+	["Jesse Sheehan", "QA, etc"],
+	["Lori Kinney", "Animation, QA"], 
 	]
 
 @onready var hsplit_container : HSplitContainer = $MarginContainer/HBoxContainer/HSplitContainer
