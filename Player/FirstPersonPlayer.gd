@@ -143,7 +143,7 @@ func handle_controls(_delta):
 	
 	# Shooting
 	
-	action_shoot()
+	# action_shoot()
 	
 	# Jumping
 	
