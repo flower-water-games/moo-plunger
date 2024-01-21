@@ -73,15 +73,8 @@ func _physics_process(delta):
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 			# calculate new current_cow's velocity vector based on making sure the cow is facing the plunger_end
 			current_cow.velocity = current_cow.global_position.direction_to(plunger_end.global_position) * return_speed
-
-
-			#current_cow.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
-			#Rotate it towards the barrel of the gun
-			#_angle_plunger_towards_gun(delta)
-			# Flip plunger around
-			#world_plunger.scale = Vector3(1, 1, -1)
-			# Return it to the player
-			if world_plunger.global_position.distance_to(plunger_end.global_position) < 2:
+	
+			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
 				_handle_cow_retrieval()
 
@@ -103,7 +96,9 @@ func _physics_process(delta):
 
 func _handle_cow_retrieval():
 	#current_cow.queue_free()
-	current_cow.velocity = Vector3.ZERO
+	current_cow.velocity.x = 0
+	current_cow.velocity.z = 0
+	current_cow.move_and_slide()
 	current_cow.choose_random_direction()
 	current_cow = null
 
