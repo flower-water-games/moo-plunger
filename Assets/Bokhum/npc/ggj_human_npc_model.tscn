@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dxbt1piq2461c"]
 
-[ext_resource type="PackedScene" uid="uid://mu1i03dkqijn" path="res://Assets/Bokhum/npc/GGJ_HumanNPC_Model.glb" id="1_mrjsy"]
+[ext_resource type="PackedScene" uid="uid://c61skvm0siejy" path="res://Assets/Bokhum/npc/GGJ_HumanNPC_Model.glb" id="1_mrjsy"]
 
 [node name="GGJ_HumanNPC_Model" instance=ExtResource("1_mrjsy")]
 

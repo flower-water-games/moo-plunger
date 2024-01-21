@@ -38,9 +38,8 @@ fov = 80.0
 
 [node name="AimingCircle" parent="Head/Camera3D" instance=ExtResource("2_2jy8v")]
 
-[node name="PlungerGun" parent="Head/Camera3D" node_paths=PackedStringArray("player") instance=ExtResource("4_obcav")]
+[node name="PlungerGun" parent="Head/Camera3D" instance=ExtResource("4_obcav")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336592, -0.800992, -0.309311)
-player = NodePath("../../..")
 
 [node name="PlayerRayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(-1, 3.48787e-16, 8.74228e-08, 3.48787e-16, 1, -3.48787e-16, -8.74228e-08, -3.48787e-16, -1, 2.08165e-12, 1, 2.08165e-12)
