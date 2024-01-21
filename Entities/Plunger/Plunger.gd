@@ -24,6 +24,4 @@ func _physics_process(delta):
 signal cow_hit(cow)
 
 func _on_area_3d_body_entered(body):
-	if body.is_in_group("cows"):
-		print("Cow entered the trigger")
-		emit_signal("cow_hit", body)
+	emit_signal("cow_hit", body)
