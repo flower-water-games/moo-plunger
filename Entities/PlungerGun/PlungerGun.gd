@@ -1,8 +1,7 @@
 extends Node3D
 
-var plunger_scene = load("res://Entities/Plunger/Plunger.tscn")
+var plunger_scene = preload("res://Entities/Plunger/Plunger.tscn")
 #var Cow = preload("res://Objects/cow.gd")
-var current_cow : Cow = null
 
 @export_subgroup("Properties")
 @export var launch_speed : float = 10.0
@@ -13,6 +12,7 @@ var current_cow : Cow = null
 @onready var plunger_end : Node3D = $PlungerEnd
 @onready var rope : CSGBox3D = $Rope
 var world_plunger : CharacterBody3D
+var current_cow : CharacterBody3D
 
 enum State {SHOOTING, STUCK, RETURNING, DEFAULT}
 var plunger_state = State.DEFAULT
@@ -23,6 +23,7 @@ func _ready():
 	world_plunger = plunger_scene.instantiate()
 	world_plunger.global_transform = plunger_end.global_transform
 	get_tree().get_root().add_child(world_plunger)
+	world_plunger.connect("cow_hit", cow_hit)
 
 func _shoot_plunger():
 	if plunger_state == State.DEFAULT:
@@ -37,10 +38,19 @@ func _return_plunger():
 	world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 	print("Return!")
 
-func _physics_process(delta):
+func _input(event:InputEvent):
 	# Shooting
 	if Input.is_action_pressed("shoot"):
 		_shoot_plunger()
+
+func cow_hit(body):
+	current_cow = body
+	current_cow.velocity = Vector3.ZERO
+	# current_cow.speed = return_speed 
+	plunger_state = State.STUCK
+
+
+func _physics_process(delta):
 		
 	# State management
 	match plunger_state:
@@ -54,54 +64,37 @@ func _physics_process(delta):
 			# world_plunger has a CollisionShape3D node as a child
 			# if the plunger is colliding with something
 
-
-			#_check_cow_collision()
-
-			if world_plunger.global_position.distance_to(plunger_end.global_position) > max_distance_from_player or plunger_state == State.STUCK:
+			if world_plunger.global_position.distance_to(plunger_end.global_position) > max_distance_from_player:
 				_return_plunger()
+		State.STUCK: 
+			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
+			# calculate new current_cow's velocity vector based on making sure the cow is facing the plunger_end
+			current_cow.velocity = current_cow.global_position.direction_to(plunger_end.global_position) * return_speed
+
+
+			#current_cow.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
+			#Rotate it towards the barrel of the gun
+			#_angle_plunger_towards_gun(delta)
+			# Flip plunger around
+			#world_plunger.scale = Vector3(1, 1, -1)
+			# Return it to the player
+			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
+				plunger_state = State.DEFAULT
+				current_cow.queue_free()
+				current_cow = null
 
 		State.RETURNING: 
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
-			if (plunger_state == State.STUCK):
-				current_cow.direction = current_cow.global_position.direction_to(plunger_end.global_position)
 			#Rotate it towards the barrel of the gun
 			_angle_plunger_towards_gun(delta)
 			# Flip plunger around
 			world_plunger.scale = Vector3(1, 1, -1)
 			# Return it to the player
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
-				if (plunger_state == State.STUCK):
-					current_cow = null
-					# kill the cow for now
-					current_cow.queue_free()
-					print("Cow is free!")
 				plunger_state = State.DEFAULT
+				world_plunger.global_transform = plunger_end.global_transform
 
 	_rope_stretch(plunger_end.global_position, world_plunger.stick_end.global_position)
-
-func _check_cow_collision():
-	var collision_shape : CollisionShape3D = world_plunger.get_node("CollisionShape3D")
-	var space_state = PhysicsServer3D.space_get_direct_state(get_world_3d().space)
-
-	var shape_query = PhysicsShapeQueryParameters3D.new()
-	shape_query.shape_rid = collision_shape.shape
-	shape_query.transform = world_plunger.global_transform
-
-	var result = space_state.intersect_shape(shape_query, 1)
-	if result and result.size() > 0:
-		var collider = result[0]["collider"]
-		print("colliding")
-		# collider's parent is the Cow
-		# get the parent of the collider
-		# check if the collider's parent has the cow.gd script
-		if collider.get_parent() is Cow:
-			print("Cow!")
-			current_cow = collider
-			#current_cow.speed = return_speed
-			plunger_state = State.STUCK
-			print("Stuck!")
-		else:
-			print("Not a cow!")
 
 func _angle_plunger_towards_gun(delta):
 	# Point the plunger towards the gun

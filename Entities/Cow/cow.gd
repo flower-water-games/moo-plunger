@@ -46,12 +46,7 @@ func pick_random_animation():
 func start_floating():
 	floating = true
 	animation_player.play("Inflate")
-	var tween = create_tween()
-	var end_rotation = rotation + Vector3(0, 0, PI/4) + Vector3(randf_range(-PI, PI), randf_range(-PI, PI), randf_range(-PI, PI)) # replace with the desired rotation
-	var duration = randf_range(8, 15.0) # replace with the desired duration
-	tween.tween_property(self, "rotation", end_rotation, duration)
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.play()
+
 
 func stop_floating():
 	floating = false
@@ -59,7 +54,13 @@ func stop_floating():
 
 # if this body collides with a plunger gameobject collider, do something
 
-
+func rotate_tween():
+	var tween = create_tween()
+	var end_rotation = rotation + Vector3(0, 0, PI/4) + Vector3(randf_range(-PI, PI), randf_range(-PI, PI), randf_range(-PI, PI)) # replace with the desired rotation
+	var duration = randf_range(8, 15.0) # replace with the desired duration
+	tween.tween_property(self, "rotation", end_rotation, duration)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.play()
 
 # func _on_PlayerRayCast3D_body_entered(body):
 #     if body == self:
