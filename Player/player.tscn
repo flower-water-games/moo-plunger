@@ -34,7 +34,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 cull_mask = 1048573
-current = true
 fov = 80.0
 
 [node name="AimingCircle" parent="Head/Camera3D" instance=ExtResource("2_2jy8v")]
@@ -56,4 +55,5 @@ render_target_update_mode = 4
 
 [node name="GunCamera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 cull_mask = 2
+current = true
 fov = 80.0

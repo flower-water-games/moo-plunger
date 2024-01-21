@@ -47,7 +47,7 @@ func _process(delta):
 	match plunger_state:
 		State.DEFAULT:
 			world_plunger.global_transform = plunger_end.global_transform
-      world_plunger.scale = Vector3(1, 1, 1) # Reset scale
+			world_plunger.scale = Vector3(1, 1, 1) # Reset scale
 		State.SHOOTING:
 			# if the plunger collides with a collider that is the type cow
 			# then set the plunger to stuck
