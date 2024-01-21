@@ -7,10 +7,10 @@
 [node name="PlayerWeapon" type="Node3D"]
 script = ExtResource("1_7mqab")
 
+[node name="PlungerEnd" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.485)
+
 [node name="PlungerGun" type="CSGBox3D" parent="."]
 layers = 2
 size = Vector3(0.1, 0.1, 1)
 material = SubResource("StandardMaterial3D_jxkoh")
-
-[node name="PlungerEnd" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.029039, -0.485258)
