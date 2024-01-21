@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://dqsbqnge121mu"]
 
 [ext_resource type="Texture2D" uid="uid://isluksb8slcn" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Diffuse2.png" id="2_jnfod"]
-[ext_resource type="Script" path="res://Objects/cow.gd" id="2_k6swh"]
+[ext_resource type="Script" path="res://Entities/Cow/cow.gd" id="2_k6swh"]
 [ext_resource type="Texture2D" uid="uid://rmittar2wr07" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Roughness.png" id="3_54ppo"]
 [ext_resource type="Texture2D" uid="uid://mg1sxeoulnvv" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Normal.png" id="4_pfvst"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wucxp"]
-size = Vector3(2.07787, 2.94746, 4.40292)
+size = Vector3(1.58626, 2.48403, 2.53419)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpjxm"]
 resource_name = "Cow_Material"
@@ -1139,7 +1139,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("2_k6swh")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109916, 0.846752, -3.51903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00654778, 0.615039, -3.04393)
 shape = SubResource("BoxShape3D_wucxp")
 
 [node name="Empty" type="Node3D" parent="."]
