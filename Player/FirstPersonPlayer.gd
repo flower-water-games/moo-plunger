@@ -1,5 +1,4 @@
 extends CharacterBody3D
-const Cow = preload("res://Objects/cow.gd")
 
 @export_subgroup("Properties")
 @export var movement_speed = 5
@@ -143,7 +142,7 @@ func handle_controls(_delta):
 	
 	# Shooting
 	
-	# action_shoot()
+	#action_shoot()
 	
 	# Jumping
 	

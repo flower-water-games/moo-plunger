@@ -5,6 +5,7 @@ extends CharacterBody3D
 # if it is, it will play the inflate animation, and the node3d needs to slowly accelerate up into the air
 # if theres a collision with the player's raycast3d, the cow will play the deflate animation and fall back down
 
+class_name Cow
 
 var floating = false
 var gravity = -9.8
@@ -55,6 +56,10 @@ func start_floating():
 func stop_floating():
 	floating = false
 	animation_player.play("De-inflate")
+
+# if this body collides with a plunger gameobject collider, do something
+
+
 
 # func _on_PlayerRayCast3D_body_entered(body):
 #     if body == self:

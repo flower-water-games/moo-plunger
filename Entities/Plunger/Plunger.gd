@@ -19,3 +19,4 @@ func _physics_process(delta):
 	
 	# Move object
 	move_and_slide()
+
