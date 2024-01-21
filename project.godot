@@ -55,6 +55,10 @@ settings/encryption_key=""
 settings/distance_scale_2d=1.0
 settings/init_with_3d_righthanded=true
 
+[global_group]
+
+cows=""
+
 [input]
 
 move_right={
