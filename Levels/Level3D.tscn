@@ -24,7 +24,7 @@ environment = SubResource("Environment_4bi23")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 0)
 
 [node name="GROUND" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499695, 4.56451, 0.0175052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, 0.0650478)
 
 [node name="GROUND2" parent="." instance=ExtResource("2_xcvej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1337, 10.3363, 0.0175052)
