@@ -11,7 +11,7 @@ var floating = false
 var gravity = -9.8
 var float_speed = 1.0
 var last_float_time = 0.0
-var float_interval = 3.0
+var float_interval = 6.0
 
 var cow_speed = .3
 
@@ -20,7 +20,7 @@ var cow_speed = .3
 @onready var cow_collider = $Collider
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
-func _choose_random_direction():
+func choose_random_direction():
 	# velocity.x = (randf_range(-1, 1) * cow_speed) + cow_speed
 	# velocity.z = (randf_range(-1, 1) * cow_speed) + cow_speed
 	var vec3 = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1))
@@ -29,7 +29,7 @@ func _choose_random_direction():
 	rotate(Vector3(0, 1, 0), angle)	
 
 func _ready():
-	_choose_random_direction()
+	choose_random_direction()
 
 func _physics_process(delta):
 	if floating:
@@ -70,14 +70,20 @@ func start_floating():
 	floating = true
 	animation_player.play("Inflate")
 	cow_collider.scale = Vector3(2.0, 2.0, 2.0)
+	rotate_tween()
 
 
 func stop_floating():
 	floating = false
 	animation_player.play("De-inflate")
 	cow_collider.scale = Vector3(1.0, 1.0, 1.0)
+	current_tween.stop()
+	current_tween.free()
+	current_tween = null
 
 # if this body collides with a plunger gameobject collider, do something
+
+var current_tween : Tween = null 
 
 func rotate_tween():
 	var tween = create_tween()
@@ -86,6 +92,7 @@ func rotate_tween():
 	tween.tween_property(self, "rotation", end_rotation, duration)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.play()
+	current_tween = tween
 
 # func _on_PlayerRayCast3D_body_entered(body):
 #     if body == self:
