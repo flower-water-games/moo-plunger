@@ -44,11 +44,13 @@ func _input(event:InputEvent):
 		_shoot_plunger()
 
 func cow_hit(body):
-	current_cow = body
-	current_cow.velocity = Vector3.ZERO
-	current_cow.stop_floating()
-	# current_cow.speed = return_speed 
-	plunger_state = State.STUCK
+	if plunger_state == State.SHOOTING && body.floating:
+		# Set the current_cow to the body that was hit
+		current_cow = body
+		current_cow.velocity = Vector3.ZERO
+		current_cow.stop_floating()
+		# current_cow.speed = return_speed 
+		plunger_state = State.STUCK
 
 
 func _physics_process(delta):
@@ -79,10 +81,10 @@ func _physics_process(delta):
 			# Flip plunger around
 			#world_plunger.scale = Vector3(1, 1, -1)
 			# Return it to the player
-			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
+			if world_plunger.global_position.distance_to(plunger_end.global_position) < 2:
 				plunger_state = State.DEFAULT
-				current_cow.queue_free()
-				current_cow = null
+				_handle_cow_retrieval()
+
 
 		State.RETURNING: 
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
@@ -94,17 +96,25 @@ func _physics_process(delta):
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
 				world_plunger.global_transform = plunger_end.global_transform
+				world_plunger.transform = Transform3D.IDENTITY
+				world_plunger.speed = 0
 
 	_rope_stretch(plunger_end.global_position, world_plunger.stick_end.global_position)
 
+func _handle_cow_retrieval():
+	#current_cow.queue_free()
+	current_cow.velocity = Vector3.ZERO
+	current_cow.choose_random_direction()
+	current_cow = null
+
+
 func _angle_plunger_towards_gun(delta):
 	# Point the plunger towards the gun
-	var speed = 10 # The rotation speed
 	var target_position = plunger_end.global_position # The origin
 	var up_vector = Vector3.UP # The positive Y axis
 	var new_transform = world_plunger.transform.looking_at(target_position, up_vector) # The desired transform
 	# The interpolated transform
-	world_plunger.transform = world_plunger.transform.interpolate_with(new_transform, speed * delta)
+	world_plunger.transform = world_plunger.transform.interpolate_with(new_transform, return_speed * delta)
 
 func _rope_stretch(target_position_a, target_position_b):
 	# Calculate the distance and direction between the two points
@@ -117,6 +127,8 @@ func _rope_stretch(target_position_a, target_position_b):
 		rope.look_at(target_position_b, Vector3.UP)
 		# Position the rope at the midpoint between the two points using the lerp method
 		rope.global_transform.origin = target_position_a.lerp(target_position_b, 0.5)
+	else :
+		rope.size.z = 0
 
 	# Stretch the rope along the x-axis to match the distance
 	
