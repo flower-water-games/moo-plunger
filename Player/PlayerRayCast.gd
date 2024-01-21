@@ -9,9 +9,9 @@ extends RayCast3D
 
 
 func _physics_process(delta):
-    if is_colliding():
-        var collider = get_collider()
-        if collider is Area3D:
-            var animation_player = collider.get_node("../AnimationPlayer") # replace with the path to your AnimationPlayer node
-            if animation_player:
-                animation_player.play("Inflate") # replace with the name of your animation
+	if is_colliding():
+		var collider = get_collider()
+		if collider is Area3D:
+			var animation_player = collider.get_node("../AnimationPlayer") # replace with the path to your AnimationPlayer node
+			if animation_player:
+				animation_player.play("Inflate") # replace with the name of your animation

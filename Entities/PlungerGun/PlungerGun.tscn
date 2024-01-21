@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0e5eq6gs1qbn"]
+[gd_scene load_steps=3 format=3 uid="uid://d0e5eq6gs1qbn"]
+
+[ext_resource type="Script" path="res://Entities/PlungerGun/PlungerGun.gd" id="1_7mqab"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxkoh"]
 
 [node name="PlayerWeapon" type="Node3D"]
+script = ExtResource("1_7mqab")
+
+[node name="PlungerEnd" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.485)
 
 [node name="PlungerGun" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 layers = 2
 size = Vector3(0.1, 0.1, 1)
 material = SubResource("StandardMaterial3D_jxkoh")
