@@ -46,10 +46,10 @@ albedo_color = Color(0.45098, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpdbv"]
 
-[node name="Level3D" type="Node3D"]
+[node name="PBLevel3D" type="Node3D"]
 
 [node name="PLAYER" parent="." instance=ExtResource("1_y1yha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.06145, 26.6036, -3.78499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9065, 18.4523, -3.78499)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4bi23")
