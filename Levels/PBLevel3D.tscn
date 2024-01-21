@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cnybpdem8ydhj" path="res://Assets/paulb/test.png" id="1_0mqul"]
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_y1yha"]
-[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Levels/Objects/Ground.tscn" id="2_j4jy6"]
+[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Ground.tscn" id="2_j4jy6"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="3_h2c3i"]
 [ext_resource type="Texture2D" uid="uid://bcrgqgwralfkd" path="res://Assets/paulb/sand.png" id="4_60khl"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Assets/Bokhum/InflatingCowTest/cow.tscn" id="4_mx3r1"]

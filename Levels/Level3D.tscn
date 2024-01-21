@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
-[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Levels/Objects/Ground.tscn" id="2_xcvej"]
+[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Assets/Bokhum/InflatingCowTest/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="4_074jo"]
 
