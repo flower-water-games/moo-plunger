@@ -51,7 +51,12 @@ jobs:
             itchGameId: ggj24
             buildChannel: web
             buildNumber: ${{ github.run_number }}
-
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'Latest main with PR #{{ EVENT_PAYLOAD.pull_request.id }} has been deployed successfully to https://carlos-michael.itch.io/ggj24!'
     #   - name: Deploy - Itch.io Playtest
     #     if: github.ref == 'refs/heads/playtest'
     #     uses: KikimoraGames/itch-publish@v0.0.3
