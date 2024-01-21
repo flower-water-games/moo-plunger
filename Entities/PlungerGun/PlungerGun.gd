@@ -23,7 +23,7 @@ func _ready():
 	world_plunger = plunger_scene.instantiate()
 	world_plunger.global_transform = plunger_end.global_transform
 	get_tree().get_root().add_child(world_plunger)
-	world_plunger.connect("cow_hit", cow_hit)
+	world_plunger.connect("cow_hit", on_hit)
 
 func _shoot_plunger():
 	if plunger_state == State.DEFAULT:
@@ -43,14 +43,18 @@ func _input(event:InputEvent):
 	if Input.is_action_pressed("shoot"):
 		_shoot_plunger()
 
-func cow_hit(body):
-	if plunger_state == State.SHOOTING && body.floating:
-		# Set the current_cow to the body that was hit
-		current_cow = body
-		current_cow.velocity = Vector3.ZERO
-		current_cow.stop_floating()
-		# current_cow.speed = return_speed 
-		plunger_state = State.STUCK
+func on_hit(body):
+	if body.is_in_group("cows"):
+		if plunger_state == State.SHOOTING && body.floating:
+			# Set the current_cow to the body that was hit
+			current_cow = body
+			current_cow.velocity = Vector3.ZERO
+			current_cow.stop_floating()
+			# current_cow.speed = return_speed 
+			plunger_state = State.STUCK
+	else:
+		plunger_state = State.RETURNING
+
 
 
 func _physics_process(delta):
