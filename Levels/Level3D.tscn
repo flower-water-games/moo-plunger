@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=8 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_hqe00"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="4_074jo"]
+[ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_a0ias"]
 
 [sub_resource type="Environment" id="Environment_4bi23"]
 
@@ -24,16 +25,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, 0.0650478
 transform = Transform3D(10.995, 0, 0, 0, 3.99, 0, 0, 0, 1, -7.88733, 2.01736, 4.75861)
 
 [node name="FENCE4" parent="GROUND" instance=ExtResource("3_hqe00")]
-transform = Transform3D(10.995, 0, 0, 0, 3.99, 0, 0, 0, 1, -7.88733, 2.01736, -12.0683)
+transform = Transform3D(14.271, 0, 0, 0, 3.99, 0, 0, 0, 1, -5.43539, 2.01736, -12.0683)
 
 [node name="FENCE2" parent="GROUND" instance=ExtResource("3_hqe00")]
-transform = Transform3D(-0.103816, 0, 0.999955, 0, 3.99, 0, -10.9945, 0, -0.00944211, -12.977, 2.01736, -4.26612)
+transform = Transform3D(-0.159618, 0, 1.00503, 0, 3.99, 0, -16.9041, 0, -0.00949004, -12.977, 2.01736, -4.26612)
 
 [node name="FENCE3" parent="GROUND" instance=ExtResource("3_hqe00")]
-transform = Transform3D(-0.103816, 0, 0.999955, 0, 3.99, 0, -10.9945, 0, -0.00944211, 2.34745, 2.01736, -2.66767)
+transform = Transform3D(-0.180702, 0, 1.00695, 0, 3.99, 0, -19.1371, 0, -0.00950814, 2.34745, 2.01736, -2.66767)
 
 [node name="ROOF1" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(0.752875, -0.658164, 0, 0.658164, 0.752875, 0, 0, 0, 1, -20.015, 15.1063, -0.203115)
+transform = Transform3D(0.752875, -0.658164, 0, 0.658164, 0.752875, 0, 0, 0, 1, -20.0165, 15.1063, -0.171653)
 
 [node name="ROOF2" parent="." instance=ExtResource("2_xcvej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01123, 23.2419, 0.484043)
@@ -85,3 +86,5 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.813521, -10.9406, 26
 
 [node name="Reexport_cowtest13" parent="COWS" instance=ExtResource("3_47edr")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.813521, -10.9406, 32.4639)
+
+[node name="FarmManager" parent="." instance=ExtResource("6_a0ias")]
