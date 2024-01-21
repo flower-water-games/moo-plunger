@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Ground.tscn" id="2_xcvej"]
-[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Assets/Bokhum/InflatingCowTest/cow.tscn" id="3_47edr"]
+[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="4_074jo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ukovm"]
@@ -21,7 +21,7 @@ ambient_light_color = Color(0, 0, 0.266667, 1)
 environment = SubResource("Environment_4bi23")
 
 [node name="PLAYER" parent="." instance=ExtResource("1_gq5fh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 9.86771)
 
 [node name="GROUND" parent="." instance=ExtResource("2_xcvej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, 0.0650478)
