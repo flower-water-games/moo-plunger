@@ -60,31 +60,4 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.66934, -10.9406, 36.
 [node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("3_47edr")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.320339, -10.9406, 29.3565)
 
-[node name="Reexport_cowtest5" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.922106, -10.9406, 35.3024)
-
-[node name="Reexport_cowtest6" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.93626, -10.9406, 29.3565)
-
-[node name="Reexport_cowtest7" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 3.24751, -10.9406, 32.4639)
-
-[node name="Reexport_cowtest8" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.01356, -10.9406, 29.3565)
-
-[node name="Reexport_cowtest9" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.49216, -10.9406, 37.726)
-
-[node name="Reexport_cowtest10" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.40479, -10.9445, 27.3402)
-
-[node name="Reexport_cowtest11" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.30644, -10.9406, 32.4639)
-
-[node name="Reexport_cowtest12" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.813521, -10.9406, 26.9131)
-
-[node name="Reexport_cowtest13" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.813521, -10.9406, 32.4639)
-
 [node name="FarmManager" parent="." instance=ExtResource("6_a0ias")]
