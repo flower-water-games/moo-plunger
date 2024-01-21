@@ -52,13 +52,13 @@ jobs:
             buildChannel: web
             buildNumber: ${{ github.run_number }}
       - name: Discord notification
-        uses: appleboy/discord-action@master
+        uses: sarisia/actions-status-discord@v1
         with:
-          webhook_id: ${{ secrets.DISCORD_WEBHOOK }}
-          webhook_token: ${{ secrets.DISCORD_TOKEN}}
-          color: "#48f442"
-          username: "build vibes"
-          message: "A new build with ${{github.event_name }} is up on https://carlos-michael.itch.io/ggj24"
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "build and deploy successful"
+          description: "A mooo build is up on https://carlos-michael.itch.io/ggj24"
+          color: 0x0000ff
+          username: fresh water builds
   
 
 
