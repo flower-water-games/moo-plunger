@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b4y3b6djw36gm"]
+[gd_scene load_steps=17 format=3 uid="uid://cnowylkgdw6sk"]
 
 [ext_resource type="Texture2D" uid="uid://cnybpdem8ydhj" path="res://Assets/paulb/test.png" id="1_0mqul"]
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_y1yha"]
@@ -46,7 +46,10 @@ albedo_color = Color(0.45098, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpdbv"]
 
-[node name="Level3D" type="Node3D"]
+[node name="PBLevel3D" type="Node3D"]
+
+[node name="PLAYER" parent="." instance=ExtResource("1_y1yha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9065, 18.4523, -3.78499)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4bi23")
@@ -55,9 +58,6 @@ environment = SubResource("Environment_4bi23")
 transform = Transform3D(-0.986881, -0.0280776, 0.158987, 0.0577404, 0.858245, 0.509982, -0.150769, 0.512471, -0.845365, 2.61885, 27.4465, -34.3174)
 light_energy = 2.0
 shadow_blur = 0.938
-
-[node name="PLAYER" parent="." instance=ExtResource("1_y1yha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44783, 7.45221, 0)
 
 [node name="cracked_ground" parent="." instance=ExtResource("2_j4jy6")]
 transform = Transform3D(2.05792, 0, 0, 0, 0.174568, 0, 0, 0, -1.76492, -4.52512, 3.92709, 0.0175052)
@@ -120,9 +120,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.813521, -10.9406, 32
 transform = Transform3D(0.789052, 0, 0.614327, 0, 1, 0, -0.614327, 0, 0.789052, 0.507727, 5.3599, 7.27012)
 mesh = SubResource("BoxMesh_cqqkv")
 surface_material_override/0 = SubResource("StandardMaterial3D_mpdbv")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.930213, 0, -0.367021, 0, 1, 0, 0.367021, 0, 0.930213, -9.38722, 6.62302, 12.6681)
 
 [node name="fence" parent="." instance=ExtResource("7_bhho8")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -9.39346, 4.83921, -12.7986)

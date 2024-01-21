@@ -51,7 +51,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
 layout_mode = 2
 text = "cow wrangling game
-godot 4.1.1"
+godot 4.3-dev2"
 label_settings = SubResource("LabelSettings_x21xl")
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
@@ -67,11 +67,19 @@ button = NodePath("../StartButton")
 
 [node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Start"
+text = "Level3D"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
 level_path = "res://Levels/Level3D.tscn"
+
+[node name="LevelButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "PBLevel3d"
+
+[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/LevelButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
+button = NodePath("..")
+level_path = "res://Levels/PBLevel3D.tscn"
 
 [node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
