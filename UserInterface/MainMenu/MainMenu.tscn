@@ -73,14 +73,6 @@ text = "Level3D"
 button = NodePath("..")
 level_path = "res://Levels/Level3D.tscn"
 
-[node name="LevelButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "PBLevel3d"
-
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/LevelButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
-button = NodePath("..")
-level_path = "res://Levels/PBLevel3D.tscn"
-
 [node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Credits"

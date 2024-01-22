@@ -25,13 +25,6 @@ var x_float_rotation_speed : float = 0.005
 @onready var cow_collider = $Collider
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
-func choose_random_direction():
-	# velocity.x = (randf_range(-1, 1) * cow_speed) + cow_speed
-	# velocity.z = (randf_range(-1, 1) * cow_speed) + cow_speed
-	var vec3 = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1))
-	velocity = global_position.direction_to(vec3) * cow_speed
-	var angle = global_position.angle_to(vec3)
-	rotate(Vector3(0, 1, 0), angle)	
 
 func _ready():
 	y_float_rotation_speed = randf_range(-y_float_rotation_speed, y_float_rotation_speed)

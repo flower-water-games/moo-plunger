@@ -52,6 +52,11 @@ func on_hit(body):
 			current_cow.stop_floating()
 			# current_cow.speed = return_speed 
 			plunger_state = State.STUCK
+	elif body.is_in_group("buyable"):
+		print("trying to purchase something")
+		if plunger_state == State.SHOOTING:
+			body.get_parent().buy()
+			plunger_state = State.RETURNING
 	else:
 		plunger_state = State.RETURNING
 
@@ -103,7 +108,6 @@ func _handle_cow_retrieval():
 	current_cow.velocity.x = 0
 	current_cow.velocity.z = 0
 	current_cow.move_and_slide()
-	current_cow.choose_random_direction()
 	current_cow = null
 
 

@@ -20,9 +20,9 @@ jump_strength = 3
 
 [node name="Label" type="Label" parent="PlayerUI"]
 offset_left = 138.0
-offset_top = 882.0
+offset_top = 809.0
 offset_right = 1748.0
-offset_bottom = 952.0
+offset_bottom = 879.0
 label_settings = SubResource("LabelSettings_ri0xv")
 horizontal_alignment = 1
 

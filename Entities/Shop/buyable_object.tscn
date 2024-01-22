@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwy4blafe32kc"]
+
+[ext_resource type="Script" path="res://Entities/Shop/Upgrades/jump_tier_2.gd" id="1_7ergn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvsy6"]
+radius = 0.708198
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ypif"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qv0a5"]
+material = SubResource("StandardMaterial3D_8ypif")
+
+[node name="Buyable" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175664, 1, 0)
+script = ExtResource("1_7ergn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["buyable"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["buyable"]]
+shape = SubResource("SphereShape3D_cvsy6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_qv0a5")
