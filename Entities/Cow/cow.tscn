@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://dqsbqnge121mu"]
 
-[ext_resource type="Texture2D" uid="uid://bkj5udrk3funa" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Diffuse2.png" id="2_jnfod"]
+[ext_resource type="Texture2D" uid="uid://isluksb8slcn" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Diffuse2.png" id="2_jnfod"]
 [ext_resource type="Script" path="res://Entities/Cow/cow.gd" id="2_k6swh"]
-[ext_resource type="Texture2D" uid="uid://cmkkyrysuei87" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Roughness.png" id="3_54ppo"]
-[ext_resource type="Texture2D" uid="uid://djwhdnqinbqw3" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Normal.png" id="4_pfvst"]
+[ext_resource type="Texture2D" uid="uid://rmittar2wr07" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Roughness.png" id="3_54ppo"]
+[ext_resource type="Texture2D" uid="uid://mg1sxeoulnvv" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Normal.png" id="4_pfvst"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wucxp"]
 size = Vector3(1.58626, 2.48403, 2.53419)

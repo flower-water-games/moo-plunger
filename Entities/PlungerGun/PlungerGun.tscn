@@ -9,6 +9,9 @@ albedo_color = Color(0.066656, 0.0873315, 0.0901475, 1)
 
 [node name="PlayerWeapon" type="Node3D"]
 script = ExtResource("1_7mqab")
+launch_speed = null
+return_speed = null
+max_distance_from_player = null
 
 [node name="PlungerEnd" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.485)
