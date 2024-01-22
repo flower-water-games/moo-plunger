@@ -153,5 +153,6 @@ close_game={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+renderer/rendering_.mobile="gl_compatiblity"
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.301961, 0.301961, 0.301961, 1)
