@@ -12,7 +12,6 @@
 
 [sub_resource type="Environment" id="Environment_4bi23"]
 sky = SubResource("Sky_ghgt7")
-ambient_light_source = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_3wlfw"]
 size = Vector3(5, 1, 1)
