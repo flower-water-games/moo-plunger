@@ -61,7 +61,8 @@ func on_hit(body):
 	elif body.is_in_group("buyable"):
 		print("trying to purchase something")
 		if plunger_state == State.SHOOTING:
-			body.get_parent().buy()
+			var buyable : Buyable = body.get_parent()
+			buyable.buy()
 			plunger_state = State.RETURNING
 	else:
 		plunger_state = State.RETURNING
