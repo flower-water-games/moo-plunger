@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=13 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
+[ext_resource type="Texture2D" uid="uid://cucgg864mw28p" path="res://Assets/paulb/test.png" id="2_poinl"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_hqe00"]
@@ -8,18 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_a0ias"]
 [ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="7_xdugc"]
 
-[sub_resource type="Sky" id="Sky_ghgt7"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_f7ayi"]
+panorama = ExtResource("2_poinl")
 
-[sub_resource type="Environment" id="Environment_4bi23"]
-sky = SubResource("Sky_ghgt7")
+[sub_resource type="Sky" id="Sky_e6l7p"]
+sky_material = SubResource("PanoramaSkyMaterial_f7ayi")
+
+[sub_resource type="Environment" id="Environment_b3nrc"]
+background_mode = 2
+sky = SubResource("Sky_e6l7p")
+sky_custom_fov = 98.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_3wlfw"]
 size = Vector3(5, 1, 1)
 
 [node name="Level3D" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4bi23")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.073071, 0.856321, -0.511249, 0.12116, 0.516444, 0.847706, 0.98994, -1.2759e-07, -0.141489, -10.2223, 6.1991, 0)
@@ -29,6 +33,12 @@ sky_mode = 1
 [node name="PLAYER" parent="." instance=ExtResource("1_gq5fh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
 jump_strength = 10
+
+[node name="Camera3D" parent="PLAYER/Head" index="0"]
+environment = SubResource("Environment_b3nrc")
+
+[node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
+player_camera = NodePath("../Head/Camera3D")
 
 [node name="FENCE" type="Node3D" parent="."]
 
@@ -72,4 +82,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175667, 1, 0)
 item_name = "Jump Higher!"
 cost = 20
 
+[editable path="PLAYER"]
 [editable path="FarmManager"]
