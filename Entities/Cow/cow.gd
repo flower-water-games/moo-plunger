@@ -9,11 +9,16 @@ class_name Cow
 
 var floating = false
 var gravity = -9.8
+
+var min_float_speed = 0.1
 var float_speed = 1.0
 var last_float_time = 0.0
 var float_interval = 6.0
 
 var cow_speed = .3
+
+var y_float_rotation_speed : float = 0.005
+var x_float_rotation_speed : float = 0.005
 
 #node child under this called "Collider"
 
@@ -29,14 +34,18 @@ func choose_random_direction():
 	rotate(Vector3(0, 1, 0), angle)	
 
 func _ready():
-	choose_random_direction()
+	y_float_rotation_speed = randf_range(-y_float_rotation_speed, y_float_rotation_speed)
 
 func _physics_process(delta):
 	if floating:
-		velocity.y += float_speed * delta
+		rotate_cow()
+		if velocity.y < float_speed:
+			velocity.y += float_speed * delta
 	else:
-		# randomly choose a direction to move in
+		# Gravity always applies
 		velocity.y += gravity * delta
+
+	
 
 	move_and_slide()
 
@@ -51,7 +60,6 @@ func _choose_to_float(delta):
 	last_float_time	-= randf_range(-.5, .5)
 	if is_on_floor() and (delta + last_float_time) > float_interval:
 		last_float_time = 0.0
-		velocity.x = randf_range(-1, 1) * 10
 		if not floating:
 			pick_random_animation()
 
@@ -70,7 +78,6 @@ func start_floating():
 	floating = true
 	animation_player.play("Inflate")
 	cow_collider.scale = Vector3(2.0, 2.0, 2.0)
-	rotate_tween()
 
 
 func stop_floating():
@@ -85,15 +92,6 @@ func stop_floating():
 
 var current_tween : Tween = null 
 
-func rotate_tween():
-	var tween = create_tween()
-	var end_rotation = rotation + Vector3(0, 0, PI/4) + Vector3(randf_range(-PI, PI), randf_range(-PI, PI), randf_range(-PI, PI)) # replace with the desired rotation
-	var duration = randf_range(8, 15.0) # replace with the desired duration
-	tween.tween_property(self, "rotation", end_rotation, duration)
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.play()
-	current_tween = tween
-
-# func _on_PlayerRayCast3D_body_entered(body):
-#     if body == self:
-#         stop_floating()
+func rotate_cow():
+	rotation.x -= x_float_rotation_speed
+	rotation.y += y_float_rotation_speed
