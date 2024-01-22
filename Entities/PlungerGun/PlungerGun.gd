@@ -6,11 +6,12 @@ var plunger_scene = preload("res://Entities/Plunger/Plunger.tscn")
 @export_subgroup("Properties")
 @export var launch_speed : float = 10.0
 @export var return_speed : float = 50.0
+@export var cow_return_speed : float = 10.0
 @export var max_distance_from_player : int = 30
 
 
 @onready var plunger_end : Node3D = $PlungerEnd
-@onready var rope : CSGBox3D = $Rope
+var rope : CSGBox3D 
 var world_plunger : CharacterBody3D
 var current_cow : CharacterBody3D
 
@@ -40,8 +41,10 @@ func _return_plunger():
 
 func _input(event:InputEvent):
 	# Shooting
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") && plunger_state == State.DEFAULT:
 		_shoot_plunger()
+	if Input.is_action_pressed("return") && plunger_state == State.SHOOTING:
+		_return_plunger()
 
 func on_hit(body):
 	if body.is_in_group("cows"):
@@ -53,6 +56,8 @@ func on_hit(body):
 			# current_cow.speed = return_speed 
 			plunger_state = State.STUCK
 			print("Stuck again")
+		else:
+			plunger_state = State.RETURNING
 	elif body.is_in_group("buyable"):
 		print("trying to purchase something")
 		if plunger_state == State.SHOOTING:
@@ -83,7 +88,7 @@ func _physics_process(delta):
 		State.STUCK: 
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 			# calculate new current_cow's velocity vector based on making sure the cow is facing the plunger_end
-			current_cow.velocity = current_cow.global_position.direction_to(plunger_end.global_position) * return_speed
+			current_cow.velocity = current_cow.global_position.direction_to(plunger_end.global_position) * cow_return_speed
 			
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
@@ -99,10 +104,7 @@ func _physics_process(delta):
 			# Return it to the player
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
-				world_plunger.global_transform = plunger_end.global_transform
-				world_plunger.speed = 0
-
-	_rope_stretch(plunger_end.global_position, world_plunger.stick_end.global_position)
+	# removed calling _rope_stretch
 
 func _handle_cow_retrieval():
 	#current_cow.queue_free()
