@@ -26,30 +26,31 @@ current = false
 [node name="FENCE" type="Node3D" parent="."]
 
 [node name="FENCE1" parent="FENCE" instance=ExtResource("3_hqe00")]
-transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -7.86838, 5.43674, 18.1372)
+transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.402, 4, 3.276)
 
 [node name="GROUND" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, 17.5119)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="GROUND2" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, -7.34001)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.29816, -48.2353)
 
 [node name="COWS" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89989, 15.5551, -33.489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.08165e-12, -33.489)
 
 [node name="Reexport_cowtest" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, -8.45715, 41.8693)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, 1.72, 41.8693)
 
 [node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, -8.45715, 29.6376)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, 1.72, 29.6376)
 
 [node name="Reexport_cowtest3" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, -8.45715, 40.7212)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, 1.72, 40.7212)
 
 [node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, -8.45715, 29.3565)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, 1.72, 29.3565)
 
 [node name="FarmManager" parent="." instance=ExtResource("6_a0ias")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)
 
 [node name="Shop" parent="." instance=ExtResource("6_dmut4")]
 
