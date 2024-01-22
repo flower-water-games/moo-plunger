@@ -5,7 +5,7 @@ var plunger_scene = preload("res://Entities/Plunger/Plunger.tscn")
 
 @export_subgroup("Properties")
 @export var launch_speed : float = 10.0
-@export var return_speed : float = 10.0
+@export var return_speed : float = 50.0
 @export var max_distance_from_player : int = 30
 
 
@@ -52,6 +52,7 @@ func on_hit(body):
 			current_cow.stop_floating()
 			# current_cow.speed = return_speed 
 			plunger_state = State.STUCK
+			print("Stuck again")
 	elif body.is_in_group("buyable"):
 		print("trying to purchase something")
 		if plunger_state == State.SHOOTING:
@@ -69,6 +70,7 @@ func _physics_process(delta):
 		State.DEFAULT:
 			world_plunger.global_transform = plunger_end.global_transform
 			world_plunger.scale = Vector3(1, 1, 1) # Reset scale
+			world_plunger.speed = 0
 		State.SHOOTING:
 			# if the plunger collides with a collider that is the type cow
 			# then set the plunger to stuck
@@ -82,7 +84,7 @@ func _physics_process(delta):
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 			# calculate new current_cow's velocity vector based on making sure the cow is facing the plunger_end
 			current_cow.velocity = current_cow.global_position.direction_to(plunger_end.global_position) * return_speed
-	
+			
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
 				_handle_cow_retrieval()
@@ -98,7 +100,6 @@ func _physics_process(delta):
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
 				world_plunger.global_transform = plunger_end.global_transform
-				world_plunger.transform = Transform3D.IDENTITY
 				world_plunger.speed = 0
 
 	_rope_stretch(plunger_end.global_position, world_plunger.stick_end.global_position)

@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal cow_hit(cow)
+
 @onready var stick_end : Node3D = $StickEnd
 var speed : float = 0.0
 
@@ -19,9 +21,6 @@ func _physics_process(delta):
 	
 	# Move object
 	move_and_slide()
-
-
-signal cow_hit(cow)
 
 func _on_area_3d_body_entered(body):
 	emit_signal("cow_hit", body)

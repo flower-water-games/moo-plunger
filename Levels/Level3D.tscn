@@ -40,16 +40,16 @@ transform = Transform3D(-0.073071, 0.856321, -0.511248, 0.12116, 0.516444, 0.847
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89989, 15.5551, -33.489)
 
 [node name="Reexport_cowtest" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, -10.193, 41.8693)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, -8.45715, 41.8693)
 
 [node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, -10.193, 29.6376)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, -8.45715, 29.6376)
 
 [node name="Reexport_cowtest3" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, -10.193, 40.7212)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, -8.45715, 40.7212)
 
 [node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, -10.193, 29.3565)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, -8.45715, 29.3565)
 
 [node name="FarmManager" parent="." instance=ExtResource("6_a0ias")]
 
@@ -65,3 +65,5 @@ mesh = SubResource("BoxMesh_3wlfw")
 [node name="BuyMiddle" parent="Shop/Shelf" instance=ExtResource("7_xdugc")]
 item_name = "Jump Higher!"
 cost = 20
+
+[editable path="FarmManager"]

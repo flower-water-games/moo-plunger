@@ -12,7 +12,7 @@ font_size = 48
 
 [node name="PLAYER" type="CharacterBody3D"]
 collision_layer = 2
-collision_mask = 9
+collision_mask = 25
 script = ExtResource("1_uqnlm")
 jump_strength = 3
 

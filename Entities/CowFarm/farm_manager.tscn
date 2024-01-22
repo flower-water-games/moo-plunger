@@ -3,13 +3,14 @@
 [ext_resource type="Script" path="res://Entities/CowFarm/farm_manager.gd" id="1_t85s0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nif0y"]
-size = Vector3(14.32, 1.49756, 15.46)
+size = Vector3(50, 15, 50)
 
 [node name="FarmManager" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22092, 7.85565, -3.92795)
 script = ExtResource("1_t85s0")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.24517, 0)

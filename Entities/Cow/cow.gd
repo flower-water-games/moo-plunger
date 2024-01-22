@@ -17,8 +17,10 @@ var float_interval = 6.0
 
 var cow_speed = .3
 
-var y_float_rotation_speed : float = 0.005
-var x_float_rotation_speed : float = 0.005
+var float_rotation_max : float = 0.005
+var z_float_rotation_speed : float = 0.0
+var y_float_rotation_speed : float = 0.0
+var x_float_rotation_speed : float = 0.0
 
 #node child under this called "Collider"
 
@@ -27,7 +29,9 @@ var x_float_rotation_speed : float = 0.005
 
 
 func _ready():
-	y_float_rotation_speed = randf_range(-y_float_rotation_speed, y_float_rotation_speed)
+	x_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
+	z_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
+	y_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 
 func _physics_process(delta):
 	if floating:
@@ -37,8 +41,6 @@ func _physics_process(delta):
 	else:
 		# Gravity always applies
 		velocity.y += gravity * delta
-
-	
 
 	move_and_slide()
 
@@ -78,13 +80,10 @@ func stop_floating():
 	animation_player.play("De-inflate")
 	cow_collider.scale = Vector3(1.0, 1.0, 1.0)
 	rotation = Vector3(0, 0, 0)
-	current_tween.stop()
-	current_tween = null
 
 # if this body collides with a plunger gameobject collider, do something
-
-var current_tween : Tween = null 
 
 func rotate_cow():
 	rotation.x -= x_float_rotation_speed
 	rotation.y += y_float_rotation_speed
+	rotation.z += z_float_rotation_speed
