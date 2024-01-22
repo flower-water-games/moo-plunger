@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://btcdsq34h0qw2"]
+[gd_scene load_steps=4 format=3 uid="uid://btcdsq34h0qw2"]
 
 [ext_resource type="Script" path="res://Entities/Plunger/Plunger.gd" id="1_vhs2x"]
-[ext_resource type="Script" path="res://Entities/Plunger/plunger_collision.gd" id="2_h8l22"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x0yda"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -17,6 +16,7 @@ script = ExtResource("1_vhs2x")
 
 [node name="CollisionShapeToSuppressWarning" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_x0yda")
+disabled = true
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 radius = 0.15
@@ -29,7 +29,8 @@ size = Vector3(0.07, 0.07, 0.6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.672538)
 
 [node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("2_h8l22")
+collision_layer = 4
+collision_mask = 25
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_jgciq")

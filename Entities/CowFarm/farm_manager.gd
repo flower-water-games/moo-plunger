@@ -14,7 +14,7 @@ var player_UI : Label
 
 func _ready():
 	player_UI = get_node("/root/Level3D/PLAYER/PlayerUI/Label")
-    # in godot 4 set the timer to call add_cow_bonus
+	# in godot 4 set the timer to call add_cow_bonus
 	bonus_timer.connect("timeout", add_cow_bonus)
 
 

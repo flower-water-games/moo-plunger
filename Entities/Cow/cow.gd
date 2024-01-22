@@ -9,9 +9,18 @@ class_name Cow
 
 var floating = false
 var gravity = -9.8
+
+var min_float_speed = 0.1
 var float_speed = 1.0
 var last_float_time = 0.0
 var float_interval = 6.0
+
+var cow_speed = .3
+
+var float_rotation_max : float = 0.005
+var z_float_rotation_speed : float = 0.0
+var y_float_rotation_speed : float = 0.0
+var x_float_rotation_speed : float = 0.0
 
 #node child under this called "Collider"
 
@@ -19,12 +28,18 @@ var float_interval = 6.0
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 
+func _ready():
+	x_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
+	z_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
+	y_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 
 func _physics_process(delta):
 	if floating:
-		velocity.y += float_speed * delta
+		rotate_cow()
+		if velocity.y < float_speed:
+			velocity.y += float_speed * delta
 	else:
-		# randomly choose a direction to move in
+		# Gravity always applies
 		velocity.y += gravity * delta
 
 	move_and_slide()
@@ -58,7 +73,6 @@ func start_floating():
 	floating = true
 	animation_player.play("Inflate")
 	cow_collider.scale = Vector3(2.0, 2.0, 2.0)
-	rotate_tween()
 
 
 func stop_floating():
@@ -66,22 +80,10 @@ func stop_floating():
 	animation_player.play("De-inflate")
 	cow_collider.scale = Vector3(1.0, 1.0, 1.0)
 	rotation = Vector3(0, 0, 0)
-	current_tween.stop()
-	current_tween = null
 
 # if this body collides with a plunger gameobject collider, do something
 
-var current_tween : Tween = null 
-
-func rotate_tween():
-	var tween = create_tween()
-	var end_rotation = rotation + Vector3(0, 0, PI/4) + Vector3(randf_range(-PI, PI), randf_range(-PI, PI), randf_range(-PI, PI)) # replace with the desired rotation
-	var duration = randf_range(8, 15.0) # replace with the desired duration
-	tween.tween_property(self, "rotation", end_rotation, duration)
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.play()
-	current_tween = tween
-
-# func _on_PlayerRayCast3D_body_entered(body):
-#     if body == self:
-#         stop_floating()
+func rotate_cow():
+	rotation.x -= x_float_rotation_speed
+	rotation.y += y_float_rotation_speed
+	rotation.z += z_float_rotation_speed
