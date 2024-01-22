@@ -4,11 +4,12 @@ extends Node3D
 # has an Area 3D node child
 # which has a CollisionShape3D child
 
+class_name FarmManager
+
 @onready var farm_collider = $Area3D
 @onready var bonus_timer : Timer = $BonusTimer
 
 var cost_per_cow = 10.0
-var time_per_bonus = 1.0
 var player_UI : Label
 
 func _ready():

@@ -58,6 +58,7 @@ settings/init_with_3d_righthanded=true
 [global_group]
 
 cows=""
+buyable=""
 
 [input]
 
