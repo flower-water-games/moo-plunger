@@ -103,7 +103,6 @@ func _handle_cow_retrieval():
 	current_cow.velocity.x = 0
 	current_cow.velocity.z = 0
 	current_cow.move_and_slide()
-	current_cow.choose_random_direction()
 	current_cow = null
 
 

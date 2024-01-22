@@ -13,23 +13,12 @@ var float_speed = 1.0
 var last_float_time = 0.0
 var float_interval = 6.0
 
-var cow_speed = .3
-
 #node child under this called "Collider"
 
 @onready var cow_collider = $Collider
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
-func choose_random_direction():
-	# velocity.x = (randf_range(-1, 1) * cow_speed) + cow_speed
-	# velocity.z = (randf_range(-1, 1) * cow_speed) + cow_speed
-	var vec3 = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1))
-	velocity = global_position.direction_to(vec3) * cow_speed
-	var angle = global_position.angle_to(vec3)
-	rotate(Vector3(0, 1, 0), angle)	
 
-func _ready():
-	choose_random_direction()
 
 func _physics_process(delta):
 	if floating:
@@ -51,7 +40,6 @@ func _choose_to_float(delta):
 	last_float_time	-= randf_range(-.5, .5)
 	if is_on_floor() and (delta + last_float_time) > float_interval:
 		last_float_time = 0.0
-		velocity.x = randf_range(-1, 1) * 10
 		if not floating:
 			pick_random_animation()
 
