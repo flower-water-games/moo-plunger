@@ -34,6 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
 jump_strength = 10
 
 [node name="Camera3D" parent="PLAYER/Head" index="0"]
+cull_mask = 1048575
 environment = SubResource("Environment_b3nrc")
 
 [node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
