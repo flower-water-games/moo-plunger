@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://drmg784i77783"]
+[gd_scene load_steps=8 format=3 uid="uid://drmg784i77783"]
 
 [ext_resource type="Script" path="res://Player/FirstPersonPlayer.gd" id="1_uqnlm"]
 [ext_resource type="PackedScene" uid="uid://b0bl8eptpj22j" path="res://UserInterface/AimingCursor/AimingCircle.tscn" id="2_2jy8v"]
+[ext_resource type="Environment" uid="uid://wvathqgw5vpj" path="res://Entities/paulb_skybox.tres" id="2_dpqjr"]
 [ext_resource type="PackedScene" uid="uid://d0e5eq6gs1qbn" path="res://Entities/PlungerGun/PlungerGun.tscn" id="4_obcav"]
 [ext_resource type="Script" path="res://Player/SubViewportContainer.gd" id="5_c85yu"]
 
@@ -35,6 +36,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 cull_mask = 1048573
+environment = ExtResource("2_dpqjr")
+current = true
 fov = 80.0
 
 [node name="AimingCircle" parent="Head/Camera3D" instance=ExtResource("2_2jy8v")]
@@ -56,5 +59,6 @@ render_target_update_mode = 4
 
 [node name="GunCamera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 cull_mask = 2
+environment = ExtResource("2_dpqjr")
 current = true
 fov = 80.0
