@@ -27,7 +27,6 @@ size = Vector3(5, 1, 1)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.073071, 0.856321, -0.511249, 0.12116, 0.516444, 0.847706, 0.98994, -1.2759e-07, -0.141489, -10.2223, 6.1991, 0)
-shadow_enabled = true
 sky_mode = 1
 
 [node name="PLAYER" parent="." instance=ExtResource("1_gq5fh")]
