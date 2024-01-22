@@ -10,7 +10,7 @@ var plunger_scene = preload("res://Entities/Plunger/Plunger.tscn")
 
 
 @onready var plunger_end : Node3D = $PlungerEnd
-@onready var rope : CSGBox3D = $Rope
+var rope : CSGBox3D 
 var world_plunger : CharacterBody3D
 var current_cow : CharacterBody3D
 
@@ -40,8 +40,10 @@ func _return_plunger():
 
 func _input(event:InputEvent):
 	# Shooting
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") && plunger_state == State.DEFAULT:
 		_shoot_plunger()
+	if Input.is_action_pressed("return") && plunger_state == State.SHOOTING:
+		_return_plunger()
 
 func on_hit(body):
 	if body.is_in_group("cows"):
@@ -101,8 +103,7 @@ func _physics_process(delta):
 				plunger_state = State.DEFAULT
 				world_plunger.global_transform = plunger_end.global_transform
 				world_plunger.speed = 0
-
-	_rope_stretch(plunger_end.global_position, world_plunger.stick_end.global_position)
+	# removed calling _rope_stretch
 
 func _handle_cow_retrieval():
 	#current_cow.queue_free()
