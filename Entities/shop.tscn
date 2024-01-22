@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf6k2esq4jkqa"]
+
+[ext_resource type="Script" path="res://Entities/Shop/shop.gd" id="1_22ahj"]
+[ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="2_134bk"]
+[ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="3_0ldt4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3wlfw"]
+size = Vector3(5, 1, 1)
+
+[node name="Shop" type="Node3D"]
+script = ExtResource("1_22ahj")
+
+[node name="ShopKeeper" parent="." instance=ExtResource("2_134bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16332, 1.76669, -1.47317)
+
+[node name="Shelf" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625365, 0)
+mesh = SubResource("BoxMesh_3wlfw")
+
+[node name="BuyMiddle" parent="Shelf" instance=ExtResource("3_0ldt4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175667, 1, 0)
+item_name = "Jump Higher!"
+cost = 20
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625365, 0.538768)
+text = "leaving in .... seconds"

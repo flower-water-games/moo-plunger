@@ -8,5 +8,5 @@ func _ready():
 	pass
 
 func add_effect():
-	player.jump_strength += 5 
+	player.jump_strength += 8
 	print("added jump strength")

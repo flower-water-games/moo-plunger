@@ -1,15 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=7 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_hqe00"]
-[ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="4_074jo"]
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_a0ias"]
-[ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="7_xdugc"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_3wlfw"]
-size = Vector3(5, 1, 1)
+[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/shop.tscn" id="6_dmut4"]
 
 [node name="Level3D" type="Node3D"]
 
@@ -30,44 +26,34 @@ current = false
 [node name="FENCE" type="Node3D" parent="."]
 
 [node name="FENCE1" parent="FENCE" instance=ExtResource("3_hqe00")]
-transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -7.86838, 5.43674, 18.1372)
+transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.402, 4, 3.276)
 
 [node name="GROUND" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, 17.5119)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="GROUND2" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, -7.34001)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.29816, -48.2353)
 
 [node name="COWS" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89989, 15.5551, -33.489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.08165e-12, -33.489)
 
 [node name="Reexport_cowtest" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, -8.45715, 41.8693)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, 1.72, 41.8693)
 
 [node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, -8.45715, 29.6376)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, 1.72, 29.6376)
 
 [node name="Reexport_cowtest3" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, -8.45715, 40.7212)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, 1.72, 40.7212)
 
 [node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, -8.45715, 29.3565)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, 1.72, 29.3565)
 
 [node name="FarmManager" parent="." instance=ExtResource("6_a0ias")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)
 
-[node name="Shop" type="Node3D" parent="."]
-
-[node name="ShopKeeper" parent="Shop" instance=ExtResource("4_074jo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8542, 6.51917, -10.3613)
-
-[node name="Shelf" type="MeshInstance3D" parent="Shop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7757, 4.93287, -7.71718)
-mesh = SubResource("BoxMesh_3wlfw")
-
-[node name="BuyMiddle" parent="Shop/Shelf" instance=ExtResource("7_xdugc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175667, 1, 0)
-item_name = "Jump Higher!"
-cost = 20
+[node name="Shop" parent="." instance=ExtResource("6_dmut4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5945, 0, -7.25902)
 
 [editable path="PLAYER"]
 [editable path="FarmManager"]

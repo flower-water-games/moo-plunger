@@ -6,10 +6,14 @@ class_name Buyable
 @export var item_name = "Buyable"
 @export var cost = 5
 
+
+@onready var label :Label3D = $Label3D
+
 var farm_manager
 
 func _ready():
 	farm_manager = get_node("/root/Level3D/FarmManager") as FarmManager
+	label.text = item_name + "\n" + str(cost) + " currency"
 	pass
 
 # abstract function for sublcasses to implement
