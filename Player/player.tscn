@@ -59,6 +59,5 @@ render_target_update_mode = 4
 
 [node name="GunCamera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 cull_mask = 2
-environment = ExtResource("2_dpqjr")
 current = true
 fov = 80.0

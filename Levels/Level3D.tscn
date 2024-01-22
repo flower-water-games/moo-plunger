@@ -25,7 +25,7 @@ jump_strength = 10
 player_camera = NodePath("../Head/Camera3D")
 
 [node name="GunCamera3D" parent="PLAYER/SubViewportContainer/SubViewport" index="0"]
-environment = null
+current = false
 
 [node name="FENCE" type="Node3D" parent="."]
 
