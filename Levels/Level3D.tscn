@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=11 format=3 uid="uid://dokdaiyn0lard"]
 
-[ext_resource type="Texture2D" uid="uid://cnybpdem8ydhj" path="res://Assets/paulb/test.png" id="1_c6vsp"]
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="3_47edr"]
@@ -9,15 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_a0ias"]
 [ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="7_xdugc"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_q731c"]
-panorama = ExtResource("1_c6vsp")
-
 [sub_resource type="Sky" id="Sky_ghgt7"]
-sky_material = SubResource("PanoramaSkyMaterial_q731c")
 
 [sub_resource type="Environment" id="Environment_4bi23"]
-background_mode = 2
 sky = SubResource("Sky_ghgt7")
+ambient_light_source = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_3wlfw"]
 size = Vector3(5, 1, 1)
@@ -26,6 +21,11 @@ size = Vector3(5, 1, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4bi23")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.073071, 0.856321, -0.511249, 0.12116, 0.516444, 0.847706, 0.98994, -1.2759e-07, -0.141489, -10.2223, 6.1991, 0)
+shadow_enabled = true
+sky_mode = 1
 
 [node name="PLAYER" parent="." instance=ExtResource("1_gq5fh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
@@ -41,9 +41,6 @@ transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, 17.51
 
 [node name="GROUND2" parent="." instance=ExtResource("2_xcvej")]
 transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189559, 4.56451, -7.34001)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.073071, 0.856321, -0.511248, 0.12116, 0.516444, 0.847706, 0.98994, 1.22661e-08, -0.141489, -10.2223, 6.1991, 0)
 
 [node name="COWS" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89989, 15.5551, -33.489)
