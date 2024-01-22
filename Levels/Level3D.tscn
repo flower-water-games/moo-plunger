@@ -53,6 +53,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, 1.72, 29.3565)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)
 
 [node name="Shop" parent="." instance=ExtResource("6_dmut4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5945, 0, -7.25902)
 
 [editable path="PLAYER"]
 [editable path="FarmManager"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddscbqbhoqh8f"]
+
+[ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="1_fatrp"]
+
+[node name="jump_tier_3" instance=ExtResource("1_fatrp")]
+item_name = "Jump Tier III"
+cost = 10
