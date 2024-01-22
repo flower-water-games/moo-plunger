@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=10 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="2_xcvej"]
@@ -6,8 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_hqe00"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="4_074jo"]
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_a0ias"]
+[ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="7_xdugc"]
 
 [sub_resource type="Environment" id="Environment_4bi23"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3wlfw"]
+size = Vector3(5, 1, 1)
 
 [node name="Level3D" type="Node3D"]
 
@@ -61,7 +65,15 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.320339, -10.193, 29.
 
 [node name="FarmManager" parent="." instance=ExtResource("6_a0ias")]
 
-[node name="ShopManager" type="Node3D" parent="."]
+[node name="Shop" type="Node3D" parent="."]
 
-[node name="ShopKeeper" parent="ShopManager" instance=ExtResource("4_074jo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84064, 6.51917, -6.97052)
+[node name="ShopKeeper" parent="Shop" instance=ExtResource("4_074jo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8542, 6.51917, -10.3613)
+
+[node name="Shelf" type="MeshInstance3D" parent="Shop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.82, 4.82461, -7.66317)
+mesh = SubResource("BoxMesh_3wlfw")
+
+[node name="BuyMiddle" parent="Shop/Shelf" instance=ExtResource("7_xdugc")]
+item_name = "Jump Higher!"
+cost = 20
