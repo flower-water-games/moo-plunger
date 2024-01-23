@@ -24,11 +24,18 @@ var x_float_rotation_speed : float = 0.0
 
 #node child under this called "Collider"
 
-@onready var cow_collider = $Collider
+@onready var cow_armature = $Armature
+
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
+
+@onready var cow_collider = $InflatedArea3D/Collider
 
 
 func _ready():
+	# Make the collision shape unique to the cow
+	cow_collider.shape = cow_collider.shape.duplicate()
+	
+	# Set up randomized rotation floating
 	x_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 	z_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 	y_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
@@ -72,18 +79,18 @@ func pick_random_animation():
 func start_floating():
 	floating = true
 	animation_player.play("Inflate")
-	cow_collider.scale = Vector3(2.0, 2.0, 2.0)
+	cow_collider.shape.radius = 2.0
 
 
 func stop_floating():
 	floating = false
 	animation_player.play("De-inflate")
-	cow_collider.scale = Vector3(1.0, 1.0, 1.0)
-	rotation = Vector3(0, 0, 0)
+	cow_collider.shape.radius = 1.1
+	cow_armature.rotation = Vector3(deg_to_rad(90.0), 0, 0)
 
 # if this body collides with a plunger gameobject collider, do something
 
 func rotate_cow():
-	rotation.x -= x_float_rotation_speed
-	rotation.y += y_float_rotation_speed
-	rotation.z += z_float_rotation_speed
+	cow_armature.rotation.x -= x_float_rotation_speed
+	cow_armature.rotation.y += y_float_rotation_speed
+	cow_armature.rotation.z += z_float_rotation_speed

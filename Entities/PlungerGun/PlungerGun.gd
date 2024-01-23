@@ -4,7 +4,7 @@ var plunger_scene = preload("res://Entities/Plunger/Plunger.tscn")
 #var Cow = preload("res://Objects/cow.gd")
 
 @export_subgroup("Properties")
-@export var launch_speed : float = 10.0
+@export var launch_speed : float = 30.0
 @export var return_speed : float = 50.0
 @export var cow_return_speed : float = 10.0
 @export var max_distance_from_player : int = 30
@@ -29,14 +29,14 @@ func _ready():
 func _shoot_plunger():
 	if plunger_state == State.DEFAULT:
 		plunger_state = State.SHOOTING
-		world_plunger.speed = launch_speed
-		world_plunger.direction = global_position.direction_to(plunger_end.global_position)
+		var direction = global_position.direction_to(plunger_end.global_position)
+		world_plunger._apply_force(direction, launch_speed)
 		print("Fire!")
 
 func _return_plunger():
 	plunger_state = State.RETURNING
-	world_plunger.speed = return_speed
-	world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
+	var direction = world_plunger.global_position.direction_to(plunger_end.global_position)
+	world_plunger._apply_force(direction, return_speed)
 	print("Return!")
 
 func _input(event:InputEvent):
@@ -77,6 +77,7 @@ func _physics_process(delta):
 			world_plunger.global_transform = plunger_end.global_transform
 			world_plunger.scale = Vector3(1, 1, 1) # Reset scale
 			world_plunger.speed = 0
+			world_plunger._apply_force(Vector3.ZERO, 0)
 		State.SHOOTING:
 			# if the plunger collides with a collider that is the type cow
 			# then set the plunger to stuck
@@ -95,17 +96,16 @@ func _physics_process(delta):
 				plunger_state = State.DEFAULT
 				_handle_cow_retrieval()
 
-
 		State.RETURNING: 
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 			#Rotate it towards the barrel of the gun
 			_angle_plunger_towards_gun(delta)
+			_return_plunger()
 			# Flip plunger around
 			world_plunger.scale = Vector3(1, 1, -1)
 			# Return it to the player
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
-	# removed calling _rope_stretch
 
 func _handle_cow_retrieval():
 	#current_cow.queue_free()
@@ -119,9 +119,10 @@ func _angle_plunger_towards_gun(delta):
 	# Point the plunger towards the gun
 	var target_position = plunger_end.global_position # The origin
 	var up_vector = Vector3.UP # The positive Y axis
-	var new_transform = world_plunger.transform.looking_at(target_position, up_vector) # The desired transform
-	# The interpolated transform
-	world_plunger.transform = world_plunger.transform.interpolate_with(new_transform, return_speed * delta)
+	if not target_position == up_vector:
+		var new_transform = world_plunger.transform.looking_at(target_position, up_vector) # The desired transform
+		# The interpolated transform
+		world_plunger.transform = world_plunger.transform.interpolate_with(new_transform, return_speed * delta)
 
 func _rope_stretch(target_position_a, target_position_b):
 	# Calculate the distance and direction between the two points

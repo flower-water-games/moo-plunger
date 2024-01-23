@@ -9,6 +9,7 @@ func _ready():
 	# Resize viewport to fit the players monitor size
 	get_tree().get_root().size_changed.connect(_on_size_changed)
 	_on_size_changed()
+	set_process(false) # Turned this off for now
 
 func _process(_delta):
 	# Match the GUN CAMERA to the PLAYER CAMERA
