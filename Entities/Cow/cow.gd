@@ -31,73 +31,69 @@ var x_float_rotation_speed : float = 0.0
 @onready var cow_physics_collider = $PhysicsCollider
 @onready var cow_body_collider = $InflatedArea3D/Collider
 
+var cow_default_size = Vector3(2.0, 3.0, 2.5)
+
 
 func _ready():
 	# Make the collision shape unique to the cow
 	cow_body_collider.shape = cow_body_collider.shape.duplicate()
 	cow_physics_collider.shape = cow_physics_collider.shape.duplicate()
+	cow_physics_collider.shape.size = cow_default_size
 	
 	# Set up randomized rotation floating
 	x_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 	z_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 	y_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
+	
+	# Set off cow
+	wait_arbitrary_amount_of_time_before_floating()
+
+func wait_arbitrary_amount_of_time_before_floating():
+	get_tree().create_timer(randf_range(1.0, 10.0)).timeout.connect(_try_to_float)
 
 func _physics_process(delta):
 	if floating:
-		rotate_cow()
+		rotate_inflated_cow()
+		# Cap speed increase
 		if velocity.y < float_speed:
 			velocity.y += float_speed * delta
 	else:
-		# Gravity always applies
-		velocity.y += gravity * delta
+		velocity.y += gravity * delta # Apply gravity
 	
+	# Apply friction on the ground
 	if is_on_floor():
-		# Do not slide on the ground
 		velocity.z *= 0.8
 		velocity.x *= 0.8
 
 	move_and_slide()
 
-	_choose_to_float(delta)
-
 	# Is it out of bounds?
-	out_of_bounds()
-
-
-func _choose_to_float(delta):
-	last_float_time += delta
-	last_float_time	-= randf_range(-.5, .5)
-	if is_on_floor() and (delta + last_float_time) > float_interval:
-		last_float_time = 0.0
-		if not floating:
-			pick_random_animation()
-
-
-func out_of_bounds():
 	if position.y > 100:
-		queue_free() # Remove Cow from scene
+		queue_free()
 
-func pick_random_animation():
-	if randf_range(0, 1) < 0.5:
+func _try_to_float():
+	if is_on_floor():
 		start_floating()
-	# elif floating:
-	# 	stop_floating()
+	else:
+		wait_arbitrary_amount_of_time_before_floating()
 
 func start_floating():
 	floating = true
 	animation_player.play("Inflate")
+	# Reset collision shapes
 	cow_body_collider.shape.radius = 2.0
-
+	cow_physics_collider.shape.size = Vector3(2.5, 4.0, 2.5)
 
 func stop_floating():
 	floating = false
 	animation_player.play("De-inflate")
+	# Reset collision shapes
 	cow_body_collider.shape.radius = 1.1
+	cow_physics_collider.shape.size = cow_default_size
+	# Reset rotation
 	cow_armature.rotation = Vector3(deg_to_rad(90.0), 0, 0)
 
-# if this body collides with a plunger gameobject collider, do something
-
-func rotate_cow():
+func rotate_inflated_cow():
 	cow_armature.rotation.x -= x_float_rotation_speed
 	cow_armature.rotation.y += y_float_rotation_speed
 	cow_armature.rotation.z += z_float_rotation_speed
