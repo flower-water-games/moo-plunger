@@ -19,7 +19,7 @@ var upgrade_purchased_states: Dictionary = {}
 
 func _ready():
 	initial_position = global_transform.origin
-	away_position = Vector3(initial_position.x, initial_position.y, -20)
+	away_position = Vector3(initial_position.x, initial_position.y, -80)
 	global_transform.origin = away_position
 	shop_timer.connect("timeout", switch_shop)
 

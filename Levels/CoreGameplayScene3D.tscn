@@ -1,0 +1,122 @@
+[gd_scene load_steps=18 format=3 uid="uid://d3dw5ylfmbasp"]
+
+[ext_resource type="Texture2D" uid="uid://dry5h46ihunx4" path="res://Assets/paulb/Moon/DBG.png" id="1_j7ifo"]
+[ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_yyavl"]
+[ext_resource type="PackedScene" uid="uid://c53m8rvje27uc" path="res://Assets/paulb/Moon/Moon_Model.glb" id="2_dwvnc"]
+[ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="2_osyk0"]
+[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="3_aime4"]
+[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="4_n68qn"]
+[ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="5_er14a"]
+[ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_2byc6"]
+[ext_resource type="Texture2D" uid="uid://ba3fpftmvmous" path="res://Assets/paulb/Moon/wip_ground.png" id="6_qdplb"]
+[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/Shop/shop.tscn" id="7_ymwjh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irpeu"]
+shading_mode = 0
+albedo_texture = ExtResource("1_j7ifo")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tx6wf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_naxgq"]
+noise = SubResource("FastNoiseLite_tx6wf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8q63"]
+albedo_texture = ExtResource("6_qdplb")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = SubResource("NoiseTexture2D_naxgq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6335"]
+albedo_texture = ExtResource("6_qdplb")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = SubResource("NoiseTexture2D_naxgq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrb30"]
+albedo_texture = ExtResource("6_qdplb")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = SubResource("NoiseTexture2D_naxgq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekanu"]
+albedo_texture = ExtResource("6_qdplb")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = SubResource("NoiseTexture2D_naxgq")
+
+[node name="Level3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0157248, 0.999876, 0, -0.999876, 0.0157248, -8.60487, 29.1884, 11.8775)
+shadow_enabled = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(-0.141468, 0.0173651, -0.98979, 0.00245684, 0.999849, 0.0171903, 0.989939, 2.3846e-07, -0.141489, -10.2223, 6.1991, 0)
+material_overlay = SubResource("StandardMaterial3D_irpeu")
+cast_shadow = 0
+flip_faces = true
+radius = 47.482
+radial_segments = 100
+rings = 25
+
+[node name="Moon_Model" parent="." instance=ExtResource("2_dwvnc")]
+transform = Transform3D(1.48, -2.62191e-06, 3.33734e-07, 2.43381e-06, 1.48, -4.56087e-07, 1.06079e-07, -4.67831e-07, 1.48, 2.46631, 39.1467, 4.19207)
+
+[node name="PLAYER" parent="." instance=ExtResource("1_yyavl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
+jump_strength = 10
+
+[node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
+player_camera = NodePath("../Head/Camera3D")
+
+[node name="GunCamera3D" parent="PLAYER/SubViewportContainer/SubViewport" index="0"]
+current = false
+
+[node name="FENCE" type="Node3D" parent="."]
+
+[node name="FENCE1" parent="FENCE" instance=ExtResource("2_osyk0")]
+transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.402, 4, 3.276)
+
+[node name="GROUND" parent="." instance=ExtResource("3_aime4")]
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, 12.5393)
+material_override = SubResource("StandardMaterial3D_l8q63")
+
+[node name="GROUND2" parent="." instance=ExtResource("3_aime4")]
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 22.2437, 0, -12.3534)
+surface_material_override/0 = SubResource("StandardMaterial3D_a6335")
+
+[node name="GROUND3" parent="." instance=ExtResource("3_aime4")]
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, -6.94851, 12.5393)
+material_override = SubResource("StandardMaterial3D_vrb30")
+
+[node name="GROUND4" parent="." instance=ExtResource("3_aime4")]
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, -12.3534)
+surface_material_override/0 = SubResource("StandardMaterial3D_ekanu")
+
+[node name="COWS" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.08165e-12, -33.489)
+
+[node name="Reexport_cowtest" parent="COWS" instance=ExtResource("4_n68qn")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, 6.30651, 41.8693)
+
+[node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("4_n68qn")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, 1.72, 29.6376)
+
+[node name="Reexport_cowtest3" parent="COWS" instance=ExtResource("4_n68qn")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, 1.72, 40.7212)
+
+[node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("4_n68qn")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, 1.72, 29.3565)
+
+[node name="MoleFactory" parent="." node_paths=PackedStringArray("spawn_area", "cow_group") instance=ExtResource("5_er14a")]
+spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
+cow_group = NodePath("../COWS")
+
+[node name="FarmManager" parent="." instance=ExtResource("6_2byc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)
+
+[node name="Shop" parent="." instance=ExtResource("7_ymwjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5945, 0, -7.25902)
+
+[editable path="PLAYER"]
+[editable path="FarmManager"]
