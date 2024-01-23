@@ -16,6 +16,7 @@ script = ExtResource("1_vhs2x")
 
 [node name="CollisionShapeToSuppressWarning" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_x0yda")
+disabled = true
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 radius = 0.15
@@ -33,4 +34,5 @@ collision_mask = 25
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_jgciq")
 
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
