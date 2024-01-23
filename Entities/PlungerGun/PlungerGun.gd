@@ -114,7 +114,6 @@ func _handle_cow_retrieval():
 	current_cow.move_and_slide()
 	current_cow = null
 
-
 func _angle_plunger_towards_gun(delta):
 	# Point the plunger towards the gun
 	var target_position = plunger_end.global_position # The origin
