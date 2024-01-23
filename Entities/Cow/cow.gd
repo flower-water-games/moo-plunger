@@ -99,6 +99,8 @@ func stop_floating():
 	cow_physics_collider.shape.size = cow_default_size
 	# Reset rotation
 	cow_armature.rotation = Vector3(deg_to_rad(90.0), 0, 0)
+	# Reset the air
+	air_inflation = 0.0
 
 func rotate_inflated_cow():
 	cow_armature.rotation.x -= x_float_rotation_speed
