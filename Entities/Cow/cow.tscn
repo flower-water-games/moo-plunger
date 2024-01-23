@@ -1143,7 +1143,7 @@ collision_layer = 8
 collision_mask = 15
 script = ExtResource("2_k6swh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="PhysicsCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.161778, 0)
 shape = SubResource("BoxShape3D_j1xgl")
 

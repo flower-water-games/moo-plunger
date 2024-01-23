@@ -28,12 +28,14 @@ var x_float_rotation_speed : float = 0.0
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
-@onready var cow_collider = $InflatedArea3D/Collider
+@onready var cow_physics_collider = $PhysicsCollider
+@onready var cow_body_collider = $InflatedArea3D/Collider
 
 
 func _ready():
 	# Make the collision shape unique to the cow
-	cow_collider.shape = cow_collider.shape.duplicate()
+	cow_body_collider.shape = cow_body_collider.shape.duplicate()
+	cow_physics_collider.shape = cow_physics_collider.shape.duplicate()
 	
 	# Set up randomized rotation floating
 	x_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
@@ -48,6 +50,11 @@ func _physics_process(delta):
 	else:
 		# Gravity always applies
 		velocity.y += gravity * delta
+	
+	if is_on_floor():
+		# Do not slide on the ground
+		velocity.z *= 0.8
+		velocity.x *= 0.8
 
 	move_and_slide()
 
@@ -79,13 +86,13 @@ func pick_random_animation():
 func start_floating():
 	floating = true
 	animation_player.play("Inflate")
-	cow_collider.shape.radius = 2.0
+	cow_body_collider.shape.radius = 2.0
 
 
 func stop_floating():
 	floating = false
 	animation_player.play("De-inflate")
-	cow_collider.shape.radius = 1.1
+	cow_body_collider.shape.radius = 1.1
 	cow_armature.rotation = Vector3(deg_to_rad(90.0), 0, 0)
 
 # if this body collides with a plunger gameobject collider, do something

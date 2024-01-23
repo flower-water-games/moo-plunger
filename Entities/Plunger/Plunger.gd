@@ -28,4 +28,10 @@ func _apply_force(direction, speed):
 	velocity = direction * speed
 
 func _on_area_3d_body_entered(body):
-	emit_signal("cow_hit", body)
+	#emit_signal("cow_hit", body)
+	pass
+
+
+func _on_area_3d_area_entered(area):
+	if area.get_parent().is_in_group("cows"):
+		emit_signal("cow_hit", area.get_parent())
