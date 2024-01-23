@@ -1,11 +1,34 @@
 extends Node
 
+@export var spawn_area : CollisionShape3D
+@export var cow_group : Node3D
 
-# Called when the node enters the scene tree for the first time.
+var mole_scene = load("res://Entities/Mole/Mole.tscn")
+var total_moles_spawned : int = 0
+
 func _ready():
-	pass # Replace with function body.
+	# Spawn a random mole after X period of time
+	_delay_between_spawn()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _delay_between_spawn():
+	get_tree().create_timer(randf_range(0.0, 8.0)).timeout.connect(_spawn_mole)
+	
+func _spawn_mole():
+	var mole = mole_scene.instantiate()
+	get_tree().current_scene.add_child(mole)
+	
+	# Provide the cow group from Level3D
+	mole.cow_group = cow_group
+	
+	var padding = 0.5
+	var random_x = randf_range(padding, spawn_area.shape.size.x - padding)
+	var random_z = randf_range(padding, spawn_area.shape.size.z - padding)
+	var initial_height_from_ground : float = 2.0
+	var offset = spawn_area.shape.size * 0.5
+	mole.position = spawn_area.global_position - offset + Vector3(random_x, initial_height_from_ground, random_z)
+	
+	total_moles_spawned += 1
+	print("Mole spawned. Total spawned " + str(total_moles_spawned))
+	
+	# Create another Mole
+	_delay_between_spawn()

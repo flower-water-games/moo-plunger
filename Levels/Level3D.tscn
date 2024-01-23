@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=8 format=3 uid="uid://dokdaiyn0lard"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="2_xcvej"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="3_47edr"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_hqe00"]
+[ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="5_pg77s"]
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_a0ias"]
 [ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/shop.tscn" id="6_dmut4"]
 
@@ -29,10 +30,16 @@ current = false
 transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.402, 4, 3.276)
 
 [node name="GROUND" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, 12.5393)
 
 [node name="GROUND2" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.29816, -48.2353)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, -12.3534)
+
+[node name="GROUND3" parent="." instance=ExtResource("2_xcvej")]
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, 12.5393)
+
+[node name="GROUND4" parent="." instance=ExtResource("2_xcvej")]
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, -12.3534)
 
 [node name="COWS" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.08165e-12, -33.489)
@@ -48,6 +55,10 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, 1.72, 40.7212)
 
 [node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("3_47edr")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, 1.72, 29.3565)
+
+[node name="MoleFactory" parent="." node_paths=PackedStringArray("spawn_area", "cow_group") instance=ExtResource("5_pg77s")]
+spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
+cow_group = NodePath("../COWS")
 
 [node name="FarmManager" parent="." instance=ExtResource("6_a0ias")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)

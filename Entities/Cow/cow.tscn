@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djwhdnqinbqw3" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Normal.png" id="4_pfvst"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1xgl"]
-size = Vector3(2, 3, 2.5)
+size = Vector3(2, 2.5, 2.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpjxm"]
 resource_name = "Cow_Material"
@@ -1144,7 +1144,7 @@ collision_mask = 15
 script = ExtResource("2_k6swh")
 
 [node name="PhysicsCollider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.161778, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.343155, 0)
 shape = SubResource("BoxShape3D_j1xgl")
 
 [node name="Armature" type="Node3D" parent="."]
@@ -1297,6 +1297,8 @@ libraries = {
 autoplay = "Idle_Good"
 
 [node name="InflatedArea3D" type="Area3D" parent="."]
+collision_layer = 9
+collision_mask = 4
 
 [node name="Collider" type="CollisionShape3D" parent="InflatedArea3D"]
 shape = SubResource("SphereShape3D_tfwyx")

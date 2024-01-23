@@ -6,7 +6,7 @@ signal cow_hit(cow)
 var speed : float = 0.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity : float = 9.8 #ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var direction : Vector3 = Vector3.ZERO
 var previous_position : Vector3 = Vector3.ZERO
@@ -28,9 +28,7 @@ func _apply_force(direction, speed):
 	velocity = direction * speed
 
 func _on_area_3d_body_entered(body):
-	#emit_signal("cow_hit", body)
-	pass
-
+	emit_signal("cow_hit", body)
 
 func _on_area_3d_area_entered(area):
 	if area.get_parent().is_in_group("cows"):

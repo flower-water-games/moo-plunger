@@ -7,6 +7,11 @@ extends CharacterBody3D
 
 class_name Cow
 
+signal cow_inflated
+
+var air_inflation : float = 0.0
+var air_max_inflation : float = 100.0
+
 var floating = false
 var gravity = -9.8
 
@@ -31,8 +36,7 @@ var x_float_rotation_speed : float = 0.0
 @onready var cow_physics_collider = $PhysicsCollider
 @onready var cow_body_collider = $InflatedArea3D/Collider
 
-var cow_default_size = Vector3(2.0, 3.0, 2.5)
-
+var cow_default_size = Vector3(2.0, 2.5, 2.5)
 
 func _ready():
 	# Make the collision shape unique to the cow
@@ -44,9 +48,7 @@ func _ready():
 	x_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 	z_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 	y_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
-	
-	# Set off cow
-	wait_arbitrary_amount_of_time_before_floating()
+
 
 func wait_arbitrary_amount_of_time_before_floating():
 	get_tree().create_timer(randf_range(1.0, 10.0)).timeout.connect(_try_to_float)
@@ -70,17 +72,21 @@ func _physics_process(delta):
 	# Is it out of bounds?
 	if position.y > 100:
 		queue_free()
+		
+	# Inflating the cow
+	if air_inflation > air_max_inflation:
+		air_inflation = air_max_inflation
+		_try_to_float()
 
 func _try_to_float():
 	if is_on_floor():
 		start_floating()
-	
-	# Always try floating
-	wait_arbitrary_amount_of_time_before_floating()
 
 func start_floating():
 	floating = true
 	animation_player.play("Inflate")
+	# Cow has inflated
+	emit_signal("cow_inflated")
 	# Reset collision shapes
 	cow_body_collider.shape.radius = 2.0
 	cow_physics_collider.shape.size = Vector3(2.5, 4.0, 2.5)
@@ -93,6 +99,8 @@ func stop_floating():
 	cow_physics_collider.shape.size = cow_default_size
 	# Reset rotation
 	cow_armature.rotation = Vector3(deg_to_rad(90.0), 0, 0)
+	# Reset the air
+	air_inflation = 0.0
 
 func rotate_inflated_cow():
 	cow_armature.rotation.x -= x_float_rotation_speed
