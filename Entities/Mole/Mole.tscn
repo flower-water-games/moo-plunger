@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgcve1v6sdoer"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vv3rq"]
+
+[node name="Mole" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vv3rq")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
