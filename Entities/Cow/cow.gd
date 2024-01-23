@@ -74,8 +74,9 @@ func _physics_process(delta):
 func _try_to_float():
 	if is_on_floor():
 		start_floating()
-	else:
-		wait_arbitrary_amount_of_time_before_floating()
+	
+	# Always try floating
+	wait_arbitrary_amount_of_time_before_floating()
 
 func start_floating():
 	floating = true

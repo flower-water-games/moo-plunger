@@ -91,7 +91,7 @@ func _physics_process(delta):
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 			# calculate new current_cow's velocity vector based on making sure the cow is facing the plunger_end
 			current_cow.velocity = current_cow.global_position.direction_to(plunger_end.global_position) * cow_return_speed
-			
+			_return_plunger()
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
 				_handle_cow_retrieval()
