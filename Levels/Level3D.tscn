@@ -1,70 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://dokdaiyn0lard"]
+[gd_scene load_steps=2 format=3 uid="uid://horxawj2lkdq"]
 
-[ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_gq5fh"]
-[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="2_xcvej"]
-[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="3_47edr"]
-[ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_hqe00"]
-[ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="5_pg77s"]
-[ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_a0ias"]
-[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/Shop/shop.tscn" id="6_dmut4"]
+[ext_resource type="PackedScene" uid="uid://d3dw5ylfmbasp" path="res://Levels/CoreGameplayScene3D.tscn" id="1_6twev"]
 
-[node name="Level3D" type="Node3D"]
+[node name="Level3D" instance=ExtResource("1_6twev")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.073071, 0.856321, -0.511249, 0.12116, 0.516444, 0.847706, 0.98994, -1.2759e-07, -0.141489, -10.2223, 6.1991, 0)
-sky_mode = 1
-
-[node name="PLAYER" parent="." instance=ExtResource("1_gq5fh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
-jump_strength = 10
+[node name="CSGSphere3D" parent="." index="1"]
+visible = false
 
 [node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
 player_camera = NodePath("../Head/Camera3D")
 
-[node name="GunCamera3D" parent="PLAYER/SubViewportContainer/SubViewport" index="0"]
-current = false
-
-[node name="FENCE" type="Node3D" parent="."]
-
-[node name="FENCE1" parent="FENCE" instance=ExtResource("3_hqe00")]
-transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.402, 4, 3.276)
-
-[node name="GROUND" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, 12.5393)
-
-[node name="GROUND2" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, -12.3534)
-
-[node name="GROUND3" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, 12.5393)
-
-[node name="GROUND4" parent="." instance=ExtResource("2_xcvej")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, -12.3534)
-
-[node name="COWS" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.08165e-12, -33.489)
-
-[node name="Reexport_cowtest" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, 1.94407, 41.8693)
-
-[node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, 1.72, 29.6376)
-
-[node name="Reexport_cowtest3" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, 1.72, 40.7212)
-
-[node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, 1.72, 29.3565)
-
-[node name="MoleFactory" parent="." node_paths=PackedStringArray("spawn_area", "cow_group") instance=ExtResource("5_pg77s")]
+[node name="MoleFactory" parent="." index="10" node_paths=PackedStringArray("spawn_area", "cow_group")]
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
 cow_group = NodePath("../COWS")
-
-[node name="FarmManager" parent="." instance=ExtResource("6_a0ias")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)
-
-[node name="Shop" parent="." instance=ExtResource("6_dmut4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5945, 0, -7.25902)
 
 [editable path="PLAYER"]
 [editable path="FarmManager"]
