@@ -1,15 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8ph4o68nuym0"]
+[gd_scene load_steps=18 format=3 uid="uid://d3dw5ylfmbasp"]
 
-[ext_resource type="Texture2D" uid="uid://b8u56ec07g4f" path="res://Assets/paulb/Moon/DBG.png" id="1_j7ifo"]
+[ext_resource type="Texture2D" uid="uid://dry5h46ihunx4" path="res://Assets/paulb/Moon/DBG.png" id="1_j7ifo"]
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_yyavl"]
-[ext_resource type="PackedScene" uid="uid://dovprwnol4u4y" path="res://Assets/paulb/Moon/Moon_Model.glb" id="2_dwvnc"]
+[ext_resource type="PackedScene" uid="uid://c53m8rvje27uc" path="res://Assets/paulb/Moon/Moon_Model.glb" id="2_dwvnc"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="2_osyk0"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="3_aime4"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="4_n68qn"]
 [ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="5_er14a"]
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_2byc6"]
-[ext_resource type="Texture2D" uid="uid://c7ndqpy18bblu" path="res://Assets/paulb/Moon/wip_ground.png" id="6_qdplb"]
-[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/shop.tscn" id="7_ymwjh"]
+[ext_resource type="Texture2D" uid="uid://ba3fpftmvmous" path="res://Assets/paulb/Moon/wip_ground.png" id="6_qdplb"]
+[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/Shop/shop.tscn" id="7_ymwjh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irpeu"]
 shading_mode = 0
@@ -47,18 +47,12 @@ metallic_texture = SubResource("NoiseTexture2D_naxgq")
 [node name="Level3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.073071, 0.856321, -0.511249, 0.12116, 0.516444, 0.847706, 0.98994, -1.2759e-07, -0.141489, -10.2223, 6.1991, 0)
-light_energy = 0.262
-light_angular_distance = 25.3
-shadow_enabled = true
-shadow_bias = 0.747
-shadow_normal_bias = 0.159
-shadow_transmittance_bias = -0.46
-shadow_blur = 3.56
-sky_mode = 1
+transform = Transform3D(1, 0, 0, 0, 0.0157248, 0.999876, 0, -0.999876, 0.0157248, -8.60487, 29.1884, 11.8775)
+light_energy = 2.371
+light_indirect_energy = 1.477
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="DirectionalLight3D"]
-transform = Transform3D(0.990615, 0.119873, -0.0656578, -0.119873, 0.531236, -0.8387, -0.0656576, 0.8387, 0.54062, 0, 0, 0)
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(-0.141468, 0.0173651, -0.98979, 0.00245684, 0.999849, 0.0171903, 0.989939, 2.3846e-07, -0.141489, -10.2223, 6.1991, 0)
 material_overlay = SubResource("StandardMaterial3D_irpeu")
 cast_shadow = 0
 flip_faces = true
@@ -66,8 +60,8 @@ radius = 47.482
 radial_segments = 100
 rings = 25
 
-[node name="Moon_Model" parent="DirectionalLight3D" instance=ExtResource("2_dwvnc")]
-transform = Transform3D(-0.108145, 0.179317, 1.46511, 1.26736, 0.764337, -1.45409e-07, -0.756648, 1.25461, -0.209404, 7.21466, 27.8811, 20.8497)
+[node name="Moon_Model" parent="." instance=ExtResource("2_dwvnc")]
+transform = Transform3D(1.48, -2.62191e-06, 3.33734e-07, 2.43381e-06, 1.48, -4.56087e-07, 1.06079e-07, -4.67831e-07, 1.48, 2.46631, 39.1467, 4.19207)
 
 [node name="PLAYER" parent="." instance=ExtResource("1_yyavl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
@@ -89,11 +83,11 @@ transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, 12.5393)
 material_override = SubResource("StandardMaterial3D_l8q63")
 
 [node name="GROUND2" parent="." instance=ExtResource("3_aime4")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, -12.3534)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 22.2437, 0, -12.3534)
 surface_material_override/0 = SubResource("StandardMaterial3D_a6335")
 
 [node name="GROUND3" parent="." instance=ExtResource("3_aime4")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, 12.5393)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, -6.94851, 12.5393)
 material_override = SubResource("StandardMaterial3D_vrb30")
 
 [node name="GROUND4" parent="." instance=ExtResource("3_aime4")]

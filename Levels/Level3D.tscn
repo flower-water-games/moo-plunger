@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_hqe00"]
 [ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="5_pg77s"]
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_a0ias"]
-[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/shop.tscn" id="6_dmut4"]
+[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/Shop/shop.tscn" id="6_dmut4"]
 
 [node name="Level3D" type="Node3D"]
 
