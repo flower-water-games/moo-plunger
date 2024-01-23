@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgcve1v6sdoer"]
+
+[ext_resource type="Script" path="res://Entities/Mole/Mole.gd" id="1_yuc33"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vv3rq"]
+height = 1.0
+
+[node name="Mole" type="CharacterBody3D"]
+collision_layer = 16
+script = ExtResource("1_yuc33")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vv3rq")
+
+[node name="CSGCylinder3D" type="CSGSphere3D" parent="."]

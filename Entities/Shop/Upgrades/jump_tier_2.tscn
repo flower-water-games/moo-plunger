@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgcqjlcw8uwtc"]
+
+[ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="1_8f3mt"]
+
+[node name="jump_tier_2" instance=ExtResource("1_8f3mt")]
+item_name = "Jump Tier 2"
+cost = 10
+
+[node name="Label3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00434494, 0.621874)

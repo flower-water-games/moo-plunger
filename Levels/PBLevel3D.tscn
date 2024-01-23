@@ -1,22 +1,5 @@
 [gd_scene load_steps=16 format=3 uid="uid://cnowylkgdw6sk"]
 
-[ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_y1yha"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Levels/Objects/Ground.tscn" id="2_j4jy6"]
-[ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="3_h2c3i"]
-[ext_resource type="Texture2D" uid="uid://bcrgqgwralfkd" path="res://Assets/paulb/sand.png" id="4_60khl"]
-[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Assets/Bokhum/InflatingCowTest/cow.tscn" id="4_mx3r1"]
-=======
-[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="2_j4jy6"]
-[ext_resource type="PackedScene" uid="uid://drkb4uqium116" path="res://Assets/paulb/Moon/Moon_Model.glb" id="3_17aia"]
-[ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="3_h2c3i"]
-[ext_resource type="Texture2D" uid="uid://48vcfiv80gr1" path="res://Assets/paulb/Screenshot 2024-01-22 at 11.42.28 PM.png" id="4_4wm4b"]
-[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="4_mx3r1"]
->>>>>>> Stashed changes
-[ext_resource type="PackedScene" uid="uid://cbhhlbppfcqxm" path="res://Assets/paulb/PicketFence/fence.glb" id="7_bhho8"]
-[ext_resource type="PackedScene" uid="uid://lfexxak82lm0" path="res://Assets/paulb/bale.glb" id="8_ilx4d"]
-[ext_resource type="Texture2D" uid="uid://t4exv12k3tfg" path="res://Assets/paulb/try_2.png" id="10_5fp6v"]
-
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qwfdx"]
 panorama = ExtResource("10_5fp6v")
 

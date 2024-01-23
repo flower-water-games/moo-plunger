@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0yoihx46611g"]
+
+[ext_resource type="Script" path="res://Managers/MoleFactory/MoleFactory.gd" id="1_astot"]
+
+[node name="MoleFactory" type="Node"]
+script = ExtResource("1_astot")
