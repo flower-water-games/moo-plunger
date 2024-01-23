@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://d3dw5ylfmbasp"]
 
-[ext_resource type="Texture2D" uid="uid://dry5h46ihunx4" path="res://Assets/paulb/Moon/DBG.png" id="1_j7ifo"]
+[ext_resource type="Texture2D" uid="uid://lmqeu8kb7aje" path="res://Assets/paulb/Moon/DBG.png" id="1_j7ifo"]
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_yyavl"]
 [ext_resource type="PackedScene" uid="uid://c53m8rvje27uc" path="res://Assets/paulb/Moon/Moon_Model.glb" id="2_dwvnc"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="2_osyk0"]
