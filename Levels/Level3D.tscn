@@ -45,7 +45,7 @@ transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, -12.3534)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.08165e-12, -33.489)
 
 [node name="Reexport_cowtest" parent="COWS" instance=ExtResource("3_47edr")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, 6.30651, 41.8693)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, 1.94407, 41.8693)
 
 [node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("3_47edr")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, 1.72, 29.6376)
