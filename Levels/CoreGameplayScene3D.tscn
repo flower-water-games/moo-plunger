@@ -48,8 +48,7 @@ metallic_texture = SubResource("NoiseTexture2D_naxgq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0157248, 0.999876, 0, -0.999876, 0.0157248, -8.60487, 29.1884, 11.8775)
-light_energy = 2.371
-light_indirect_energy = 1.477
+shadow_enabled = true
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 transform = Transform3D(-0.141468, 0.0173651, -0.98979, 0.00245684, 0.999849, 0.0171903, 0.989939, 2.3846e-07, -0.141489, -10.2223, 6.1991, 0)
