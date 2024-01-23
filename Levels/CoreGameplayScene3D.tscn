@@ -1,19 +1,23 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3dw5ylfmbasp"]
+[gd_scene load_steps=19 format=3 uid="uid://d3dw5ylfmbasp"]
 
-[ext_resource type="Texture2D" uid="uid://b8u56ec07g4f" path="res://Assets/paulb/Moon/DBG.png" id="1_j7ifo"]
+[ext_resource type="Texture2D" uid="uid://dry5h46ihunx4" path="res://Assets/paulb/Moon/DBG.png" id="1_j7ifo"]
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_yyavl"]
-[ext_resource type="PackedScene" uid="uid://dovprwnol4u4y" path="res://Assets/paulb/Moon/Moon_Model.glb" id="2_dwvnc"]
+[ext_resource type="PackedScene" uid="uid://c53m8rvje27uc" path="res://Assets/paulb/Moon/Moon_Model.glb" id="2_dwvnc"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="2_osyk0"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="3_aime4"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="4_n68qn"]
 [ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="5_er14a"]
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_2byc6"]
-[ext_resource type="Texture2D" uid="uid://c7ndqpy18bblu" path="res://Assets/paulb/Moon/wip_ground.png" id="6_qdplb"]
+[ext_resource type="Texture2D" uid="uid://ba3fpftmvmous" path="res://Assets/paulb/Moon/wip_ground.png" id="6_qdplb"]
 [ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/Shop/shop.tscn" id="7_ymwjh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irpeu"]
 shading_mode = 0
 albedo_texture = ExtResource("1_j7ifo")
+
+[sub_resource type="Environment" id="Environment_bbebb"]
+ambient_light_source = 2
+ambient_light_color = Color(0.347461, 0.198879, 0.146101, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tx6wf"]
 
@@ -48,6 +52,7 @@ metallic_texture = SubResource("NoiseTexture2D_naxgq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0157248, 0.999876, 0, -0.999876, 0.0157248, -8.60487, 94.6285, 11.8775)
+visible = false
 light_energy = 0.028
 shadow_enabled = true
 
@@ -80,6 +85,9 @@ transform = Transform3D(1.48, -2.62191e-06, 3.33734e-07, 2.43381e-06, 1.48, -4.5
 [node name="PLAYER" parent="." instance=ExtResource("1_yyavl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
 jump_strength = 10
+
+[node name="Camera3D" parent="PLAYER/Head" index="0"]
+environment = SubResource("Environment_bbebb")
 
 [node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
 player_camera = NodePath("../Head/Camera3D")
