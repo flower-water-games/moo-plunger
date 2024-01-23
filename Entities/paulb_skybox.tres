@@ -11,4 +11,3 @@ sky_material = SubResource("PanoramaSkyMaterial_7c0ep")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_kep1v")
-sky_custom_fov = 87.9
