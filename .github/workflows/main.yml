@@ -41,7 +41,7 @@ jobs:
         with:
             name: godot-export
             path: ./
-      - name: Deploy - Itch.io 
+      - name: Deploy - Itch.io - web
         if: github.ref == 'refs/heads/main'
         uses: KikimoraGames/itch-publish@v0.0.3
         with:
@@ -51,6 +51,18 @@ jobs:
             itchGameId: ggj24
             buildChannel: web
             buildNumber: ${{ github.run_number }}
+      - name: Deploy - Itch.io - windows
+        if: github.ref == 'refs/heads/main'
+        uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+            butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+            gameData: ./something.exe
+            itchUsername: carlos-michael
+            itchGameId: ggj24
+            buildChannel: windows
+            buildNumber: windows:${{ github.run_number }}
+
+            
       - name: Discord notification
         uses: sarisia/actions-status-discord@v1
         with:
