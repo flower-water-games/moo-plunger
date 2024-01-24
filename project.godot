@@ -59,6 +59,7 @@ settings/init_with_3d_righthanded=true
 
 cows=""
 buyable=""
+moles=""
 
 [input]
 

@@ -5,13 +5,28 @@
 [node name="GGJ_Mole_Animated3" instance=ExtResource("1_uv8vy")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(-0.0156969, -1.89728, 0.130047)
+bones/0/scale = Vector3(0.204453, 0.204453, 0.204453)
+bones/1/position = Vector3(-0.0156969, -1.65229, 0.130047)
+bones/1/scale = Vector3(0.204453, 0.204453, 0.204453)
+bones/2/position = Vector3(0.00184298, -1.78441, 0.236192)
 bones/2/rotation = Quaternion(0.819243, -0.282565, 0.123507, 0.483471)
+bones/2/scale = Vector3(-0.0447999, -0.0447999, -0.0447999)
+bones/3/position = Vector3(-0.0845795, -1.92805, 0.133719)
 bones/3/rotation = Quaternion(0.994578, -0.0250509, 0.0286942, -0.0967709)
+bones/3/scale = Vector3(0.204453, 0.204453, 0.204453)
+bones/4/position = Vector3(-0.0429405, -1.78351, 0.236192)
 bones/4/rotation = Quaternion(0.819243, 0.282565, -0.123507, 0.483471)
-bones/5/rotation = Quaternion(0.994677, 0.0193928, -0.0292262, -0.0968904)
-bones/6/position = Vector3(-0.0627806, 0.095968, -8.45271e-08)
-bones/6/scale = Vector3(0.0457572, 0.0457572, 0.0457572)
-bones/11/position = Vector3(-0.0477594, 0.098948, 0.0215676)
+bones/4/scale = Vector3(-0.0447999, -0.0447999, -0.0447999)
+bones/5/position = Vector3(0.0419888, -1.92749, 0.133719)
+bones/5/rotation = Quaternion(0.994677, 0.0193928, -0.0292262, -0.0968903)
+bones/5/scale = Vector3(0.204453, 0.204453, 0.204453)
+bones/6/position = Vector3(-0.0351379, -0.0346303, 0.0743435)
+bones/6/scale = Vector3(0.041394, 0.041394, 0.041394)
+bones/9/position = Vector3(-5.1156e-07, -0.0431249, 2.35794)
+bones/9/scale = Vector3(0.00319016, 0.00319016, 0.00319016)
+bones/10/scale = Vector3(0.694259, 0.511175, 0.694259)
+bones/11/position = Vector3(-0.0477594, -0.0549698, 0.0215676)
 bones/11/scale = Vector3(0.0741823, 0.0741823, 0.0741823)
 
 [node name="AnimationPlayer" parent="." index="1"]

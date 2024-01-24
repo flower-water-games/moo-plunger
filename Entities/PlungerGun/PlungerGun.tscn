@@ -7,7 +7,6 @@
 
 [node name="PlayerWeapon" type="Node3D"]
 script = ExtResource("1_7mqab")
-cow_return_speed = 50.0
 
 [node name="PlungerEnd" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0833481, -0.858994)
