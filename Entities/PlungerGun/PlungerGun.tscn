@@ -1,37 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0e5eq6gs1qbn"]
+[gd_scene load_steps=4 format=3 uid="uid://d0e5eq6gs1qbn"]
 
 [ext_resource type="Script" path="res://Entities/PlungerGun/PlungerGun.gd" id="1_7mqab"]
+[ext_resource type="PackedScene" uid="uid://b3raot5ebvtcq" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxkoh"]
-
-[sub_resource type="Animation" id="Animation_h2itb"]
-resource_name = "recoil"
-length = 0.5
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0.258819, 0, 0, 0.965926, 0.2, 1, 0, 0, 0, 1)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fikgw"]
-_data = {
-"recoil": SubResource("Animation_h2itb")
-}
 
 [node name="PlayerWeapon" type="Node3D"]
 script = ExtResource("1_7mqab")
 
 [node name="PlungerEnd" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.485)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0833481, -0.858994)
 
 [node name="PlungerGun" type="CSGBox3D" parent="."]
+visible = false
 layers = 2
 size = Vector3(0.1, 0.1, 1)
 material = SubResource("StandardMaterial3D_jxkoh")
 
-[node name="recoil_AnimationPlayer" type="AnimationPlayer" parent="PlungerGun"]
-libraries = {
-"": SubResource("AnimationLibrary_fikgw")
-}
+[node name="GGJ_PlungerGunwithHands_Model" parent="." instance=ExtResource("2_kc3w1")]
+transform = Transform3D(-5.54005e-09, -0.0802281, 0.126742, -3.50688e-09, 0.126742, 0.0802281, -0.15, 8.096e-17, -6.55671e-09, -0.0556799, 0.106711, -0.386442)

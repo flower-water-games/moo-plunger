@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drmg784i77783"]
+[gd_scene load_steps=8 format=3 uid="uid://drmg784i77783"]
 
 [ext_resource type="Script" path="res://Player/FirstPersonPlayer.gd" id="1_uqnlm"]
 [ext_resource type="PackedScene" uid="uid://b0bl8eptpj22j" path="res://UserInterface/AimingCursor/AimingCircle.tscn" id="2_2jy8v"]
@@ -9,6 +9,9 @@
 font_size = 48
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nrfj3"]
+
+[sub_resource type="Environment" id="Environment_5f267"]
+ambient_light_energy = 0.0
 
 [node name="PLAYER" type="CharacterBody3D"]
 collision_layer = 2
@@ -34,6 +37,7 @@ shape = SubResource("CapsuleShape3D_nrfj3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+environment = SubResource("Environment_5f267")
 current = true
 fov = 80.0
 
@@ -61,3 +65,6 @@ visible = false
 cull_mask = 1
 current = true
 fov = 80.0
+
+[editable path="Head/Camera3D/PlungerGun"]
+[editable path="Head/Camera3D/PlungerGun/GGJ_PlungerGunwithHands_Model"]
