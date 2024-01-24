@@ -8,12 +8,12 @@ dist/
 *.tmp
 *blend1
 *.DS_Store
-#export_presets.cfg
+export_presets.cfg
 
 *.import
 
 # Dummy HTML5 export presets file for continuous integration
-#!.github/dist/export_presets.cfg
+!.github/dist/export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
