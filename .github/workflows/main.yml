@@ -56,13 +56,13 @@ jobs:
         uses: KikimoraGames/itch-publish@v0.0.3
         with:
             butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-            gameData: ./something.exe
+            gameData: ./win
             itchUsername: carlos-michael
             itchGameId: ggj24
             buildChannel: windows
             buildNumber: windows:${{ github.run_number }}
 
-            
+
       - name: Discord notification
         uses: sarisia/actions-status-discord@v1
         with:
