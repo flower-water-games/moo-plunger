@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs8i3pek0clrx"]
+[gd_scene load_steps=4 format=3 uid="uid://bs8i3pek0clrx"]
 
 [ext_resource type="Script" path="res://Entities/Mole/Mole.gd" id="1_yuc33"]
+[ext_resource type="PackedScene" uid="uid://dxjisngfhv840" path="res://Entities/Mole/ggj_mole_animated_3.tscn" id="2_nd4hs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vv3rq"]
 height = 1.0
@@ -9,7 +10,11 @@ height = 1.0
 collision_layer = 16
 script = ExtResource("1_yuc33")
 
+[node name="GGJ_Mole_Animated3" parent="." instance=ExtResource("2_nd4hs")]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 2.01783, -0.211627, 2.08165e-12)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vv3rq")
 
 [node name="CSGCylinder3D" type="CSGSphere3D" parent="."]
+visible = false

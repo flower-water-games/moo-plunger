@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3dw5ylfmbasp"]
+[gd_scene load_steps=18 format=3 uid="uid://d3dw5ylfmbasp"]
 
 [ext_resource type="Texture2D" uid="uid://lmqeu8kb7aje" path="res://Assets/paulb/Moon/DBG.png" id="1_j7ifo"]
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_yyavl"]
@@ -14,10 +14,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irpeu"]
 shading_mode = 0
 albedo_texture = ExtResource("1_j7ifo")
-
-[sub_resource type="Environment" id="Environment_bbebb"]
-ambient_light_source = 2
-ambient_light_color = Color(0.347461, 0.198879, 0.146101, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tx6wf"]
 
@@ -52,7 +48,6 @@ metallic_texture = SubResource("NoiseTexture2D_naxgq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0157248, 0.999876, 0, -0.999876, 0.0157248, -8.60487, 94.6285, 11.8775)
-visible = false
 light_energy = 0.028
 shadow_enabled = true
 
@@ -86,15 +81,6 @@ transform = Transform3D(1.48, -2.62191e-06, 3.33734e-07, 2.43381e-06, 1.48, -4.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
 jump_strength = 10
 
-[node name="Camera3D" parent="PLAYER/Head" index="0"]
-environment = SubResource("Environment_bbebb")
-
-[node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
-player_camera = NodePath("../Head/Camera3D")
-
-[node name="GunCamera3D" parent="PLAYER/SubViewportContainer/SubViewport" index="0"]
-current = false
-
 [node name="FENCE" type="Node3D" parent="."]
 
 [node name="FENCE1" parent="FENCE" instance=ExtResource("2_osyk0")]
@@ -109,7 +95,7 @@ transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 22.2437, 0, -12.3534)
 surface_material_override/0 = SubResource("StandardMaterial3D_a6335")
 
 [node name="GROUND3" parent="." instance=ExtResource("3_aime4")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, -6.94851, 12.5393)
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -42.1899, -0.0466223, 12.5393)
 material_override = SubResource("StandardMaterial3D_vrb30")
 
 [node name="GROUND4" parent="." instance=ExtResource("3_aime4")]
@@ -141,5 +127,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)
 [node name="Shop" parent="." instance=ExtResource("7_ymwjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5945, 0, -7.25902)
 
-[editable path="PLAYER"]
 [editable path="FarmManager"]
