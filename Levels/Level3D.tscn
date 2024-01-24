@@ -4,15 +4,14 @@
 
 [node name="Level3D" instance=ExtResource("1_6twev")]
 
-[node name="CSGSphere3D" parent="." index="1"]
-visible = false
-
 [node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
 player_camera = NodePath("../Head/Camera3D")
 
-[node name="MoleFactory" parent="." index="10" node_paths=PackedStringArray("spawn_area", "cow_group")]
+[node name="MoleFactory" parent="." index="9" node_paths=PackedStringArray("spawn_area", "cow_group")]
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
 cow_group = NodePath("../COWS")
 
 [editable path="PLAYER"]
+[editable path="PLAYER/Head/Camera3D/PlungerGun"]
+[editable path="PLAYER/Head/Camera3D/PlungerGun/GGJ_PlungerGunwithHands_Model"]
 [editable path="FarmManager"]
