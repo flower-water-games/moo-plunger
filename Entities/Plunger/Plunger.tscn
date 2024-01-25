@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://btcdsq34h0qw2"]
+[gd_scene load_steps=6 format=3 uid="uid://btcdsq34h0qw2"]
 
 [ext_resource type="Script" path="res://Entities/Plunger/Plunger.gd" id="1_vhs2x"]
-[ext_resource type="PackedScene" uid="uid://c8kyc4oxwl2q8" path="res://Entities/Plunger/plunger_asset.glb" id="2_no5oy"]
+[ext_resource type="PackedScene" uid="uid://ukj8lhclpr8u" path="res://Entities/Plunger/plunger_asset.glb" id="2_no5oy"]
+[ext_resource type="PackedScene" uid="uid://bh1lmv3jbkgjv" path="res://Entities/Plunger/super_plunge.tscn" id="3_qrbn0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x0yda"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -17,6 +18,9 @@ script = ExtResource("1_vhs2x")
 
 [node name="MagneticPlunger" parent="." instance=ExtResource("2_no5oy")]
 transform = Transform3D(-5.68248e-09, 4.53423e-17, 0.13, 4.53423e-17, 0.13, -4.53423e-17, -0.13, 4.53423e-17, -5.68248e-09, 0.00253046, 0.184769, 0.62182)
+
+[node name="ParticleFX2" parent="MagneticPlunger/MetalloPlunger" index="0" instance=ExtResource("3_qrbn0")]
+transform = Transform3D(0.0361553, -0.999344, -4.36827e-08, 0.999345, 0.0361552, -4.2131e-08, 4.36828e-08, -4.2131e-08, 1, 4.5405, -1.72853e-06, -0.443024)
 
 [node name="CollisionShapeToSuppressWarning" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_x0yda")
@@ -42,3 +46,5 @@ shape = SubResource("SphereShape3D_jgciq")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+
+[editable path="MagneticPlunger"]
