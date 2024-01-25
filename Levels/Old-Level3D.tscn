@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://horxawj2lkdq"]
 
-[ext_resource type="PackedScene" uid="uid://d3dw5ylfmbasp" path="res://Levels/CoreGameplayScene3D.tscn" id="1_6twev"]
+[ext_resource type="PackedScene" uid="uid://d3dw5ylfmbasp" path="res://Levels/Old_CoreGameplayScene3D.tscn" id="1_6twev"]
 
 [node name="Level3D" instance=ExtResource("1_6twev")]
 

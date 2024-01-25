@@ -4,20 +4,30 @@
 [ext_resource type="PackedScene" uid="uid://bgcqjlcw8uwtc" path="res://Entities/Shop/Upgrades/jump_tier_2.tscn" id="2_1plcn"]
 [ext_resource type="PackedScene" uid="uid://dxbt1piq2461c" path="res://Assets/Bokhum/npc/ggj_human_npc_model.tscn" id="2_134bk"]
 [ext_resource type="PackedScene" uid="uid://ddscbqbhoqh8f" path="res://Entities/Shop/Upgrades/jump_tier_3.tscn" id="3_2uovw"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_3wlfw"]
-size = Vector3(5, 1, 1)
+[ext_resource type="PackedScene" uid="uid://duypdqbqd3hj" path="res://Entities/Shop/train_front_cart.tscn" id="4_t5ew3"]
 
 [node name="Shop" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28147, 0.029675, 0.0837297)
 script = ExtResource("1_22ahj")
 all_upgrades = Array[PackedScene]([ExtResource("2_1plcn"), ExtResource("3_2uovw")])
 
-[node name="ShopKeeper" parent="." instance=ExtResource("2_134bk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16332, 1.76669, -1.47317)
+[node name="Train_Front_Cart2" parent="." instance=ExtResource("4_t5ew3")]
 
-[node name="Shelf" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625365, 0)
-mesh = SubResource("BoxMesh_3wlfw")
+[node name="ShopKeeper" parent="Train_Front_Cart2" instance=ExtResource("2_134bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54143, 1.29055, -0.122502)
+
+[node name="Armature_001" parent="Train_Front_Cart2" index="1"]
+transform = Transform3D(5.77606e-07, -1.84, 0, 1.84, 5.77606e-07, 0, 0, 0, 1.84, -5.80136, 0, 0)
+
+[node name="Skeleton3D" parent="Train_Front_Cart2/Armature_001" index="0"]
+bones/1/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
+bones/2/rotation = Quaternion(-0.5, 0.5, -0.5, 0.5)
+bones/3/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
+bones/4/rotation = Quaternion(-0.5, 0.5, -0.5, 0.5)
+bones/5/rotation = Quaternion(0.707107, 2.10243e-07, 0.707107, -1.82141e-07)
+
+[node name="Shelf" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.134753, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -26,3 +36,6 @@ autostart = true
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625365, 0.538768)
 text = "leaving in .... seconds"
+
+[editable path="Train_Front_Cart2"]
+[editable path="Train_Front_Cart2/ShopKeeper"]
