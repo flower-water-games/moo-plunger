@@ -79,7 +79,7 @@ text = "Web PLAY"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/StartButton2" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
-level_path = "res://Levels/CoreGameplayScene3D.tscn"
+level_path = "res://Levels/Old_CoreGameplayScene3D.tscn"
 
 [node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
