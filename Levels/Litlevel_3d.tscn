@@ -1,12 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://dd8wub23xyevr"]
+[gd_scene load_steps=52 format=3 uid="uid://dd8wub23xyevr"]
 
 [ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/old_scenes/Old-Level3D.tscn" id="1_eilup"]
-[ext_resource type="Texture2D" uid="uid://11mmivqaotq6" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
-[ext_resource type="Texture2D" uid="uid://d02o3ha6joh3m" path="res://Assets/paulb/3D models/Moon/Moon_Model_GGJ_Moon_Diffuse.png" id="3_11p3y"]
-[ext_resource type="Texture2D" uid="uid://3yl7whm8a8op" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
-[ext_resource type="Texture2D" uid="uid://c48pqpok3o2m1" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Normal.png" id="5_mvvo3"]
-[ext_resource type="Texture2D" uid="uid://c5hengkhq4ch1" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Roughness.png" id="6_kbxo1"]
-[ext_resource type="PackedScene" uid="uid://c4l6wlbdx0b0e" path="res://Assets/paulb/3D models/bale.glb" id="7_olbd7"]
+[ext_resource type="Texture2D" uid="uid://cd7e5r1gqyqht" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
+[ext_resource type="Texture2D" uid="uid://ci7aq77otwgjj" path="res://Assets/paulb/3D models/Moon/Moon_Model_GGJ_Moon_Diffuse.png" id="3_11p3y"]
+[ext_resource type="Texture2D" uid="uid://dcfgocmh5cl0" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
+[ext_resource type="Texture2D" uid="uid://bhyjns3a4jugx" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Normal.png" id="5_mvvo3"]
+[ext_resource type="Texture2D" uid="uid://b1gehahi6106t" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Roughness.png" id="6_kbxo1"]
+[ext_resource type="PackedScene" uid="uid://da0thkweaafor" path="res://Assets/paulb/3D models/bale.glb" id="7_olbd7"]
+[ext_resource type="PackedScene" uid="uid://c7et8yj88nm6q" path="res://Assets/paulb/3D models/frog.glb" id="8_bnj41"]
+[ext_resource type="PackedScene" uid="uid://d3poy5dgiogw6" path="res://Assets/paulb/3D models/updatedrug.glb" id="9_6n6e3"]
+[ext_resource type="PackedScene" uid="uid://0iq1j42sb7lj" path="res://Assets/paulb/3D models/blockswooden.glb" id="10_wjh7r"]
+[ext_resource type="PackedScene" uid="uid://0euxjd3h8gmw" path="res://Assets/paulb/3D models/mug.glb" id="11_m4a1i"]
+[ext_resource type="PackedScene" uid="uid://gl4wtoswmoxt" path="res://Assets/paulb/3D models/moleMound.glb" id="12_y0p5r"]
+[ext_resource type="PackedScene" uid="uid://uiihou6rjhtp" path="res://Assets/paulb/3D models/curvedTrack.glb" id="13_e3gl6"]
+[ext_resource type="PackedScene" uid="uid://bt1yrh7vqdbf1" path="res://Assets/paulb/white_track.glb" id="13_jslqa"]
+[ext_resource type="PackedScene" uid="uid://bjvgeqk0fybav" path="res://Assets/paulb/black_track.glb" id="14_lkjvl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p5q3h"]
 panorama = ExtResource("2_vjih6")
@@ -53,11 +61,99 @@ background_mode = 2
 sky = SubResource("Sky_8thm5")
 ambient_light_source = 3
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hi54"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fjec"]
 albedo_color = Color(1, 1, 0.141176, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0mw8h"]
 size = Vector3(89.3112, 44.2141, 43.2584)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcsoe"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ry5oj"]
+points = PackedVector3Array(-2.12882, -1.85628, -0.540765, 3.39829, -0.0921279, -3.62845, 3.40434, 0.0181389, -3.73894, 1.97028, 2.02248, -0.0635423, -1.13112, 1.22541, -7.14146, -3.14603, 1.63011, -0.403522, 0.842499, -2.60943, -1.98616, -3.20381, -0.746636, -4.17505, 0.0754896, 2.42451, -5.26865, 0.291212, -1.27588, -5.89422, 2.18574, -1.53556, -0.0756482, 1.27987, 1.22168, -7.02089, 3.07302, 1.63011, -0.518982, -2.20795, 2.30186, -3.19434, 2.26661, 2.31838, -3.08069, 3.10835, -0.848094, -4.17008, -1.1168, -2.47489, -2.43713, -0.806133, -2.29799, -0.0980255, -0.143373, 2.65409, -2.64021, -1.93086, 2.02568, -0.0578566, -3.33263, 0.237679, -3.95705, -0.78191, -1.05244, -5.98406, -2.57565, -0.75496, -0.0916134, 2.59391, -1.51412, -1.11037, 0.617805, -0.740613, -6.3399, 1.71772, -2.28034, -1.11055, 1.1478, -2.34226, -2.87814, 3.13051, 0.781405, -3.73714, 2.95154, 1.12379, -0.0891324, -3.32661, -0.5305, -3.62845, -1.68049, 2.54359, -2.64043, 1.61686, 2.54891, -2.63835)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sjxdi"]
+points = PackedVector3Array(42.371, -29.1338, 0.888628, -42.9781, -27.0603, -3.27474, -42.9781, -27.0603, 0.888628, 9.06176, 66.6139, -3.27474, 23.6319, -60.3672, -3.27474, -24.2391, 60.3672, 0.888628, 40.2824, 41.6272, 0.888628, 42.371, 33.307, -3.27474, -9.66893, -66.6139, 0.888628, -40.8895, 37.4671, -3.27474, -30.4799, -56.1941, -3.27474, 42.371, -29.1338, -3.27474, -42.9781, 27.0603, 0.888628, 25.7122, 60.3672, 0.888628, 23.6319, -60.3672, 0.888628, -24.2391, 60.3672, -3.27474, -36.729, -47.8608, 0.888628, 9.06176, -66.6139, -3.27474, 36.1218, 49.9605, -3.27474, -7.58867, 66.6139, 0.888628, 38.2021, -43.7007, -3.27474, -34.6488, 49.9605, 0.888628, -9.66893, -66.6139, -3.27474, 34.0416, -49.9605, 0.888628, 42.371, 33.307, 0.888628, -24.2391, -60.3672, 0.888628, 9.06176, -66.6139, 0.888628, -42.9781, 27.0603, -3.27474, 25.7122, 60.3672, -3.27474, 9.06176, 66.6139, 0.888628, -7.58867, 66.6139, -3.27474, -38.8093, -43.7007, -3.27474)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2olj"]
+cull_mode = 2
+albedo_color = Color(0.78, 0.63427, 0.3198, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jpjns"]
+points = PackedVector3Array(5.72966, -9.49499, -1.53308, 2.38419e-07, -7.29102, -1.53308, 2.38419e-07, -7.29102, 0.229672, 2.64554, -3.32649, 0.229672, 2.20415, -4.64855, -2.85553, 4.40717, -10.817, 0.229672, 3.52551, -11.2588, -1.53308, 2.38419e-07, -2.88553, -1.53308, 0.440829, -7.29102, -2.85553, 3.52551, -4.20841, -1.53308, 2.38419e-07, -2.88553, 0.229672, 5.28883, -9.05404, 0.229672, 3.08412, -10.817, 0.229672, 2.64554, -6.41156, -2.85553, 3.52551, -4.20841, 0.229672, 2.38419e-07, -6.41156, -2.85553, 2.64554, -3.32649, -1.53308, 4.84744, -10.817, -1.53308, 3.96634, -6.85252, -2.41461, 5.72966, -9.93513, -0.651857, 1.32249, -4.64855, -2.85553, 2.64554, -8.61308, -2.41461, 0.881658, -2.88553, -1.53308, 4.84744, -9.05404, -1.9737, 2.64554, -10.3761, -1.53308, 5.72966, -9.49499, -0.651857, 3.96634, -11.2588, -0.651857, 2.64554, -5.08951, -2.85553, 0.881658, -2.88553, 0.229672, 5.28883, -9.93513, 0.229672)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j0why"]
+points = PackedVector3Array(-0.440915, -8.17354, 0.229672, -3.0852, -6.85049, -1.5333, -3.0852, -6.85049, 0.229672, 0, -2.88527, -1.5333, -1.76245, -2.88527, 0.229672, 0, -7.73215, -1.5333, 0, -2.88527, 0.229672, -1.76245, -8.61437, -1.5333, -1.76245, -2.88527, -1.5333, -1.76245, -8.61437, 0.229672, 0, -7.73215, 0.229672, -3.0852, -6.40966, -1.5333, -2.64428, -7.73215, -1.5333, -3.0852, -6.40966, 0.229672, -1.32275, -8.61437, -1.5333, -2.64428, -7.73215, 0.229672)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_udnlj"]
+points = PackedVector3Array(-1.32223, 4.60791, -1.5333, 0, 5.04866, 0.229672, 0, 4.16717, 0.229672, 0, 5.04866, -1.5333, -1.32223, 5.04866, 0.229672, 0, 4.16717, -1.5333, -0.88127, 4.16717, 0.229672, -1.32223, 5.04866, -1.5333, -0.88127, 4.16717, -1.5333)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sirwp"]
+points = PackedVector3Array(-7.93311, 2.84494, -1.5333, -5.72996, 4.60791, 0.229672, -5.28891, 4.16683, 0.229672, -5.72996, 4.60791, -1.5333, -7.93311, 4.60791, 0.229672, -5.28891, 2.84494, 0.229672, -5.28891, 2.84494, -1.5333, -7.93311, 2.84494, 0.229672, -7.93311, 4.60791, -1.5333, -5.28891, 4.16683, -1.5333)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wwcql"]
+points = PackedVector3Array(1.19209e-07, 2.4042, 0.229672, -1.32223, -2.88471, -1.5333, -1.32223, -2.88471, 0.229672, 2.20371, 0.640884, -1.5333, 1.32154, -2.88471, 0.229672, -0.440743, 1.96311, -1.5333, 2.20371, 1.96311, 0.229672, 1.32154, -2.88471, -1.5333, 2.20371, 1.96311, -1.5333, -1.32223, -1.12088, 0.229672, -1.32223, -1.12088, -1.5333, 0.440743, 2.4042, -1.5333, 2.20371, 0.640884, 0.229672, -0.440743, 1.96311, 0.229672, -0.881486, 0.640884, 0.229672)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jakrr"]
+points = PackedVector3Array(-8.81615, -2.88471, -1.5333, -5.28917, 2.84494, 0.229672, -4.84972, 1.52246, 0.229672, -14.1038, -2.88471, 0.229672, -14.1038, -0.680568, -1.5333, -5.28917, 2.84494, -1.5333, -4.40743, -1.56223, 0.229672, -7.93441, 2.84494, 0.229672, -4.40743, -1.56223, -1.5333, -14.1038, -0.680568, 0.229672, -14.1038, -2.88471, -1.5333, -7.93441, 2.84494, -1.5333, -8.81615, -2.88471, 0.229672, -4.40743, -0.680568, -1.5333, -4.40743, -0.680568, 0.229672, -4.84972, 1.52246, -1.5333, -5.73147, -2.00249, 0.229672)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6jag1"]
+points = PackedVector3Array(-8.37325, -10.3763, -2.41461, -5.73087, -5.08908, 0.229672, -5.28982, -5.97104, 0.229672, -11.4582, -10.817, 0.229672, -3.96669, -11.2576, 0.229672, -7.05245, -6.85235, -2.85553, -11.8985, -9.05434, -1.53308, -3.96669, -11.2576, -1.53308, -11.0172, -11.6989, -1.53308, -8.37325, -5.53038, 0.229672, -5.73087, -5.08908, -1.53308, -8.37325, -5.53038, -1.53308, -5.28982, -9.05434, -2.85553, -11.8985, -9.05434, 0.229672, -5.28982, -11.6989, 0.229672, -3.96669, -9.93565, -1.53308, -5.28982, -11.6989, -1.53308, -7.93298, -7.29301, -2.85553, -11.0172, -11.6989, -0.211243, -11.8985, -10.3763, -1.53308, -5.28982, -8.17432, -2.85553, -7.49349, -5.08908, -1.53308, -3.96669, -9.93565, 0.229672, -5.73087, -9.49499, -2.85553, -5.28982, -5.97104, -1.53308, -7.05245, -9.49499, -2.85553, -7.49349, -5.08908, 0.229672, -5.73087, -7.29301, -2.85553, -11.0172, -11.2576, 0.229672, -10.5769, -9.93565, -1.9737, -11.4582, -11.2576, -0.211243, -11.8985, -9.93565, 0.229672)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b08o8"]
+points = PackedVector3Array(2.2032, 11.6592, -0.211243, 2.2032, 11.6592, -1.53308, -5.28891, 9.01457, -1.53308, 0.440398, 5.04931, 0.229672, -5.28891, 7.69389, 0.229672, 3.52594, 9.89588, 0.229672, 0.881313, 5.93127, -2.85553, -4.40622, 9.89588, 0.229672, -2.64428, 5.49061, -1.53308, -1.76159, 7.69389, -2.85553, 3.52594, 9.89588, -1.53308, -4.40622, 9.89588, -1.53308, -0.881486, 5.49061, -2.85553, -5.28891, 7.69389, -1.53308, 1.32223, 11.6592, 0.229672, -2.64428, 5.49061, 0.229672, -0.441433, 5.04931, -2.41461, 3.52594, 10.7772, -1.53308, 0.440398, 7.25324, -2.85553, 0.881313, 5.49061, -1.53308, 1.32223, 11.6592, -1.53308, -1.76159, 5.04931, -1.53308, -5.28891, 9.01457, 0.229672, 3.52594, 10.3365, 0.229672, 3.08503, 9.01457, -0.211243, 0.881313, 9.01457, -2.41461, 0.440398, 5.04931, -1.53308, 3.08503, 9.01457, -1.53308, 0.440398, 5.49061, -2.85553, 3.08503, 11.2179, -1.09277)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vn6y6"]
+points = PackedVector3Array(7.49392, -3.32546, -21.8075, 13.8834, 2.63922, -0.507128, 13.8834, -3.11974, -0.507128, 7.49392, 2.84494, 0.227514, 13.8834, 2.63922, -21.0728, 7.49392, -3.32546, 0.227514, 7.49392, 2.84494, -21.8075, 13.8834, -3.11974, -21.0728)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brqsy"]
+
+[sub_resource type="Gradient" id="Gradient_ahdyw"]
+offsets = PackedFloat32Array(0, 0.931759)
+colors = PackedColorArray(0.84201, 0.848033, 0.525349, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xy35u"]
+gradient = SubResource("Gradient_ahdyw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6w46"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.913821, 0.59967, 0.259302, 1)
+albedo_texture = SubResource("GradientTexture2D_xy35u")
+albedo_texture_force_srgb = true
+metallic_specular = 1.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ppbe6"]
+points = PackedVector3Array(1.83769, -19.627, -1.88155, -1.22513, 19.7312, -0.0367522, -1.22513, 19.7312, -0.651904, -19.6791, -3.02228, -0.651904, 0, 4.13542, -5.61123, 19.0588, 9.27523, -0.0367522, 13.5226, -17.7816, -0.651904, -10.4483, -14.0908, -0.0367522, 11.6811, 4.97187, -4.34083, -8.60671, 19.1109, 0.5784, -12.9101, 16.653, -0.651904, 13.5226, -17.7816, -1.88155, -9.83954, -6.70922, -3.11119, -18.4463, 1.88979, -1.88155, 18.4463, 11.1168, -1.26706, 19.6791, 1.88979, -1.26706, 7.37388, 17.2655, -1.26706, -8.60671, 8.65881, -3.72634, -0.962083, -2.36219, -4.977, -9.83954, -14.7072, -1.26706, 0.50161, 7.14449, -5.08426, -16.6009, -7.94205, -0.0367522, -9.22313, 19.1109, -0.651904, -18.4463, -5.48024, -1.26706, -18.4463, 6.81341, -1.26706, 1.43628, 1.48838, -5.44747, 19.0588, 3.12647, -1.88155, 18.4463, 11.1168, -0.0367522, 4.30336, -19.0067, -0.651904, -13.5226, 15.4201, -0.0367522, -1.83769, -18.3942, -1.88155, 6.76131, -19.627, -1.88155)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_na12n"]
+noise_type = 0
+frequency = 0.0006
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1ovef"]
+noise = SubResource("FastNoiseLite_na12n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4u631"]
+cull_mode = 2
+albedo_color = Color(0.372549, 0.631373, 0.321569, 1)
+albedo_texture = SubResource("NoiseTexture2D_1ovef")
+metallic = 0.43
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_odwvb"]
+points = PackedVector3Array(-539.399, -35.0207, -17.3842, 525.038, 43.5616, 4.0489, 525.038, 43.5616, -10.2384, 525.038, -42.1707, 4.0489, -525.038, 43.5616, 4.0489, -525.038, -42.1707, 4.0489, 539.399, -35.0207, -17.3842, -539.399, 29.2617, -17.3842, 539.399, 29.2617, -17.3842, 525.038, -42.1707, -10.2384, -525.038, 43.5616, -10.2384, -525.038, -42.1707, -10.2384)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji0pj"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.62, 0.217, 0.217, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_68a0f"]
+points = PackedVector3Array(-1.25924, 22.4809, 0.747956, -23.7415, -31.281, -3.16216, -23.7415, -31.281, 0.747956, 24.1481, 24.4344, 0.747956, 12.4195, 31.281, -3.16216, -8.10329, -31.281, -3.16216, -16.8974, 2.92723, -3.16216, 24.1481, 24.4344, -3.16216, -8.10329, -31.281, 0.747956, -19.8319, -3.90706, 0.747956, 14.3743, 31.281, 0.747956, -1.25924, 22.4809, -3.16216, -22.7617, -13.6808, -3.16216, -12.0128, 10.7475, 0.747956, 22.1934, 29.3213, -3.16216, 20.2386, 16.6142, -3.16216, -23.7415, -19.5475, 0.747956, 24.1481, 27.3678, 0.747956, 20.2386, 16.6142, 0.747956, -8.10329, 15.6405, -3.16216, 8.50994, 29.3213, 0.747956, -23.7415, -19.5475, -3.16216, 22.1934, 29.3213, 0.747956, -16.8974, 2.92723, 0.747956, -19.8319, -3.90706, -3.16216, -21.7867, -9.77377, 0.747956, 2.64562, 25.4143, -3.16216, -13.9676, 7.82024, -3.16216, -8.10329, 15.6405, 0.747956, 24.1481, 27.3678, -3.16216, 12.4195, 31.281, 0.747956, 14.3743, 31.281, -3.16216)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_civuy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7yoc6"]
+points = PackedVector3Array(9.32091, -2.29284, -0.591944, 9.32091, 2.19591, 0.0986333, 11.0492, 0.469129, 0.0986333, -11.0492, -2.29284, 0.0986333, -11.0492, 2.19591, -0.591944, 9.32091, 2.19591, -0.591944, -11.0492, 2.19591, 0.0986333, -11.0492, -2.29284, -0.591944, 9.32091, -2.29284, 0.0986333, 11.0492, -0.566062, -0.591944, 11.0492, 0.469129, -0.591944, 11.0492, -0.566062, 0.0986333)
 
 [node name="Level3D" instance=ExtResource("1_eilup")]
 
@@ -104,11 +200,26 @@ environment = SubResource("Environment_6axua")
 [node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
 player_camera = NodePath("../Head/Camera3D")
 
+[node name="FENCE1" parent="FENCE" index="0"]
+transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.3625, 4.00072, 3.276)
+
 [node name="GROUND" parent="." index="6"]
 transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 22.1784, 0, 12.5393)
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_4hi54")
+
+[node name="GROUND2" parent="." index="7"]
+visible = false
 
 [node name="GROUND3" parent="." index="8"]
 transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.397, -0.0466223, 12.5393)
+visible = false
+
+[node name="GROUND4" parent="." index="9"]
+visible = false
+
+[node name="COWS" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59302, 5.52145, -25.8817)
 
 [node name="MoleFactory" parent="." index="11" node_paths=PackedStringArray("spawn_area", "cow_group")]
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
@@ -127,6 +238,7 @@ skeleton = NodePath("bale")
 visible = false
 
 [node name="hay_bale_v1_square_nc_GLX7_XQ" parent="Hay Bale/bale" index="1"]
+transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, 0, 0, -620.756)
 material_overlay = SubResource("StandardMaterial3D_1fjec")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Hay Bale/bale/hay_bale_v1_square_nc_GLX7_XQ" index="0"]
@@ -135,9 +247,164 @@ material_overlay = SubResource("StandardMaterial3D_1fjec")
 transform = Transform3D(0.999965, 0, 0, 0, 1, -1.18897e-14, 0, 2.91323e-15, 1, 1.09698, -0.780983, -17.4911)
 shape = SubResource("BoxShape3D_0mw8h")
 
+[node name="level props" type="Node3D" parent="." index="15"]
+
+[node name="frog" parent="level props" index="0" instance=ExtResource("8_bnj41")]
+transform = Transform3D(3.68, -2.56707e-15, -5.61051e-23, -5.61051e-23, -1.60858e-07, 3.68, -2.56707e-15, -3.68, -1.60858e-07, -48.0877, -0.466418, 2.08165e-12)
+
+[node name="bath_toys_frog_W23_BYR" parent="level props/frog" index="0"]
+transform = Transform3D(0.240686, -7.55513e-29, -6.39303e-23, -1.43032e-22, -1.14768e-07, -0.240686, -6.41655e-30, 0.240686, -1.14768e-07, 20.1983, -5.2661, -2.23517e-07)
+material_overlay = SubResource("StandardMaterial3D_hcsoe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level props/frog/bath_toys_frog_W23_BYR" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level props/frog/bath_toys_frog_W23_BYR/StaticBody3D" index="0"]
+transform = Transform3D(1, 7.86815e-29, 1.31718e-22, -7.09186e-29, 1, 1.46156e-14, 2.90353e-23, 2.70487e-15, 1, 0, 0.879088, 0)
+shape = SubResource("ConvexPolygonShape3D_ry5oj")
+
+[node name="rug ground" type="Node3D" parent="level props" index="1"]
+transform = Transform3D(-1.19026e-06, 9.49747e-15, 27.23, 9.49747e-15, 27.23, -9.49747e-15, -27.23, 9.49747e-15, -1.19026e-06, 2.08165e-12, -2.33663, 2.08165e-12)
+
+[node name="updatedrug" parent="level props/rug ground" index="0" instance=ExtResource("9_6n6e3")]
+transform = Transform3D(1, -3.22955e-23, 3.24608e-15, -5.18768e-24, 1, 8.52019e-24, -4.06106e-15, -1.46615e-25, 1, 0, 0, 0)
+
+[node name="a_rug_1_146" parent="level props/rug ground/updatedrug" index="0"]
+transform = Transform3D(0.0381709, 9.37123e-17, 5.86204e-23, 9.675e-25, -2.27516e-08, -0.0381709, -6.03082e-17, 0.0381709, -2.27516e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level props/rug ground/updatedrug/a_rug_1_146" index="0"]
+transform = Transform3D(26.198, -5.42935e-20, -6.2832e-13, 6.52638e-13, -1.56152e-05, 26.198, 1.23383e-19, -26.198, -1.56152e-05, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level props/rug ground/updatedrug/a_rug_1_146/StaticBody3D" index="0"]
+transform = Transform3D(0.0381709, 1.13181e-15, -5.76654e-22, 6.28617e-22, -2.27516e-08, -0.0381709, -1.0945e-15, 0.0381709, -2.27516e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_sjxdi")
+
+[node name="jenga block" type="Node3D" parent="level props" index="2"]
+
+[node name="blockswooden" parent="level props/jenga block" index="0" instance=ExtResource("10_wjh7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5294, 0.00337694, 11.8828)
+
+[node name="tower_blocks_game_wooden" parent="level props/jenga block/blockswooden" index="0"]
+transform = Transform3D(-0.96756, 0.751301, -3.28404e-08, 4.56787e-15, -5.35464e-08, -1.225, -0.751301, -0.96756, 4.22934e-08, -2.35941, 0, -5.45554)
+material_overlay = SubResource("StandardMaterial3D_m2olj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden" index="0"]
+
+[node name="@CollisionShape3D@83082" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="0"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jpjns")
+
+[node name="@CollisionShape3D@83081" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="1"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_j0why")
+
+[node name="@CollisionShape3D@83080" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="2"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_udnlj")
+
+[node name="@CollisionShape3D@83079" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="3"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_sirwp")
+
+[node name="@CollisionShape3D@83078" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="4"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_wwcql")
+
+[node name="@CollisionShape3D@83077" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="5"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jakrr")
+
+[node name="@CollisionShape3D@83076" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="6"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_6jag1")
+
+[node name="@CollisionShape3D@83075" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="7"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_b08o8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level props/jenga block/blockswooden/tower_blocks_game_wooden/StaticBody3D" index="8"]
+transform = Transform3D(1, 5.77624e-08, -3.95133e-15, -2.19441e-08, 1, 1.46538e-15, 1.346e-15, 4.86825e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_vn6y6")
+
+[node name="brown mug" parent="level props" index="3" instance=ExtResource("11_m4a1i")]
+transform = Transform3D(1, 0, 0, 0, 0.00127393, 0.999999, 0, -0.999999, 0.00127394, -35.4795, 15.5666, -15.6584)
+
+[node name="Cube" parent="level props/brown mug" index="0"]
+visible = false
+
+[node name="OldWoodMug" parent="level props/brown mug" index="1"]
+transform = Transform3D(0.205826, 1.78326, -0.132706, -1.78813, 0.206388, -9.82192e-10, 0.015216, 0.131831, 1.7951, 42.337, 4.82135, 11.0709)
+material_overlay = SubResource("StandardMaterial3D_brqsy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level props/brown mug/OldWoodMug" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level props/brown mug/OldWoodMug/StaticBody3D" index="0"]
+transform = Transform3D(1, 1.88814e-09, 2.41418e-10, 6.60555e-10, 1, -6.43653e-09, 1.32807e-09, 1.10454e-08, 1, 0, 0, 0)
+
+[node name="sand moleMound" parent="level props" index="4" instance=ExtResource("12_y0p5r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.990461, 0.0499992, -1.64711)
+
+[node name="moleMound" parent="level props/sand moleMound" index="0"]
+transform = Transform3D(-0.117087, -0.993122, 3.55168e-07, -1.10978e-15, -3.57628e-07, -1, 0.993122, -0.117087, 4.18735e-08, 5.4404, -0.446162, 11.1095)
+material_override = SubResource("StandardMaterial3D_q6w46")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level props/sand moleMound/moleMound" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level props/sand moleMound/moleMound/StaticBody3D" index="0"]
+transform = Transform3D(1, -3.96993e-09, -9.82077e-16, 6.05438e-09, 1, -2.68029e-14, -3.64422e-16, -1.66478e-14, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_ppbe6")
+
+[node name="green train track" parent="level props" index="5" instance=ExtResource("13_jslqa")]
+transform = Transform3D(0.0592282, 0.022555, -0.0297202, -0.0257218, 0.065076, -0.00187296, 0.0270261, 0.0125055, 0.0633499, -5.41763, 13.6251, 13.1211)
+
+[node name="Train_tracks" parent="level props/green train track" index="0"]
+material_override = SubResource("StandardMaterial3D_4u631")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level props/green train track/Train_tracks" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level props/green train track/Train_tracks/StaticBody3D" index="0"]
+transform = Transform3D(1, 1.82344e-08, 1.71674e-08, -1.83309e-08, 1, 7.09987e-09, 2.0015e-08, 6.97116e-09, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_odwvb")
+
+[node name="red track" type="Node3D" parent="level props" index="6"]
+transform = Transform3D(0.15511, 0.338119, -1.44896e-07, 5.42104e-18, -4.80481e-09, -1.07764, -0.33812, 0.15511, -6.64704e-08, -1.32812, -0.126163, 31.0364)
+
+[node name="curvedTrack" parent="level props/red track" index="0" instance=ExtResource("13_e3gl6")]
+transform = Transform3D(1.12087, -6.4925e-15, -2.44334, 2.44334, -1.17504e-07, 1.12087, -1.0894e-08, -0.274198, -4.99754e-09, 30.9507, -14.1985, -3.03591)
+
+[node name="curved_track" parent="level props/red track/curvedTrack" index="0"]
+transform = Transform3D(0.100726, 0.358104, -1.5346e-07, -3.77837e-16, -1.62606e-08, -3.647, -0.358104, 0.100726, -4.31647e-08, 9.28231, -11.072, 12.0136)
+material_override = SubResource("StandardMaterial3D_ji0pj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level props/red track/curvedTrack/curved_track" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level props/red track/curvedTrack/curved_track/StaticBody3D" index="0"]
+transform = Transform3D(1, 1.47584e-08, -4.24097e-15, -1.55414e-08, 1, -1.37569e-14, -9.50371e-17, 1.14502e-16, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_68a0f")
+
+[node name="black_track" parent="level props" index="7" instance=ExtResource("14_lkjvl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4431, 1.06713, 24.9276)
+
+[node name="straight_wooden_rail" parent="level props/black_track" index="0"]
+transform = Transform3D(0.921303, -0.343384, 0.182449, 0.160701, -0.0910241, -0.982797, 0.354084, 0.934774, -0.0286787, 11.8161, 1.67498, 4.99125)
+material_overlay = SubResource("StandardMaterial3D_civuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level props/black_track/straight_wooden_rail" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level props/black_track/straight_wooden_rail/StaticBody3D" index="0"]
+transform = Transform3D(1, 1.64605e-08, -5.77305e-10, -8.78629e-09, 1, 2.44535e-09, 6.79922e-09, -1.86678e-09, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7yoc6")
+
 [editable path="Moon_Model"]
 [editable path="PLAYER"]
 [editable path="PLAYER/Head/Camera3D/PlungerGun"]
 [editable path="PLAYER/Head/Camera3D/PlungerGun/GGJ_PlungerGunwithHands_Model"]
 [editable path="FarmManager"]
 [editable path="Hay Bale/bale"]
+[editable path="level props/frog"]
+[editable path="level props/rug ground/updatedrug"]
+[editable path="level props/jenga block/blockswooden"]
+[editable path="level props/brown mug"]
+[editable path="level props/sand moleMound"]
+[editable path="level props/green train track"]
+[editable path="level props/red track/curvedTrack"]
+[editable path="level props/black_track"]
