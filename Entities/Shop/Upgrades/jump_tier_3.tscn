@@ -6,4 +6,6 @@
 [node name="jump_tier_3" instance=ExtResource("1_fatrp")]
 script = ExtResource("2_3phf0")
 item_name = "Jump Tier 3"
-cost = 40
+cost = 15
+
+[editable path="Train_Middle_Carts"]
