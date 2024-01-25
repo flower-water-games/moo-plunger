@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://br7eiccl4ewkj"]
+
+[ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="1_lhwi7"]
+
+[node name="Buyable" instance=ExtResource("1_lhwi7")]
+item_name = "Ted Lasso"
+cost = 10
+
+[editable path="Train_Middle_Carts"]

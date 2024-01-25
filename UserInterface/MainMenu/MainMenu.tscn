@@ -63,23 +63,23 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="SetSelectedButton" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer" node_paths=PackedStringArray("button") instance=ExtResource("4_pywf7")]
-button = NodePath("../StartButton")
+button = NodePath("../Desktop PLAY")
 
-[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+[node name="Desktop PLAY" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Desktop PLAY"
 
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
+[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/Desktop PLAY" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
 level_path = "res://Levels/Litlevel_3d.tscn"
 
-[node name="StartButton2" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+[node name="Web PLAY" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Web PLAY"
 
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/StartButton2" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
+[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/Web PLAY" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
-level_path = "res://Levels/CoreGameplayScene3D.tscn"
+level_path = "res://Levels/web_lit_level.tscn"
 
 [node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2

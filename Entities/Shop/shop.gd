@@ -22,6 +22,7 @@ func _ready():
 	away_position = Vector3(-80,  initial_position.y, initial_position.z)
 	global_transform.origin = away_position
 	shop_timer.connect("timeout", switch_shop)
+	switch_shop()
 
 	# for each scene in all_upgrades
 	# add to a dictionary of each scene with its name as the key
@@ -72,8 +73,11 @@ func refresh_shop():
 	var children = shelf.get_children()
 	for child in children:
 		child.queue_free()
-	instantiate_upgrade(all_upgrades[0], 0)
-	instantiate_upgrade(all_upgrades[1], 1)
+
+	var chosen = choose_three_random_upgrades()
+	instantiate_upgrade(chosen[0], 0)
+	instantiate_upgrade(chosen[1], 1)
+	instantiate_upgrade(chosen[2], 2)
 	# choose 3 random upgrades that hasn't already been purchased
 	# and instance them, then place them on top of the shelf
 	# and add them to the scene tree
@@ -84,9 +88,28 @@ func refresh_shop():
 
 
 func choose_three_random_upgrades():
+	# look through all upgrades and choose 3 that hasn't been purchased
+	# and return them in an array
+	var unpurchased_upgrades = []
+	for upgrade in all_upgrades:
+		var instance = upgrade.instantiate() as Buyable
+		register_in_shop(instance.item_name)
+		if upgrade_purchased_states[instance.item_name] == 0:
+			unpurchased_upgrades.append(upgrade)
+	
+	if unpurchased_upgrades.size() < 3:
+		print("Not enough unpurchased upgrades available")
+		return []
 
+	var chosen_upgrades = []
+	for i in range(3):
+		var random_index = randi() % unpurchased_upgrades.size()
+		chosen_upgrades.append(unpurchased_upgrades[random_index])
+		unpurchased_upgrades.pop_at(random_index)
 
-	pass
+	return chosen_upgrades
+
+	
 
 var distance_per_slot = 5.2
 

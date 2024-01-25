@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Entities/PlungerGun/PlungerGun.gd" id="1_7mqab"]
 [ext_resource type="PackedScene" uid="uid://ift7gm4lg7vu" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxkoh"]
 
 [sub_resource type="Animation" id="Animation_t7d0v"]
