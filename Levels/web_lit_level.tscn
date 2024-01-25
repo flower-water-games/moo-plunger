@@ -1,11 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://b845xo6ir4lv8"]
+[gd_scene load_steps=3 format=3 uid="uid://b845xo6ir4lv8"]
 
 [ext_resource type="PackedScene" uid="uid://dd8wub23xyevr" path="res://Levels/Litlevel_3d.tscn" id="1_36jdp"]
+
+[sub_resource type="Environment" id="Environment_wtp1i"]
+background_mode = 1
+background_color = Color(0.361874, 0.692861, 0.82382, 1)
+background_energy_multiplier = 0.83
+ambient_light_source = 3
+ambient_light_color = Color(0.280054, 0.294688, 0.324565, 1)
+ambient_light_sky_contribution = 0.92
+ambient_light_energy = 13.4
+tonemap_mode = 2
+ssr_fade_in = 0.197926
+fog_light_energy = 1.61
+fog_sun_scatter = 0.26
+fog_density = 0.022
+fog_sky_affect = 0.0
+fog_height = -1024.0
+fog_height_density = 0.101
+adjustment_brightness = 1.25
+adjustment_contrast = 1.31
 
 [node name="Level3D" instance=ExtResource("1_36jdp")]
 
 [node name="WorldEnvironment" parent="." index="0"]
-environment = null
+environment = SubResource("Environment_wtp1i")
 
 [node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
 player_camera = NodePath("../Head/Camera3D")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dd8wub23xyevr"]
 
-[ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/Old-Level3D.tscn" id="1_7gw86"]
+[ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/old_scenes/Old-Level3D.tscn" id="1_eilup"]
 [ext_resource type="Texture2D" uid="uid://11mmivqaotq6" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
 [ext_resource type="Texture2D" uid="uid://d02o3ha6joh3m" path="res://Assets/paulb/3D models/Moon/Moon_Model_GGJ_Moon_Diffuse.png" id="3_11p3y"]
 [ext_resource type="Texture2D" uid="uid://3yl7whm8a8op" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
@@ -59,7 +59,7 @@ albedo_color = Color(1, 1, 0.141176, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0mw8h"]
 size = Vector3(89.3112, 44.2141, 43.2584)
 
-[node name="Level3D" instance=ExtResource("1_7gw86")]
+[node name="Level3D" instance=ExtResource("1_eilup")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource("Environment_fb0m3")
