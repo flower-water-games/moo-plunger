@@ -17,6 +17,7 @@ ambient_light_energy = 0.0
 collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_uqnlm")
+movement_speed = 4
 jump_strength = 3
 
 [node name="PlayerUI" type="CanvasGroup" parent="."]
@@ -45,6 +46,7 @@ fov = 80.0
 
 [node name="PlungerGun" parent="Head/Camera3D" instance=ExtResource("4_obcav")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336592, -0.304664, -0.309311)
+launch_speed = 25.0
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." node_paths=PackedStringArray("player_camera")]
 visible = false

@@ -6,12 +6,14 @@ extends Node
 var mole_scene = load("res://Entities/Mole/Mole.tscn")
 var total_moles_spawned : int = 0
 
+var mole_time_to_spawn : float = 3.0
+
 func _ready():
 	# Spawn a random mole after X period of time
 	_delay_between_spawn()
 
 func _delay_between_spawn():
-	get_tree().create_timer(randf_range(0.0, 8.0)).timeout.connect(_spawn_mole)
+	get_tree().create_timer(randf_range(mole_time_to_spawn-1, mole_time_to_spawn+1)).timeout.connect(_spawn_mole)
 	
 func _spawn_mole():
 	var mole = mole_scene.instantiate()

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://73j8dn10v4k4"]
+
+[ext_resource type="PackedScene" uid="uid://dwy4blafe32kc" path="res://Entities/Shop/buyable_object.tscn" id="1_xnfrc"]
+
+[node name="Buyable" instance=ExtResource("1_xnfrc")]
+item_name = "Epic Plunger"
+cost = 22
+
+[editable path="Train_Middle_Carts"]

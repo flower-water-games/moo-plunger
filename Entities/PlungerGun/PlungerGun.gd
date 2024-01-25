@@ -1,5 +1,5 @@
 extends Node3D
-
+class_name PlungerGun
 var plunger_scene = preload("res://Entities/Plunger/Plunger.tscn")
 #var Cow = preload("res://Objects/cow.gd")
 
