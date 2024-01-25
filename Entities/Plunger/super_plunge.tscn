@@ -1,0 +1,137 @@
+[gd_scene load_steps=13 format=3 uid="uid://bh1lmv3jbkgjv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebpyj"]
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rvuh4"]
+lightmap_size_hint = Vector2i(828, 114)
+material = SubResource("StandardMaterial3D_ebpyj")
+uv2_padding = 0.0
+radius = 0.388
+height = 5.052
+radial_segments = 24
+rings = 83
+
+[sub_resource type="Curve" id="Curve_pob0e"]
+min_value = -178.7
+max_value = 222.4
+bake_resolution = 111
+_data = [Vector2(0, -200), 0.0, 13330.3, 0, 1, Vector2(0.030185, 202.374), -1129.84, -1129.84, 0, 0, Vector2(0.452775, 80.1765), -505.645, -505.645, 0, 0, Vector2(0.740993, -125.703), -2345.54, -2345.54, 0, 0, Vector2(0.990263, 43.4487), 678.588, 0.0, 1, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Gradient" id="Gradient_vrsrj"]
+offsets = PackedFloat32Array(0, 0.759366, 1)
+colors = PackedColorArray(0, 0.913725, 0, 1, 0.744846, 0.0643154, 0.343337, 1, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_0mbkb"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.647517, 0.109822), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_g63o3"]
+offsets = PackedFloat32Array(0, 0.450161, 0.654341, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.384082, 0.294636, 1, 1, 0.0335249, 0.418519, 0.540878, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ird7m"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0tuxq"]
+in_3d_space = true
+color_ramp = SubResource("Gradient_g63o3")
+noise = SubResource("FastNoiseLite_ird7m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pha1e"]
+cull_mode = 1
+albedo_color = Color(0.757392, 0.498544, 0.144603, 0.815686)
+rim_enabled = true
+rim_tint = 1.0
+rim_texture = SubResource("NoiseTexture2D_0tuxq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_8rgak"]
+material = SubResource("StandardMaterial3D_pha1e")
+
+[sub_resource type="Curve" id="Curve_wx11k"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, -360), 0.0, 720.0, 0, 1, Vector2(1, 360), 720.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_x82s6"]
+min_value = -0.4
+max_value = 4.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.254138, 0.912894), 0.0, 0.0, 0, 0, Vector2(0.327167, 1.13826), 0.0, 0.0, 0, 0, Vector2(0.367089, 0.783298), 0.0, 0.0, 0, 0, Vector2(0.676728, 0.338209), 0.0, 0.0, 0, 0, Vector2(1, 0.169309), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[node name="ParticleFX" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.543289)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.0097387, -0.999953, 0, 0.999953, -0.00973876, 0, 0, 0, 1, -6.80942, 4.63866, 1.01337)
+lifetime = 0.07
+preprocess = 19.92
+speed_scale = 2.77
+randomness = 0.07
+lifetime_randomness = 0.31
+fixed_fps = 30
+local_coords = true
+draw_order = 1
+mesh = SubResource("CapsuleMesh_rvuh4")
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+emission_colors = PackedColorArray(0, 70.883, 0, 1, 0.413407, 0.0460693, 0.371604, 1, 0.209245, 0.512507, 1, 1, 0.665929, 0.0976475, 0.43937, 1)
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+spread = 11.85
+flatness = 1.0
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+orbit_velocity_curve = null
+linear_accel_min = -96.16
+linear_accel_max = -96.16
+linear_accel_curve = SubResource("Curve_pob0e")
+radial_accel_min = -24.0
+radial_accel_max = 16.27
+tangential_accel_min = 1.0
+tangential_accel_max = 17.2
+scale_amount_max = 3.5
+color = Color(1, 0, 0.0166664, 1)
+color_ramp = SubResource("Gradient_vrsrj")
+hue_variation_min = -0.96
+hue_variation_max = 0.18
+hue_variation_curve = SubResource("Curve_0mbkb")
+
+[node name="CPUParticles3D3" type="CPUParticles3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.0748047, 0.997198, 0, -0.997198, -0.0748047, 0, 0, 0, 1, -5.97347, 3.67831, 1.30009)
+amount = 13
+lifetime = 0.08
+preprocess = 1.15
+speed_scale = 7.16
+explosiveness = 0.05
+randomness = 0.04
+lifetime_randomness = 1.0
+local_coords = true
+mesh = SubResource("SphereMesh_8rgak")
+emission_shape = 6
+emission_ring_axis = Vector3(2.56, 1.8, 1)
+emission_ring_height = 3.39
+emission_ring_radius = 1.83
+emission_ring_inner_radius = 3.45
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+spread = 3.73
+gravity = Vector3(2.08165e-12, -27.95, 2.08165e-12)
+angular_velocity_curve = SubResource("Curve_wx11k")
+linear_accel_curve = SubResource("Curve_pob0e")
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_x82s6")
+color = Color(0.79875, 0.783142, 1, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
