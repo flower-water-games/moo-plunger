@@ -40,6 +40,7 @@ func _shoot_plunger():
 		plunger_state = State.SHOOTING
 		var direction = global_position.direction_to(plunger_end.global_position)
 		world_plunger._apply_force(direction, launch_speed)
+		# $Animator whatever .play("recoil")
 		print("Fire!")
 
 func _return_plunger():
@@ -70,7 +71,7 @@ func on_hit(body):
 	elif body.is_in_group("buyable"):
 		print("trying to purchase something")
 		if plunger_state == State.SHOOTING:
-			var buyable : Buyable = body.get_parent()
+			var buyable : Buyable = body.get_parent().get_parent() as Buyable
 			buyable.buy()
 			plunger_state = State.RETURNING
 	elif body.is_in_group("moles"):

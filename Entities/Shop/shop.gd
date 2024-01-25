@@ -19,7 +19,7 @@ var upgrade_purchased_states: Dictionary = {}
 
 func _ready():
 	initial_position = global_transform.origin
-	away_position = Vector3(initial_position.x, initial_position.y, -80)
+	away_position = Vector3(-80,  initial_position.y, initial_position.z)
 	global_transform.origin = away_position
 	shop_timer.connect("timeout", switch_shop)
 
@@ -73,7 +73,7 @@ func refresh_shop():
 	for child in children:
 		child.queue_free()
 	instantiate_upgrade(all_upgrades[0], 0)
-	instantiate_upgrade(all_upgrades[1], 2)
+	instantiate_upgrade(all_upgrades[1], 1)
 	# choose 3 random upgrades that hasn't already been purchased
 	# and instance them, then place them on top of the shelf
 	# and add them to the scene tree
@@ -88,6 +88,7 @@ func choose_three_random_upgrades():
 
 	pass
 
+var distance_per_slot = 5.2
 
 # slot_num should be 0, 1, or 2
 func instantiate_upgrade(upgrade: PackedScene, slot_num):
@@ -97,7 +98,8 @@ func instantiate_upgrade(upgrade: PackedScene, slot_num):
 		instance.queue_free()
 		return false
 	shelf.add_child(instance)
-	instance.transform.origin = Vector3(slot_num-1.7, 1, 0)
+	# based on slot_num = 0, 1, or 2, map to 0, distance_per_slot, or 2*distance_per_slot
+	instance.transform.origin = Vector3(slot_num*distance_per_slot, 0, 0)
 	return true
 	# choose 3 random upgrades that hasn't already been purchased
 	# and instance them, then place them on top of the shelf

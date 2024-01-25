@@ -1,27 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwy4blafe32kc"]
+[gd_scene load_steps=6 format=3 uid="uid://dwy4blafe32kc"]
 
 [ext_resource type="Script" path="res://Entities/Shop/Upgrades/jump_tier_2.gd" id="1_7ergn"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_cvsy6"]
-radius = 0.708198
+[ext_resource type="PackedScene" uid="uid://bphfyysb0t6qm" path="res://Assets/Bokhum/shop/Train_Middle_Carts.glb" id="2_l18tr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ypif"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_qv0a5"]
 material = SubResource("StandardMaterial3D_8ypif")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvsy6"]
+radius = 0.708198
+
 [node name="Buyable" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175664, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 script = ExtResource("1_7ergn")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["buyable"]]
+[node name="Train_Middle_Carts" parent="." instance=ExtResource("2_l18tr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17411, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["buyable"]]
-shape = SubResource("SphereShape3D_cvsy6")
+[node name="Armature_002" parent="Train_Middle_Carts" index="0"]
+transform = Transform3D(4.70875e-07, -1.5, 0, 1.5, 4.70875e-07, 0, 0, 0, 1.5, 0.939362, 0, 2.08165e-12)
+
+[node name="Skeleton3D" parent="Train_Middle_Carts/Armature_002" index="0"]
+bones/1/rotation = Quaternion(0.707107, 7.93773e-09, -2.83295e-07, 0.707107)
+bones/2/rotation = Quaternion(-1.94232e-08, -0.707107, 0.707107, -1.26193e-07)
+bones/3/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
+bones/4/rotation = Quaternion(0.5, -0.5, 0.5, -0.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0803411, 1.38793, -0.174354)
 mesh = SubResource("SphereMesh_qv0a5")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" groups=["buyable"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" groups=["buyable"]]
+shape = SubResource("SphereShape3D_cvsy6")
+
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.182711, 0.621874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0427666, 0.226501, 0.955832)
 text = "this is a buyable object"
+
+[editable path="Train_Middle_Carts"]

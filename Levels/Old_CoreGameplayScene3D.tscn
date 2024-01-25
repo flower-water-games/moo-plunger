@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://d3dw5ylfmbasp"]
 
-[ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_yyavl"]
-[ext_resource type="PackedScene" uid="uid://bhfmoot3wonqm" path="res://Assets/paulb/3D models/Moon/Moon_Model.glb" id="2_dwvnc"]
-[ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="2_osyk0"]
-[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="3_aime4"]
-[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="4_n68qn"]
-[ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="5_er14a"]
-[ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_2byc6"]
-[ext_resource type="Texture2D" uid="uid://h6lkfod35j3o" path="res://Assets/wip_ground.png" id="6_qdplb"]
-[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/Shop/shop.tscn" id="7_ymwjh"]
+[ext_resource type="PackedScene" uid="uid://bhfmoot3wonqm" path="res://Assets/paulb/3D models/Moon/Moon_Model.glb" id="1_wlbbs"]
+[ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="2_y4otq"]
+[ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_s3ug8"]
+[ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="4_0iiek"]
+[ext_resource type="Texture2D" uid="uid://h6lkfod35j3o" path="res://Assets/wip_ground.png" id="5_5cjcy"]
+[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="6_7igpo"]
+[ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="7_y173u"]
+[ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="8_m7spl"]
+[ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/Shop/shop.tscn" id="9_n6ld6"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tx6wf"]
 
@@ -16,25 +16,25 @@
 noise = SubResource("FastNoiseLite_tx6wf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8q63"]
-albedo_texture = ExtResource("6_qdplb")
+albedo_texture = ExtResource("5_5cjcy")
 metallic = 1.0
 metallic_specular = 0.0
 metallic_texture = SubResource("NoiseTexture2D_naxgq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6335"]
-albedo_texture = ExtResource("6_qdplb")
+albedo_texture = ExtResource("5_5cjcy")
 metallic = 1.0
 metallic_specular = 0.0
 metallic_texture = SubResource("NoiseTexture2D_naxgq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrb30"]
-albedo_texture = ExtResource("6_qdplb")
+albedo_texture = ExtResource("5_5cjcy")
 metallic = 1.0
 metallic_specular = 0.0
 metallic_texture = SubResource("NoiseTexture2D_naxgq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekanu"]
-albedo_texture = ExtResource("6_qdplb")
+albedo_texture = ExtResource("5_5cjcy")
 metallic = 1.0
 metallic_specular = 0.0
 metallic_texture = SubResource("NoiseTexture2D_naxgq")
@@ -46,10 +46,10 @@ transform = Transform3D(1, 0, 0, 0, 0.0157248, 0.999876, 0, -0.999876, 0.0157248
 light_energy = 0.028
 shadow_enabled = true
 
-[node name="Moon_Model" parent="." instance=ExtResource("2_dwvnc")]
+[node name="Moon_Model" parent="." instance=ExtResource("1_wlbbs")]
 transform = Transform3D(1.48, -2.62191e-06, 3.33734e-07, 2.43381e-06, 1.48, -4.56087e-07, 1.06079e-07, -4.67831e-07, 1.48, 2.46631, 39.1467, 4.19207)
 
-[node name="PLAYER" parent="." instance=ExtResource("1_yyavl")]
+[node name="PLAYER" parent="." instance=ExtResource("2_y4otq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46833, 7.43121, 9.876)
 jump_strength = 10
 
@@ -58,48 +58,48 @@ player_camera = NodePath("../Head/Camera3D")
 
 [node name="FENCE" type="Node3D" parent="."]
 
-[node name="FENCE1" parent="FENCE" instance=ExtResource("2_osyk0")]
+[node name="FENCE1" parent="FENCE" instance=ExtResource("3_s3ug8")]
 transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.402, 4, 3.276)
 
-[node name="GROUND" parent="." instance=ExtResource("3_aime4")]
+[node name="GROUND" parent="." instance=ExtResource("4_0iiek")]
 transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, 12.5393)
 material_override = SubResource("StandardMaterial3D_l8q63")
 
-[node name="GROUND2" parent="." instance=ExtResource("3_aime4")]
+[node name="GROUND2" parent="." instance=ExtResource("4_0iiek")]
 transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 22.2437, 0, -12.3534)
 surface_material_override/0 = SubResource("StandardMaterial3D_a6335")
 
-[node name="GROUND3" parent="." instance=ExtResource("3_aime4")]
+[node name="GROUND3" parent="." instance=ExtResource("4_0iiek")]
 transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -42.1899, -0.0466223, 12.5393)
 material_override = SubResource("StandardMaterial3D_vrb30")
 
-[node name="GROUND4" parent="." instance=ExtResource("3_aime4")]
+[node name="GROUND4" parent="." instance=ExtResource("4_0iiek")]
 transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, -12.3534)
 surface_material_override/0 = SubResource("StandardMaterial3D_ekanu")
 
 [node name="COWS" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.08165e-12, -33.489)
 
-[node name="Reexport_cowtest" parent="COWS" instance=ExtResource("4_n68qn")]
+[node name="Reexport_cowtest" parent="COWS" instance=ExtResource("6_7igpo")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, 6.30651, 41.8693)
 
-[node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("4_n68qn")]
+[node name="Reexport_cowtest2" parent="COWS" instance=ExtResource("6_7igpo")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, 1.72, 29.6376)
 
-[node name="Reexport_cowtest3" parent="COWS" instance=ExtResource("4_n68qn")]
+[node name="Reexport_cowtest3" parent="COWS" instance=ExtResource("6_7igpo")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, 1.72, 40.7212)
 
-[node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("4_n68qn")]
+[node name="Reexport_cowtest4" parent="COWS" instance=ExtResource("6_7igpo")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, 1.72, 29.3565)
 
-[node name="MoleFactory" parent="." node_paths=PackedStringArray("spawn_area", "cow_group") instance=ExtResource("5_er14a")]
+[node name="MoleFactory" parent="." node_paths=PackedStringArray("spawn_area", "cow_group") instance=ExtResource("7_y173u")]
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
 cow_group = NodePath("../COWS")
 
-[node name="FarmManager" parent="." instance=ExtResource("6_2byc6")]
+[node name="FarmManager" parent="." instance=ExtResource("8_m7spl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)
 
-[node name="Shop" parent="." instance=ExtResource("7_ymwjh")]
+[node name="Shop" parent="." instance=ExtResource("9_n6ld6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5945, 0, -7.25902)
 
 [editable path="PLAYER"]
