@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dd8wub23xyevr"]
 
-[ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/Level3D.tscn" id="1_7gw86"]
+[ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/Old-Level3D.tscn" id="1_7gw86"]
 [ext_resource type="Texture2D" uid="uid://isx1pk5rfugl" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
 [ext_resource type="Texture2D" uid="uid://bq5d1fdrkuk5b" path="res://Assets/paulb/3D models/Moon/Moon_Model_GGJ_Moon_Diffuse.png" id="3_11p3y"]
 [ext_resource type="Texture2D" uid="uid://vf16eg43peuj" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
