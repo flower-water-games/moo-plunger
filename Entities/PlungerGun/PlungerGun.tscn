@@ -1,9 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0e5eq6gs1qbn"]
+[gd_scene load_steps=6 format=3 uid="uid://d0e5eq6gs1qbn"]
 
 [ext_resource type="Script" path="res://Entities/PlungerGun/PlungerGun.gd" id="1_7mqab"]
-[ext_resource type="PackedScene" uid="uid://b3raot5ebvtcq" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
+[ext_resource type="PackedScene" uid="uid://ift7gm4lg7vu" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxkoh"]
+
+[sub_resource type="Animation" id="Animation_t7d0v"]
+resource_name = "recoil"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.261799, 1.5708, -3.49257e-05), Vector3(-0.226065, 1.43761, 0.538704), Vector3(-0.261799, 1.5708, -3.49257e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plane_001:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.00652, 0.567933, 0.750594), Vector3(-0.5704, 0.567878, 0.750593), Vector3(1.00652, 0.567933, 0.750594)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwucs"]
+_data = {
+"recoil": SubResource("Animation_t7d0v")
+}
 
 [node name="PlayerWeapon" type="Node3D"]
 script = ExtResource("1_7mqab")
@@ -18,9 +50,20 @@ size = Vector3(0.1, 0.1, 1)
 material = SubResource("StandardMaterial3D_jxkoh")
 
 [node name="GGJ_PlungerGunwithHands_Model" parent="." instance=ExtResource("2_kc3w1")]
-transform = Transform3D(-5.54005e-09, -0.0802281, 0.126742, -3.50688e-09, 0.126742, 0.0802281, -0.15, 8.096e-17, -6.55671e-09, -0.0556799, 0.106711, -0.386442)
+transform = Transform3D(1.34936e-06, -0.0388229, 0.144889, -5.06035e-06, 0.144889, 0.0388229, -0.15, -5.23717e-06, -6.3333e-09, 0, 0, 0)
+
+[node name="PopGunBase" parent="GGJ_PlungerGunwithHands_Model" index="0"]
+transform = Transform3D(0.175353, 0.858619, 0.0332118, -0.797908, 0.176177, -0.310748, -0.310873, 0.032132, 0.816321, 0.398128, -0.845911, 6.25849e-07)
+
+[node name="Plane_001" parent="GGJ_PlungerGunwithHands_Model" index="1"]
+transform = Transform3D(-0.041282, -0.0731921, -0.606931, -0.00409085, 0.546634, -0.0813666, 0.600944, -0.00130669, -0.0422472, 1.00652, 0.567933, 0.750594)
 
 [node name="Plane_002" parent="GGJ_PlungerGunwithHands_Model" index="2"]
 transform = Transform3D(-2.6058e-08, -1.90369e-16, -0.607461, 2.07925e-16, 0.545804, -2.11875e-16, 0.596137, -1.90369e-16, -2.6553e-08, -0.719149, -1.48187, -1.14523)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GGJ_PlungerGunwithHands_Model"]
+libraries = {
+"": SubResource("AnimationLibrary_dwucs")
+}
 
 [editable path="GGJ_PlungerGunwithHands_Model"]

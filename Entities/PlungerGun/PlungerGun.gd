@@ -40,7 +40,7 @@ func _shoot_plunger():
 		plunger_state = State.SHOOTING
 		var direction = global_position.direction_to(plunger_end.global_position)
 		world_plunger._apply_force(direction, launch_speed)
-		# $Animator whatever .play("recoil")
+		$GGJ_PlungerGunwithHands_Model/AnimationPlayer.play("recoil")
 		print("Fire!")
 
 func _return_plunger():
