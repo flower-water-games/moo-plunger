@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=3 uid="uid://d3dw5ylfmbasp"]
 
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="1_yyavl"]
-[ext_resource type="PackedScene" uid="uid://dovprwnol4u4y" path="res://Assets/paulb/3D models/Moon/Moon_Model.glb" id="2_dwvnc"]
+[ext_resource type="PackedScene" uid="uid://bhfmoot3wonqm" path="res://Assets/paulb/3D models/Moon/Moon_Model.glb" id="2_dwvnc"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="2_osyk0"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="3_aime4"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="4_n68qn"]
 [ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="5_er14a"]
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="6_2byc6"]
-[ext_resource type="Texture2D" uid="uid://c7ndqpy18bblu" path="res://Assets/wip_ground.png" id="6_qdplb"]
+[ext_resource type="Texture2D" uid="uid://h6lkfod35j3o" path="res://Assets/wip_ground.png" id="6_qdplb"]
 [ext_resource type="PackedScene" uid="uid://bf6k2esq4jkqa" path="res://Entities/Shop/shop.tscn" id="7_ymwjh"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tx6wf"]

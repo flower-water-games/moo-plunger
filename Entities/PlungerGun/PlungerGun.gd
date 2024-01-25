@@ -8,13 +8,9 @@ var plunger_scene = preload("res://Entities/Plunger/Plunger.tscn")
 @export var return_speed : float = 50.0
 @export var cow_return_speed : float = 10.0
 @export var max_distance_from_player : int = 30
+
+
 @onready var plunger_end : Node3D = $PlungerEnd
-
-var farm_manager : FarmManager
-var shop : Shop
-var player_UI : Label
-
-
 var rope : CSGBox3D 
 var world_plunger : CharacterBody3D
 var current_cow : CharacterBody3D
@@ -29,9 +25,6 @@ func _ready():
 	world_plunger.global_transform = plunger_end.global_transform
 	get_tree().get_root().add_child(world_plunger)
 	world_plunger.connect("cow_hit", on_hit)
-	farm_manager = get_node("/root/Level3D/FarmManager") as FarmManager
-	shop = get_node("/root/Level3D/Shop") as Shop
-	player_UI = get_node("/root/Level3D/PLAYER/PlayerUI/Label")
 
 func _shoot_plunger():
 	if plunger_state == State.DEFAULT:
@@ -39,7 +32,6 @@ func _shoot_plunger():
 		var direction = global_position.direction_to(plunger_end.global_position)
 		world_plunger._apply_force(direction, launch_speed)
 		print("Fire!")
-	#$PlungerGun/recoil_AnimationPlayer.play("recoil")
 
 func _return_plunger():
 	plunger_state = State.RETURNING
@@ -63,7 +55,7 @@ func on_hit(body):
 			current_cow.stop_floating()
 			# current_cow.speed = return_speed 
 			plunger_state = State.STUCK
-			print("Stuck")
+			print("Stuck again")
 		else:
 			plunger_state = State.RETURNING
 	elif body.is_in_group("buyable"):
@@ -72,12 +64,6 @@ func on_hit(body):
 			var buyable : Buyable = body.get_parent()
 			buyable.buy()
 			plunger_state = State.RETURNING
-	# else if group is in "moles", get_parent and retrieve mole
-	elif body.is_in_group("moles"):
-		if plunger_state == State.SHOOTING:
-			var mole : Mole = body as Mole
-			farm_manager.add_currency(1)
-			mole._destroy_mole()
 	else:
 		plunger_state = State.RETURNING
 
@@ -106,12 +92,8 @@ func _physics_process(delta):
 			# calculate new current_cow's velocity vector based on making sure the cow is facing the plunger_end
 			current_cow.velocity = current_cow.global_position.direction_to(plunger_end.global_position) * cow_return_speed
 			_return_plunger()
-			if current_cow.global_position.distance_to(plunger_end.global_position) < 2:
+			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
 				plunger_state = State.DEFAULT
-				if current_cow.is_in_group("moles"):
-					var mole : Mole = current_cow as Mole
-					mole.is_being_retrieved = false
-					mole.queue_free()
 				_handle_cow_retrieval()
 
 		State.RETURNING: 

@@ -1,12 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://12yv0lr6w61u"]
+[gd_scene load_steps=17 format=3 uid="uid://dd8wub23xyevr"]
 
 [ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/Level3D.tscn" id="1_7gw86"]
-[ext_resource type="Texture2D" uid="uid://cd7e5r1gqyqht" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
-[ext_resource type="Texture2D" uid="uid://ci7aq77otwgjj" path="res://Assets/paulb/3D models/Moon/Moon_Model_GGJ_Moon_Diffuse.png" id="3_11p3y"]
-[ext_resource type="Texture2D" uid="uid://dcfgocmh5cl0" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
-[ext_resource type="Texture2D" uid="uid://bhyjns3a4jugx" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Normal.png" id="5_mvvo3"]
-[ext_resource type="Texture2D" uid="uid://b1gehahi6106t" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Roughness.png" id="6_kbxo1"]
-[ext_resource type="PackedScene" uid="uid://da0thkweaafor" path="res://Assets/paulb/3D models/bale.glb" id="7_olbd7"]
+[ext_resource type="Texture2D" uid="uid://isx1pk5rfugl" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
+[ext_resource type="Texture2D" uid="uid://bq5d1fdrkuk5b" path="res://Assets/paulb/3D models/Moon/Moon_Model_GGJ_Moon_Diffuse.png" id="3_11p3y"]
+[ext_resource type="Texture2D" uid="uid://vf16eg43peuj" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
+[ext_resource type="Texture2D" uid="uid://ge0m4fh21gj4" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Normal.png" id="5_mvvo3"]
+[ext_resource type="Texture2D" uid="uid://rd4pkvnpn5h4" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Roughness.png" id="6_kbxo1"]
+[ext_resource type="PackedScene" uid="uid://d5guggy5q568" path="res://Assets/paulb/3D models/bale.glb" id="7_olbd7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p5q3h"]
 panorama = ExtResource("2_vjih6")

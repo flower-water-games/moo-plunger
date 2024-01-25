@@ -67,7 +67,7 @@ button = NodePath("../StartButton")
 
 [node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "debug-scene"
+text = "Desktop PLAY"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
@@ -75,7 +75,7 @@ level_path = "res://Levels/Litlevel_3d.tscn"
 
 [node name="StartButton2" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "PLAY"
+text = "Web PLAY"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/StartButton2" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
