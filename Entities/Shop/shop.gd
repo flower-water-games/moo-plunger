@@ -22,6 +22,7 @@ func _ready():
 	away_position = Vector3(-80,  initial_position.y, initial_position.z)
 	global_transform.origin = away_position
 	shop_timer.connect("timeout", switch_shop)
+	switch_shop()
 
 	# for each scene in all_upgrades
 	# add to a dictionary of each scene with its name as the key

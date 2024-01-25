@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwy4blafe32kc"]
 
 [ext_resource type="Script" path="res://Entities/Shop/Upgrades/jump_tier_2.gd" id="1_7ergn"]
-[ext_resource type="PackedScene" uid="uid://bphfyysb0t6qm" path="res://Assets/Bokhum/shop/Train_Middle_Carts.glb" id="2_l18tr"]
+[ext_resource type="PackedScene" uid="uid://bt6s2apyh8mn3" path="res://Assets/Bokhum/shop/Train_Middle_Carts.glb" id="2_l18tr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ypif"]
 

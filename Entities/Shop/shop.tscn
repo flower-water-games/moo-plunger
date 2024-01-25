@@ -33,11 +33,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54143, 1.29055, -0.122502)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.134753, 0)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 20.0
 autostart = true
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625365, 0.538768)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625365, 1.91659)
 text = "leaving in .... seconds"
 
 [editable path="Train_Front_Cart2"]
