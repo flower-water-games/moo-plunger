@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3dw5ylfmbasp"]
+[gd_scene load_steps=13 format=3 uid="uid://d3dw5ylfmbasp"]
 
-[ext_resource type="PackedScene" uid="uid://bhfmoot3wonqm" path="res://Assets/paulb/3D models/Moon/Moon_Model.glb" id="1_wlbbs"]
+[ext_resource type="PackedScene" uid="uid://c8rwopxv6f2o8" path="res://Assets/paulb/3D models/Moon/Moon_Model.glb" id="1_wlbbs"]
 [ext_resource type="PackedScene" uid="uid://drmg784i77783" path="res://Player/player.tscn" id="2_y4otq"]
 [ext_resource type="PackedScene" uid="uid://brui3pakvej1r" path="res://Entities/StaticObjects/fence.tscn" id="3_s3ug8"]
 [ext_resource type="PackedScene" uid="uid://cd673b277ll16" path="res://Entities/StaticObjects/Ground.tscn" id="4_0iiek"]
-[ext_resource type="Texture2D" uid="uid://h6lkfod35j3o" path="res://Assets/wip_ground.png" id="5_5cjcy"]
+[ext_resource type="Texture2D" uid="uid://dxuylgwu6yxg1" path="res://Assets/wip_ground.png" id="5_5cjcy"]
 [ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="6_7igpo"]
 [ext_resource type="PackedScene" uid="uid://c0yoihx46611g" path="res://Managers/MoleFactory/MoleFactory.tscn" id="7_y173u"]
 [ext_resource type="PackedScene" uid="uid://bse4ouoqrcmst" path="res://Entities/CowFarm/farm_manager.tscn" id="8_m7spl"]
@@ -16,24 +16,6 @@
 noise = SubResource("FastNoiseLite_tx6wf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8q63"]
-albedo_texture = ExtResource("5_5cjcy")
-metallic = 1.0
-metallic_specular = 0.0
-metallic_texture = SubResource("NoiseTexture2D_naxgq")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6335"]
-albedo_texture = ExtResource("5_5cjcy")
-metallic = 1.0
-metallic_specular = 0.0
-metallic_texture = SubResource("NoiseTexture2D_naxgq")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrb30"]
-albedo_texture = ExtResource("5_5cjcy")
-metallic = 1.0
-metallic_specular = 0.0
-metallic_texture = SubResource("NoiseTexture2D_naxgq")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekanu"]
 albedo_texture = ExtResource("5_5cjcy")
 metallic = 1.0
 metallic_specular = 0.0
@@ -64,18 +46,6 @@ transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.402, 4, 3.276)
 [node name="GROUND" parent="." instance=ExtResource("4_0iiek")]
 transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 4.40824, 0, 12.5393)
 material_override = SubResource("StandardMaterial3D_l8q63")
-
-[node name="GROUND2" parent="." instance=ExtResource("4_0iiek")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 22.2437, 0, -12.3534)
-surface_material_override/0 = SubResource("StandardMaterial3D_a6335")
-
-[node name="GROUND3" parent="." instance=ExtResource("4_0iiek")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -42.1899, -0.0466223, 12.5393)
-material_override = SubResource("StandardMaterial3D_vrb30")
-
-[node name="GROUND4" parent="." instance=ExtResource("4_0iiek")]
-transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, -12.3534)
-surface_material_override/0 = SubResource("StandardMaterial3D_ekanu")
 
 [node name="COWS" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.08165e-12, -33.489)
