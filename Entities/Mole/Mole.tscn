@@ -1,7 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs8i3pek0clrx"]
+[gd_scene load_steps=7 format=3 uid="uid://bs8i3pek0clrx"]
 
 [ext_resource type="Script" path="res://Entities/Mole/Mole.gd" id="1_yuc33"]
 [ext_resource type="PackedScene" uid="uid://dxjisngfhv840" path="res://Entities/Mole/ggj_mole_animated_3.tscn" id="2_nd4hs"]
+[ext_resource type="AudioStream" path="res://Assets/audio/sfx mole rise out of ground.wav" id="3_g6wxs"]
+
+[sub_resource type="Animation" id="Animation_ka5e2"]
+resource_name = "mole_popout"
+length = 1.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.304022,
+"start_offset": 0.134848,
+"stream": ExtResource("3_g6wxs")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gtug5"]
+_data = {
+"mole_popout": SubResource("Animation_ka5e2")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sr54f"]
 size = Vector3(1, 1.97949, 1)
@@ -13,32 +38,15 @@ script = ExtResource("1_yuc33")
 [node name="GGJ_Mole_Animated3" parent="." groups=["moles"] instance=ExtResource("2_nd4hs")]
 transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 2.01783, -0.211627, 2.08165e-12)
 
-[node name="Skeleton3D" parent="GGJ_Mole_Animated3/Armature" index="0"]
-bones/0/position = Vector3(-0.0156969, -1.89728, 0.130047)
-bones/0/scale = Vector3(0.204453, 0.204453, 0.204453)
-bones/1/position = Vector3(-0.0156969, -1.65229, 0.130047)
-bones/1/scale = Vector3(0.204453, 0.204453, 0.204453)
-bones/2/position = Vector3(0.00184298, -1.78441, 0.236192)
-bones/2/rotation = Quaternion(0.819243, -0.282565, 0.123507, 0.483471)
-bones/2/scale = Vector3(-0.0447999, -0.0447999, -0.0447999)
-bones/3/position = Vector3(-0.0845795, -1.92805, 0.133719)
-bones/3/rotation = Quaternion(0.994578, -0.0250509, 0.0286942, -0.0967709)
-bones/3/scale = Vector3(0.204453, 0.204453, 0.204453)
-bones/4/position = Vector3(-0.0429405, -1.78351, 0.236192)
-bones/4/rotation = Quaternion(0.819243, 0.282565, -0.123507, 0.483471)
-bones/4/scale = Vector3(-0.0447999, -0.0447999, -0.0447999)
-bones/5/position = Vector3(0.0419888, -1.92749, 0.133719)
-bones/5/rotation = Quaternion(0.994677, 0.0193928, -0.0292262, -0.0968903)
-bones/5/scale = Vector3(0.204453, 0.204453, 0.204453)
-bones/6/position = Vector3(-0.0351379, -0.0346303, 0.0743435)
-bones/6/scale = Vector3(0.041394, 0.041394, 0.041394)
-bones/9/position = Vector3(-5.1156e-07, -0.0431249, 2.35794)
-bones/9/scale = Vector3(0.00319016, 0.00319016, 0.00319016)
-bones/10/scale = Vector3(0.694259, 0.511175, 0.694259)
-bones/11/position = Vector3(-0.0477594, -0.0549698, 0.0215676)
-
 [node name="AnimationPlayer" parent="GGJ_Mole_Animated3" index="1"]
 autoplay = "Underground_movement"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GGJ_Mole_Animated3"]
+
+[node name="Audio" type="AnimationPlayer" parent="GGJ_Mole_Animated3"]
+libraries = {
+"": SubResource("AnimationLibrary_gtug5")
+}
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["moles"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.805395, 0)

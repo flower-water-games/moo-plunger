@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Entities/PlungerGun/PlungerGun.gd" id="1_7mqab"]
 [ext_resource type="PackedScene" uid="uid://ift7gm4lg7vu" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
 
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxkoh"]
 
 [sub_resource type="Animation" id="Animation_t7d0v"]
@@ -51,7 +50,7 @@ size = Vector3(0.1, 0.1, 1)
 material = SubResource("StandardMaterial3D_jxkoh")
 
 [node name="GGJ_PlungerGunwithHands_Model" parent="." instance=ExtResource("2_kc3w1")]
-transform = Transform3D(1.34936e-06, -0.0388229, 0.144889, -5.06035e-06, 0.144889, 0.0388229, -0.15, -5.23717e-06, -6.3333e-09, 0, 0, 0)
+transform = Transform3D(8.12915e-07, -0.0388228, 0.144889, -5.06035e-06, 0.144889, 0.0388228, -0.15, -5.09832e-06, -5.24497e-07, 0, 0, 0)
 
 [node name="PopGunBase" parent="GGJ_PlungerGunwithHands_Model" index="0"]
 transform = Transform3D(0.175353, 0.858619, 0.0332118, -0.797908, 0.176177, -0.310748, -0.310873, 0.032132, 0.816321, 0.398128, -0.845911, 6.25849e-07)
