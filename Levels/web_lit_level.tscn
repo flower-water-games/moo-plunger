@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b845xo6ir4lv8"]
+[gd_scene load_steps=10 format=3 uid="uid://b845xo6ir4lv8"]
 
 [ext_resource type="PackedScene" uid="uid://dd8wub23xyevr" path="res://Levels/Litlevel_3d.tscn" id="1_36jdp"]
+[ext_resource type="Texture2D" uid="uid://dxuylgwu6yxg1" path="res://Assets/wip_ground.png" id="2_akgiu"]
 
 [sub_resource type="Environment" id="Environment_wtp1i"]
 background_mode = 1
@@ -25,6 +26,29 @@ adjustment_contrast = 1.31
 background_mode = 1
 background_color = Color(0.787034, 0.421315, 0.313707, 1)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tx6wf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_naxgq"]
+noise = SubResource("FastNoiseLite_tx6wf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6335"]
+albedo_texture = ExtResource("2_akgiu")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = SubResource("NoiseTexture2D_naxgq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrb30"]
+albedo_texture = ExtResource("2_akgiu")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = SubResource("NoiseTexture2D_naxgq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekanu"]
+albedo_texture = ExtResource("2_akgiu")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = SubResource("NoiseTexture2D_naxgq")
+
 [node name="Level3D" instance=ExtResource("1_36jdp")]
 
 [node name="WorldEnvironment" parent="." index="0"]
@@ -36,13 +60,38 @@ environment = SubResource("Environment_bb565")
 [node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
 player_camera = NodePath("../Head/Camera3D")
 
+[node name="GROUND2" parent="." index="7"]
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, 22.2437, 0, -12.3534)
+surface_material_override/0 = SubResource("StandardMaterial3D_a6335")
+
+[node name="GROUND3" parent="." index="8"]
+material_override = SubResource("StandardMaterial3D_vrb30")
+
+[node name="GROUND4" parent="." index="9"]
+transform = Transform3D(1.869, 0, 0, 0, 1, 0, 0, 0, 1, -24.4784, 0, -12.3534)
+surface_material_override/0 = SubResource("StandardMaterial3D_ekanu")
+
 [node name="MoleFactory" parent="." index="11" node_paths=PackedStringArray("spawn_area", "cow_group")]
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
 cow_group = NodePath("../COWS")
+
+[node name="FarmManager" parent="." index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9958, 3.28066, -0.786733)
 
 [editable path="Moon_Model"]
 [editable path="PLAYER"]
 [editable path="PLAYER/Head/Camera3D/PlungerGun"]
 [editable path="PLAYER/Head/Camera3D/PlungerGun/GGJ_PlungerGunwithHands_Model"]
 [editable path="FarmManager"]
-[editable path="Hay Bale/bale"]
+[editable path="level props/rug ground/updatedrug"]
+[editable path="level props/jenga block/blockswooden"]
+[editable path="level props/brown mug"]
+[editable path="level props/sand moleMound"]
+[editable path="level props/green train track"]
+[editable path="level props/green train track2"]
+[editable path="level props/red track/curvedTrack"]
+[editable path="level props/black_track"]
+[editable path="level props/Cardboard Boxes2/frog"]
+[editable path="level props/Hay Bale pile/bale"]
+[editable path="level props/tv"]
+[editable path="ground_plane"]
