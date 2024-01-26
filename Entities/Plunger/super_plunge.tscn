@@ -62,8 +62,8 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_x82s6"]
 min_value = -0.4
 max_value = 4.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.254138, 0.912894), 0.0, 0.0, 0, 0, Vector2(0.327167, 1.13826), 0.0, 0.0, 0, 0, Vector2(0.367089, 0.783298), 0.0, 0.0, 0, 0, Vector2(0.676728, 0.338209), 0.0, 0.0, 0, 0, Vector2(1, 0.169309), 0.0, 0.0, 0, 0]
-point_count = 6
+_data = [Vector2(0, -0.318825), 0.0, 0.468067, 0, 1, Vector2(0.814141, 0.0622478), 0.0, 0.0, 0, 0, Vector2(1, -0.240656), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="ParticleFX" type="Node3D"]
 

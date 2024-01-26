@@ -1,8 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://btcdsq34h0qw2"]
+[gd_scene load_steps=9 format=3 uid="uid://btcdsq34h0qw2"]
 
 [ext_resource type="Script" path="res://Entities/Plunger/Plunger.gd" id="1_vhs2x"]
 [ext_resource type="PackedScene" uid="uid://ukj8lhclpr8u" path="res://Entities/Plunger/plunger_asset.glb" id="2_no5oy"]
 [ext_resource type="PackedScene" uid="uid://bh1lmv3jbkgjv" path="res://Entities/Plunger/super_plunge.tscn" id="3_qrbn0"]
+
+[sub_resource type="Curve" id="Curve_cm83d"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0.0161616, 43.6624), 0.0, 0.0, 0, 0, Vector2(0.757576, 168.91), 0.0, 0.0, 0, 0, Vector2(0.985859, 15.2374), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_b8022"]
+offsets = PackedFloat32Array(0, 0.281465, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.00392157, 0.843137, 0.27451, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_51qca"]
+offsets = PackedFloat32Array(0, 0.860412, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.778964, 0.430945, 0.183106, 1, 0.56927, 7.56492e-06, 0.387496, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x0yda"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -19,8 +33,61 @@ script = ExtResource("1_vhs2x")
 [node name="MagneticPlunger" parent="." instance=ExtResource("2_no5oy")]
 transform = Transform3D(-5.68248e-09, 4.53423e-17, 0.13, 4.53423e-17, 0.13, -4.53423e-17, -0.13, 4.53423e-17, -5.68248e-09, 0.00253046, 0.184769, 0.62182)
 
-[node name="ParticleFX2" parent="MagneticPlunger/MetalloPlunger" index="0" instance=ExtResource("3_qrbn0")]
+[node name="Idle_ParticleFX2" parent="MagneticPlunger/MetalloPlunger" index="0" instance=ExtResource("3_qrbn0")]
 transform = Transform3D(0.0361553, -0.999344, -4.36827e-08, 0.999345, 0.0361552, -4.2131e-08, 4.36828e-08, -4.2131e-08, 1, 4.5405, -1.72853e-06, -0.443024)
+
+[node name="CPUParticles3D" parent="MagneticPlunger/MetalloPlunger/Idle_ParticleFX2/MeshInstance3D" index="0"]
+visible = false
+damping_max = 0.91
+scale_amount_min = 0.0
+split_scale = true
+scale_curve_x = null
+scale_curve_y = null
+scale_curve_z = null
+hue_variation_min = -0.82
+hue_variation_max = 0.13
+
+[node name="CPUParticles3D3" parent="MagneticPlunger/MetalloPlunger/Idle_ParticleFX2/MeshInstance3D" index="1"]
+transform = Transform3D(-0.0748047, 0.997198, -1.84043e-17, -0.997198, -0.0748047, -6.44308e-16, -3.57472e-16, 3.25019e-17, 1, 1.49216, 4.51907, 1.04922)
+amount = 7
+lifetime = 0.05
+preprocess = 14.48
+speed_scale = 3.9
+explosiveness = 0.04
+randomness = 0.0
+lifetime_randomness = 0.0
+emission_colors = PackedColorArray(0.21278, 0.43921, 0.055126, 1, 0.516712, 0.108333, 0.774375, 1, 0.546988, 0.111497, 1, 1, 0.879776, 0.879776, 0.879776, 0.329412)
+emission_ring_axis = Vector3(1, 1, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 2.08165e-12
+particle_flag_rotate_y = false
+spread = 48.05
+gravity = Vector3(1.44, 2.08165e-12, 2.08165e-12)
+angular_velocity_curve = null
+linear_accel_curve = null
+radial_accel_min = -21.8
+radial_accel_max = 19.55
+radial_accel_curve = SubResource("Curve_cm83d")
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_b8022")
+color_initial_ramp = SubResource("Gradient_51qca")
+
+[node name="Launch_ParticleFX3" parent="MagneticPlunger/MetalloPlunger" index="1" instance=ExtResource("3_qrbn0")]
+transform = Transform3D(0.0361553, -0.999344, -4.36827e-08, 0.999345, 0.0361552, -4.2131e-08, 4.36828e-08, -4.2131e-08, 1, 4.5405, -1.72853e-06, -0.443024)
+visible = false
+
+[node name="MeshInstance3D" parent="MagneticPlunger/MetalloPlunger/Launch_ParticleFX3" index="0"]
+visible = false
+
+[node name="CPUParticles3D" parent="MagneticPlunger/MetalloPlunger/Launch_ParticleFX3/MeshInstance3D" index="0"]
+visible = false
+
+[node name="CPUParticles3D3" parent="MagneticPlunger/MetalloPlunger/Launch_ParticleFX3/MeshInstance3D" index="1"]
+visible = false
+scale_amount_min = 12.28
+scale_amount_max = 19.8
 
 [node name="CollisionShapeToSuppressWarning" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_x0yda")
@@ -48,3 +115,5 @@ shape = SubResource("SphereShape3D_jgciq")
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="MagneticPlunger"]
+[editable path="MagneticPlunger/MetalloPlunger/Idle_ParticleFX2"]
+[editable path="MagneticPlunger/MetalloPlunger/Launch_ParticleFX3"]
