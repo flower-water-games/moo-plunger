@@ -51,26 +51,26 @@ jobs:
             itchGameId: ggj24
             buildChannel: web
             buildNumber: web${{ github.run_number }}
-      - name: Deploy - Itch.io - windows
-        if: github.ref == 'refs/heads/main'
-        uses: KikimoraGames/itch-publish@v0.0.3
-        with:
-            butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-            gameData: ./win.zip
-            itchUsername: carlos-michael
-            itchGameId: ggj24
-            buildChannel: windows
-            buildNumber: windows:${{ github.run_number }}
-      - name: Deploy - Itch.io - linux
-        if: github.ref == 'refs/heads/main'
-        uses: KikimoraGames/itch-publish@v0.0.3
-        with:
-            butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-            gameData: ./LinuxX11.zip
-            itchUsername: carlos-michael
-            itchGameId: ggj24
-            buildChannel: linux
-            buildNumber: linux:${{ github.run_number }}
+      # - name: Deploy - Itch.io - windows
+      #   if: github.ref == 'refs/heads/main'
+      #   uses: KikimoraGames/itch-publish@v0.0.3
+      #   with:
+      #       butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+      #       gameData: ./win.zip
+      #       itchUsername: carlos-michael
+      #       itchGameId: ggj24
+      #       buildChannel: windows
+      #       buildNumber: windows:${{ github.run_number }}
+      # - name: Deploy - Itch.io - linux
+      #   if: github.ref == 'refs/heads/main'
+      #   uses: KikimoraGames/itch-publish@v0.0.3
+      #   with:
+      #       butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+      #       gameData: ./LinuxX11.zip
+      #       itchUsername: carlos-michael
+      #       itchGameId: ggj24
+      #       buildChannel: linux
+      #       buildNumber: linux:${{ github.run_number }}
 
       - name: Discord notification
         uses: sarisia/actions-status-discord@v1
