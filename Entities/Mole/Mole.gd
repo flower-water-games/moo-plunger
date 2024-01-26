@@ -68,6 +68,7 @@ func _process(delta):
 			if not animated:
 				animator.play("Pop_out_Ground")
 				animated = true
+				$GGJ_Mole_Animated3/Audio.play("mole_popout")
 
 func _can_be_animated_again():
 	animated = false
