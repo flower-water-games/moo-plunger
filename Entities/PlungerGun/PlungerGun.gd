@@ -37,6 +37,7 @@ func _ready():
 
 func _shoot_plunger():
 	if plunger_state == State.DEFAULT:
+		$LaunchSound.play()
 		plunger_state = State.SHOOTING
 		var direction = global_position.direction_to(plunger_end.global_position)
 		world_plunger._apply_force(direction, launch_speed)
@@ -58,6 +59,7 @@ func _input(event:InputEvent):
 
 func on_hit(body):
 	if body.is_in_group("cows"):
+		$HitSound.play()
 		if plunger_state == State.SHOOTING && body.floating:
 			# Set the current_cow to the body that was hit
 			current_cow = body
@@ -75,6 +77,7 @@ func on_hit(body):
 			buyable.buy()
 			plunger_state = State.RETURNING
 	elif body.is_in_group("moles"):
+		$HitSound.play()
 		if plunger_state == State.SHOOTING:
 			var mole : Mole = body as Mole
 			farm_manager.add_currency(1)
