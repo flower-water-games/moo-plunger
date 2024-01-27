@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf6k2esq4jkqa"]
+[gd_scene load_steps=10 format=3 uid="uid://bf6k2esq4jkqa"]
 
 [ext_resource type="Script" path="res://Entities/Shop/shop.gd" id="1_22ahj"]
 [ext_resource type="PackedScene" uid="uid://bgcqjlcw8uwtc" path="res://Entities/Shop/Upgrades/jump_tier_2.tscn" id="2_1plcn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://duypdqbqd3hj" path="res://Entities/Shop/train_front_cart.tscn" id="4_t5ew3"]
 [ext_resource type="PackedScene" uid="uid://co0ghyinpsnw6" path="res://Entities/Shop/Upgrades/pspeed_tier_2.tscn" id="5_o6pu4"]
 [ext_resource type="PackedScene" uid="uid://73j8dn10v4k4" path="res://Entities/Shop/Upgrades/pspeed_tier_3.tscn" id="6_hhspi"]
+[ext_resource type="AudioStream" uid="uid://ufeu1ltvud1j" path="res://Assets/audio/Train_Shop.wav" id="9_osw1j"]
 
 [node name="Shop" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28147, 0.029675, 0.0837297)
@@ -39,6 +40,9 @@ autostart = true
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625365, 1.91659)
 text = "leaving in .... seconds"
+
+[node name="Audio_Train" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_osw1j")
 
 [editable path="Train_Front_Cart2"]
 [editable path="Train_Front_Cart2/ShopKeeper"]

@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://horxawj2lkdq"]
+[gd_scene load_steps=3 format=3 uid="uid://horxawj2lkdq"]
 
 [ext_resource type="PackedScene" uid="uid://d3dw5ylfmbasp" path="res://Levels/old_scenes/Old_CoreGameplayScene3D.tscn" id="1_6twev"]
+[ext_resource type="AudioStream" uid="uid://cwanqgagf8h1d" path="res://Assets/audio/2. Workin' Man (Vocal) .wav" id="2_jc45y"]
 
 [node name="Level3D" instance=ExtResource("1_6twev")]
 
 [node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
 player_camera = NodePath("../Head/Camera3D")
 
-[node name="MoleFactory" parent="." index="9" node_paths=PackedStringArray("spawn_area", "cow_group")]
+[node name="MoleFactory" parent="." index="6" node_paths=PackedStringArray("spawn_area", "cow_group")]
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
 cow_group = NodePath("../COWS")
+
+[node name="Music_Vocal" type="AudioStreamPlayer" parent="." index="9"]
+stream = ExtResource("2_jc45y")
+volume_db = 2.342
+autoplay = true
 
 [editable path="PLAYER"]
 [editable path="PLAYER/Head/Camera3D/PlungerGun"]
