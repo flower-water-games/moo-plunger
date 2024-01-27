@@ -20,8 +20,8 @@ var rope : CSGBox3D
 var world_plunger : CharacterBody3D
 var current_cow : CharacterBody3D
 
-enum State {SHOOTING, STUCK, RETURNING, DEFAULT}
-var plunger_state = State.DEFAULT
+enum PlungerState {SHOOTING, STUCK, RETURNING, DEFAULT}
+var plunger_state = PlungerState.DEFAULT
 
 
 func _ready():
@@ -36,67 +36,67 @@ func _ready():
 	player_UI = get_node("/root/Level3D/PLAYER/PlayerUI/Label")
 
 func _shoot_plunger():
-	if plunger_state == State.DEFAULT:
+	if plunger_state == PlungerState.DEFAULT:
 		$LaunchSound.play()
-		plunger_state = State.SHOOTING
+		plunger_state = PlungerState.SHOOTING
 		var direction = global_position.direction_to(plunger_end.global_position)
 		world_plunger._apply_force(direction, launch_speed)
 		$GGJ_PlungerGunwithHands_Model/AnimationPlayer.play("recoil")
 		print("Fire!")
 
 func _return_plunger():
-	plunger_state = State.RETURNING
+	plunger_state = PlungerState.RETURNING
 	var direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 	world_plunger._apply_force(direction, return_speed)
 	print("Return!")
 
 func _input(event:InputEvent):
 	# Shooting
-	if Input.is_action_pressed("shoot") && plunger_state == State.DEFAULT:
+	if Input.is_action_pressed("shoot") && plunger_state == PlungerState.DEFAULT:
 		_shoot_plunger()
-	if Input.is_action_pressed("return") && plunger_state == State.SHOOTING:
+	if Input.is_action_pressed("return") && plunger_state == PlungerState.SHOOTING:
 		_return_plunger()
 
 func on_hit(body):
 	if body.is_in_group("cows"):
 		$HitSound.play()
-		if plunger_state == State.SHOOTING && body.floating:
+		if plunger_state == PlungerState.SHOOTING && body.floating:
 			# Set the current_cow to the body that was hit
 			current_cow = body
 			current_cow.velocity = Vector3.ZERO
 			current_cow.stop_floating()
 			# current_cow.speed = return_speed 
-			plunger_state = State.STUCK
+			plunger_state = PlungerState.STUCK
 			print("Stuck again")
 		else:
-			plunger_state = State.RETURNING
+			plunger_state = PlungerState.RETURNING
 	elif body.is_in_group("buyable"):
 		print("trying to purchase something")
-		if plunger_state == State.SHOOTING:
+		if plunger_state == PlungerState.SHOOTING:
 			var buyable : Buyable = body.get_parent().get_parent() as Buyable
 			buyable.buy()
-			plunger_state = State.RETURNING
+			plunger_state = PlungerState.RETURNING
 	elif body.is_in_group("moles"):
 		$HitSound.play()
-		if plunger_state == State.SHOOTING:
+		if plunger_state == PlungerState.SHOOTING:
 			var mole : Mole = body as Mole
 			farm_manager.add_currency(1)
 			mole._destroy_mole()
 	else:
-		plunger_state = State.RETURNING
+		plunger_state = PlungerState.RETURNING
 
 
 
 func _physics_process(delta):
 		
-	# State management
+	# PlungerState management
 	match plunger_state:
-		State.DEFAULT:
+		PlungerState.DEFAULT:
 			world_plunger.global_transform = plunger_end.global_transform
 			world_plunger.scale = Vector3(1, 1, 1) # Reset scale
 			world_plunger.speed = 0
 			world_plunger._apply_force(Vector3.ZERO, 0)
-		State.SHOOTING:
+		PlungerState.SHOOTING:
 			# if the plunger collides with a collider that is the type cow
 			# then set the plunger to stuck
 	
@@ -105,20 +105,20 @@ func _physics_process(delta):
 
 			if world_plunger.global_position.distance_to(plunger_end.global_position) > max_distance_from_player:
 				_return_plunger()
-		State.STUCK: 
+		PlungerState.STUCK: 
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 			# calculate new current_cow's velocity vector based on making sure the cow is facing the plunger_end
 			current_cow.velocity = current_cow.global_position.direction_to(plunger_end.global_position) * cow_return_speed
 			_return_plunger()
 			if current_cow.global_position.distance_to(plunger_end.global_position) < 2:
-				plunger_state = State.DEFAULT
+				plunger_state = PlungerState.DEFAULT
 				if current_cow.is_in_group("moles"):
 					var mole : Mole = current_cow as Mole
 					mole.is_being_retrieved = false
 					mole.queue_free()
 				_handle_cow_retrieval()
 
-		State.RETURNING: 
+		PlungerState.RETURNING: 
 			world_plunger.direction = world_plunger.global_position.direction_to(plunger_end.global_position)
 			#Rotate it towards the barrel of the gun
 			_angle_plunger_towards_gun(delta)
@@ -127,7 +127,7 @@ func _physics_process(delta):
 			world_plunger.scale = Vector3(1, 1, -1)
 			# Return it to the player
 			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
-				plunger_state = State.DEFAULT
+				plunger_state = PlungerState.DEFAULT
 
 func _handle_cow_retrieval():
 	#current_cow.queue_free()

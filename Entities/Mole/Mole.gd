@@ -14,9 +14,9 @@ var my_cow = null
 
 @onready var animator : AnimationPlayer = $GGJ_Mole_Animated3/AnimationPlayer
 var is_being_retrieved = false
-enum State {PICKING, SEEKING_UNDERGROUND, INFLATING, DYING}
+enum MoleState {PICKING, SEEKING_UNDERGROUND, INFLATING, DYING}
 
-var mole_state : State = State.PICKING
+var mole_state : MoleState = MoleState.PICKING
 
 func _ready():
 	print("Mole Spawned!")
@@ -24,7 +24,7 @@ func _ready():
 	animator.connect("animation_finished", _can_be_animated_again)
 
 func _pick_a_cow():
-	mole_state = State.PICKING
+	mole_state = MoleState.PICKING
 	var grounded_cow_list : Array = []
 	for cow in cow_group.get_children():
 		# Add cows that are on the floor
@@ -38,7 +38,7 @@ func _pick_a_cow():
 		my_cow = grounded_cow_list[0]
 		# Connect to the cow
 		my_cow.cow_inflated.connect(_cow_has_inflated)
-		mole_state = State.SEEKING_UNDERGROUND
+		mole_state = MoleState.SEEKING_UNDERGROUND
 		
 	else:
 		# Search for another cow after a X second delay
@@ -54,17 +54,17 @@ func _destroy_mole():
 func _inflate_the_cow():
 	if not my_cow == null:
 		my_cow.air_inflation += 1.0
-		mole_state = State.INFLATING
+		mole_state = MoleState.INFLATING
 
 var animated = false
 
 func _process(delta):
 	match mole_state:
-		State.PICKING:
+		MoleState.PICKING:
 			print("Picking a cow")
-		State.SEEKING_UNDERGROUND:
+		MoleState.SEEKING_UNDERGROUND:
 			print("Seeking underground")
-		State.INFLATING:
+		MoleState.INFLATING:
 			if not animated:
 				animator.play("Pop_out_Ground")
 				animated = true
