@@ -48,9 +48,9 @@ jobs:
             butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
             gameData: ./Web.zip
             itchUsername: carlos-michael
-            itchGameId: ggj24
+            itchGameId: moo
             buildChannel: web
-            buildNumber: web${{ github.run_number }}
+            buildNumber: ${{ github.run_number }}
       # - name: Deploy - Itch.io - windows
       #   if: github.ref == 'refs/heads/main'
       #   uses: KikimoraGames/itch-publish@v0.0.3
