@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dd8wub23xyevr"]
+[gd_scene load_steps=70 format=3 uid="uid://dd8wub23xyevr"]
 
 [ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/old_scenes/Old-Level3D.tscn" id="1_eilup"]
 [ext_resource type="Texture2D" uid="uid://cd7e5r1gqyqht" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c4tkt52pfdhhw" path="res://Assets/paulb/3D models/Train_Carts/Back Train Cart/BackTrainExported.glb" id="22_mkto3"]
 [ext_resource type="PackedScene" uid="uid://cvhj3qxgarrqw" path="res://Assets/paulb/3D models/Train_Carts/Front Train Cart/FrontTrainExported.glb" id="23_7puua"]
 [ext_resource type="PackedScene" uid="uid://can3xx2nfmv6t" path="res://Assets/paulb/3D models/Train_Carts/Middle Train Cart/MiddleTrainExported.glb" id="24_s1py7"]
+[ext_resource type="PackedScene" uid="uid://dtoouac0y48w7" path="res://Assets/paulb/3D models/rock.glb" id="25_w2igy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p5q3h"]
 panorama = ExtResource("2_vjih6")
@@ -319,6 +320,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2dejt")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qkhd2"]
+points = PackedVector3Array(1.98967, 2.26475, -0.92156, 1.98924, 2.26023, -0.920735, 1.89664, 2.26023, -1.5014, 1.80404, 2.26475, -2.08289, 1.89664, 2.40789, -1.5014, 1.98924, 2.40789, -0.920735, 1.92653, 1.84752, 0.186982, 1.80362, 2.26023, -2.08207, 1.7228, 2.40789, -2.38807, 1.80362, 2.40789, -2.08207, 1.7228, 2.26023, -2.38807, 1.64199, 2.26475, -2.69407, 1.64704, 2.40789, 1.51492, 1.70007, 1.89452, 1.58421, 0.941997, 1.41683, 0.47814, 0.997559, 1.41683, 0.0970786, 0.979038, 1.41683, -0.291406, 1.58769, 1.84664, -1.54099, 1.64157, 2.40789, -2.69325, 1.64157, 2.26023, -2.69325, 1.21265, 2.26475, -3.47269, 1.2821, 2.40789, 3.50931, 0.846449, 1.67471, 2.13106, 0.816563, 1.41683, 0.82291, 1.2821, 2.26475, 3.51096, 1.2821, 2.26023, 3.50931, -0.000441074, 1.12401, -0.000248909, 0.887699, 1.41683, -0.657621, 0.980301, 1.67471, -1.87586, 0.696601, 1.67471, -2.34848, 1.21223, 2.26023, -3.47104, 1.4269, 2.40777, -3.08256, 1.21265, 2.40789, -3.47104, -0.000441074, 2.26023, -3.94118, -0.000441074, 2.26475, -3.94201, -0.000441074, 2.40789, -3.94118, 0.809408, 2.40789, 4.14936, 0.809408, 2.40777, 4.15019, 0.809408, 2.26023, 4.15019, 0.534127, 1.67471, 2.51954, 0.630938, 1.41683, 1.10747, 0.809408, 2.26475, 4.15101, 0.39817, 1.41683, 1.30955, 0.182238, 1.67471, 2.72162, -0.18312, 1.67471, 2.72162, -0.63182, 1.35978, 1.10747, -0.817866, 1.35978, 0.82291, -0.998441, 1.41683, 0.0970786, -0.97992, 1.41683, -0.291406, -0.888581, 1.41683, -0.657621, -0.731578, 1.41683, -0.975173, -0.520276, 1.41683, -1.22097, -0.27025, 1.41683, -1.37603, -0.362432, 1.67471, -2.64623, -0.000441074, 1.67471, -2.74851, 0.36155, 1.67471, -2.64623, 0.269368, 1.41683, -1.37603, 0.519394, 1.41683, -1.22097, 0.730696, 1.41683, -0.975173, -1.29519, 2.26023, -3.86695, -1.29603, 2.26475, -3.86778, -1.29519, 2.40789, -3.86695, 0.276524, 2.40789, 4.48258, 0.276103, 2.26475, 4.48423, 0.276524, 2.26023, 4.48176, -0.549741, 1.96037, 3.84171, -2.19722, 2.26023, 1.51492, -0.847331, 1.67471, 2.13106, -1.94256, 2.26023, 2.60862, -2.3096, 2.26023, 0.308229, -2.04358, 2.26023, -2.08207, -1.72453, 2.26023, -3.08916, -0.981183, 1.67471, -1.87586, -0.697904, 1.67471, -2.34848, -1.72537, 2.26475, -3.08998, -1.72453, 2.40789, -3.08916, -0.276985, 2.40789, 4.48258, -0.277406, 2.26475, 4.48423, -0.276985, 2.26023, 4.48176, -0.809869, 2.26023, 4.15019, -1.28256, 2.26023, 3.50931, -2.07094, 2.26475, 2.0626, -2.19806, 2.26475, 1.51575, -2.25446, 2.26475, 0.911989, -1.6134, 2.26475, 3.06062, -1.9434, 2.26475, 2.60945, -2.31045, 2.26475, 0.308229, -2.04485, 2.26475, -2.08289, -1.88532, 2.26475, -2.58685, -2.04358, 2.40789, -2.08207, -0.809869, 2.40789, 4.14936, -0.809869, 2.40777, 4.15019, -0.81029, 2.26475, 4.15101, -1.2834, 2.26475, 3.51096, -1.94256, 2.40789, 2.60862, -2.19722, 2.40777, 1.51492, -2.3096, 2.40789, 0.308229, -1.28256, 2.40789, 3.50931, -2.1968, 2.40789, 1.51492)
+
 [node name="Level3D" instance=ExtResource("1_eilup")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
@@ -371,6 +375,7 @@ visible = false
 
 [node name="GROUND" parent="." index="6"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 2.08165e-12, -1, 2.08165e-12)
+visible = false
 surface_material_override/0 = SubResource("StandardMaterial3D_4hi54")
 
 [node name="COWS" parent="." index="7"]
@@ -392,11 +397,8 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, -3.34579, 29.35
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
 cow_group = NodePath("../COWS")
 
-[node name="CollisionShape3D" parent="FarmManager/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65115, -0.593085, -1.04184)
-
 [node name="Shop" parent="." index="10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5945, 0.370996, -7.25902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5945, -1.63324, -7.25902)
 
 [node name="level props" type="Node3D" parent="." index="11"]
 
@@ -420,7 +422,7 @@ shape = SubResource("ConvexPolygonShape3D_s1v5k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.990461, 0.0499992, -1.64711)
 
 [node name="moleMound" parent="level props/sand moleMound" index="0"]
-transform = Transform3D(-0.0772774, -0.65546, 2.86511e-08, 0, -2.88495e-08, -0.66, 0.65546, -0.0772774, 3.3779e-09, -23.8354, -2.27639, 26.4133)
+transform = Transform3D(-0.0772774, -0.65546, 2.86511e-08, 0, -2.88495e-08, -0.66, 0.65546, -0.0772774, 3.3779e-09, -23.8354, -2.73975, 26.4133)
 material_override = SubResource("StandardMaterial3D_q6w46")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="level props/sand moleMound/moleMound" index="0"]
@@ -474,7 +476,7 @@ transform = Transform3D(0.000489999, 0.00106811, -1.07763, -0.155109, -0.338117,
 transform = Transform3D(0.99988, 3.5142e-08, -2.1796, 2.1796, -9.32206e-09, 0.999879, 5.84617e-08, -0.244, -3.54747e-07, 43.4398, -19.9159, -4.21328)
 
 [node name="curved_track" parent="level props/red track/curvedTrack" index="0"]
-transform = Transform3D(0.271909, -0.0070239, -0.000723926, -9.06591e-05, -0.000650173, -2.66699, 0.00702371, 0.271909, -0.00639587, -13.2131, -9.12497, -0.136336)
+transform = Transform3D(0.271909, -0.0070239, -0.000723926, -9.06592e-05, -0.000650173, -2.66699, 0.00702371, 0.271909, -0.00639587, -11.9729, -9.13826, -0.136334)
 material_override = SubResource("StandardMaterial3D_ji0pj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="level props/red track/curvedTrack/curved_track" index="0"]
@@ -548,6 +550,9 @@ shape = SubResource("ConvexPolygonShape3D_ry5oj")
 [node name="tv" parent="level props" index="7" instance=ExtResource("21_wl08p")]
 transform = Transform3D(0.0621939, 0.0142511, -0.0896038, 1.67949e-08, -0.108635, -0.017278, -0.0907299, 0.00976891, -0.0614218, -26.6486, 1.40912, 25.8956)
 
+[node name="Collada visual scene group" parent="level props/tv/Sketchfab_model" index="0"]
+transform = Transform3D(1, 1.13506e-08, -3.08834e-08, 4.80139e-08, -3.37493e-07, -1, -2.05049e-08, 1, -3.49048e-07, 0.446594, -4.11652, 25.8787)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="level props/tv/Sketchfab_model/Collada visual scene group/TV_Master/TV_Back1/defaultMaterial_004" index="0"]
 transform = Transform3D(-0.027881, 0.000366016, -3.07315e-11, 3.71881e-10, 2.06763e-08, -0.0278834, -0.000366016, -0.027881, -1.85939e-08, 0.0620999, 0.525133, -0.753678)
 
@@ -566,6 +571,9 @@ shape = SubResource("ConvexPolygonShape3D_dsesq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level props/tv/Sketchfab_model/Collada visual scene group/TV_Master/TV_Frame/defaultMaterial/StaticBody3D" index="0"]
 transform = Transform3D(1, 5.72295e-09, -1.86762e-10, 3.39652e-09, 1, 1.40535e-08, 2.98256e-10, -7.14182e-09, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_v28jh")
+
+[node name="TV_Screen" parent="level props/tv/Sketchfab_model/Collada visual scene group/TV_Master" index="4"]
+transform = Transform3D(1, -5.54878e-08, 1.02525e-08, -6.29861e-08, 1, -1.74368e-08, 6.82167e-09, -1.39192e-09, 1, 0, 0.553726, 0.0285422)
 
 [node name="defaultMaterial_001" parent="level props/tv/Sketchfab_model/Collada visual scene group/TV_Master/TV_Screen" index="0"]
 transform = Transform3D(1, -1.83947e-08, 3.77364e-09, -5.26111e-09, 1, 9.95131e-09, 3.08639e-09, 7.28682e-09, 1, 0, 0, 0)
@@ -716,7 +724,7 @@ shape = SubResource("ConvexPolygonShape3D_8ocvf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00215, 0, 0)
 
 [node name="Cube_035" parent="jenga block/down3/Woodblock_reexport2" index="0"]
-transform = Transform3D(0.124389, 0.992234, -1.18242e-07, 1.16417e-10, -1.19209e-07, -1, -0.992234, 0.12439, -1.51557e-08, 4.1315, -4.50553, 9.0277)
+transform = Transform3D(0.124389, 0.992234, -1.18242e-07, 1.16417e-10, -1.19209e-07, -1, -0.992234, 0.12439, -1.51557e-08, 4.1315, -5.18238, 9.0277)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="jenga block/down3/Woodblock_reexport2/Cube_035" index="0"]
 
@@ -824,7 +832,7 @@ shape = SubResource("ConvexPolygonShape3D_8ocvf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00215, 0, 0)
 
 [node name="Cube_035" parent="jenga block/up4/Woodblock_reexport2" index="0"]
-transform = Transform3D(0.9638, 0.263893, -0.038038, -0.028992, -0.0380904, -0.998851, -0.26504, 0.963797, -0.0290608, 22.7579, -7.22308, 20.185)
+transform = Transform3D(0.9638, 0.263893, -0.038038, -0.028992, -0.0380904, -0.998851, -0.26504, 0.963797, -0.0290608, 22.7579, -7.47625, 20.185)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="jenga block/up4/Woodblock_reexport2/Cube_035" index="0"]
 
@@ -990,7 +998,7 @@ shape = SubResource("ConvexPolygonShape3D_8ocvf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00215, 0, 0)
 
 [node name="Cube_035" parent="jenga block/down7/Woodblock_reexport2" index="0"]
-transform = Transform3D(0.999993, 0.00374369, -1.16409e-10, 1.16415e-10, -1.19209e-07, -1, -0.00374377, 0.999994, -1.19209e-07, 0.729912, -14.2289, 8.52544)
+transform = Transform3D(0.999993, 0.00374363, -1.16397e-10, 1.16415e-10, -1.19209e-07, -1, -0.00374374, 0.999994, -1.19209e-07, 0.729912, -14.9057, 8.52544)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="jenga block/down7/Woodblock_reexport2/Cube_035" index="0"]
 
@@ -1042,6 +1050,9 @@ transform = Transform3D(1, 0, 7.00799e-09, 0, 1, 0, 1.36612e-08, 0, 1, 0, 17.050
 [node name="Woodblock_reexport" parent="jenga block/down8" index="0" instance=ExtResource("19_opf1b")]
 transform = Transform3D(0.951235, 0, 0.308469, 0, 1, 0, -0.308469, 0, 0.951235, -22.3551, -16.7983, 23.0022)
 
+[node name="Cube_035" parent="jenga block/down8/Woodblock_reexport" index="0"]
+transform = Transform3D(0.999993, 0.00374379, -1.16414e-10, 1.16415e-10, -1.19209e-07, -1, -0.00374379, 0.999993, -1.19209e-07, 0, -0.441909, 0)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="jenga block/down8/Woodblock_reexport/Cube_035" index="0"]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="jenga block/down8/Woodblock_reexport/Cube_035/StaticBody3D" index="0"]
@@ -1067,7 +1078,7 @@ transform = Transform3D(1, 1.74539e-08, -2.35911e-15, -1.50043e-08, 1, 3.71613e-
 shape = SubResource("ConvexPolygonShape3D_j61oo")
 
 [node name="train" type="Node3D" parent="." index="14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5967, 0.305754, 43.5998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5967, -1.02164, 43.5998)
 
 [node name="BackTrainExported" parent="train" index="0" instance=ExtResource("22_mkto3")]
 
@@ -1076,6 +1087,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9895, -0.149195, -0.21782
 
 [node name="MiddleTrainExported" parent="train" index="2" instance=ExtResource("24_s1py7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8433, -0.0311356, -0.0627022)
+
+[node name="rock" parent="." index="15" instance=ExtResource("25_w2igy")]
+transform = Transform3D(110.989, 0, -205.241, 0, 252.78, 0, 455.431, 0, 50.0171, 9.23241, -13.3655, 4.26546)
+
+[node name="Cylinder_002" parent="rock" index="0"]
+lod_bias = 49.484
+gi_mode = 2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rock/Cylinder_002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rock/Cylinder_002/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 1.1683e-08, 0, 1, 0, -7.00317e-08, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_qkhd2")
 
 [editable path="Moon_Model"]
 [editable path="PLAYER"]
@@ -1136,3 +1160,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8433, -0.0311356, -0.0627
 [editable path="jenga block/down8/Woodblock_reexport"]
 [editable path="jenga block/down8/Woodblock_reexport2"]
 [editable path="jenga block/down8/Woodblock_reexport3"]
+[editable path="rock"]
