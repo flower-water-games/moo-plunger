@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://drmg784i77783"]
+[gd_scene load_steps=10 format=3 uid="uid://drmg784i77783"]
 
 [ext_resource type="Script" path="res://Player/FirstPersonPlayer.gd" id="1_uqnlm"]
 [ext_resource type="PackedScene" uid="uid://b0bl8eptpj22j" path="res://UserInterface/AimingCursor/AimingCircle.tscn" id="2_2jy8v"]
 [ext_resource type="PackedScene" uid="uid://d0e5eq6gs1qbn" path="res://Entities/PlungerGun/PlungerGun.tscn" id="4_obcav"]
 [ext_resource type="Script" path="res://Player/SubViewportContainer.gd" id="5_c85yu"]
+[ext_resource type="AudioStream" uid="uid://dyyyut0j36d8j" path="res://Assets/audio/Jump_Cowboy.wav" id="5_lepbt"]
+[ext_resource type="AudioStream" uid="uid://d350afrggelo0" path="res://Assets/audio/Foosep_1.wav" id="6_ugfw8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri0xv"]
 font_size = 48
@@ -67,6 +69,14 @@ visible = false
 cull_mask = 1
 current = true
 fov = 80.0
+
+[node name="Audio_Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lepbt")
+volume_db = 4.216
+
+[node name="Audio_Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ugfw8")
+volume_db = -4.685
 
 [editable path="Head/Camera3D/PlungerGun"]
 [editable path="Head/Camera3D/PlungerGun/GGJ_PlungerGunwithHands_Model"]

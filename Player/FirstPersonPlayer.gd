@@ -44,6 +44,8 @@ signal health_updated
 # @export var crosshair:TextureRect
 
 # Functions
+func _autoplay():
+	$Music_Vocal.play()
 
 func _ready():
 	
@@ -80,13 +82,11 @@ func _physics_process(delta):
 	
 	# container.position = lerp(container.position, container_offset - (basis.inverse() * applied_velocity / 30), delta * 10)
 	
-	# Movement sound
+	#Movement sound
 	
-	# sound_footsteps.stream_paused = true
-	
-	# if is_on_floor():
-	# 	if abs(velocity.x) > 1 or abs(velocity.z) > 1:
-	# 		sound_footsteps.stream_paused = false
+	if is_on_floor():
+		if abs(velocity.x) > 1 or abs(velocity.z) > 1:
+			$Audio_Walk.play()
 	
 	# Landing after jump or falling
 	
@@ -128,7 +128,6 @@ func handle_controls(_delta):
 		input_mouse = Vector2.ZERO
 	
 	# Movement
-	
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
 	movement_velocity = Vector3(input.x, 0, input.y).normalized() * movement_speed
@@ -147,7 +146,6 @@ func handle_controls(_delta):
 	# Jumping
 	
 	if Input.is_action_just_pressed("jump"):
-		
 		# if jump_single or jump_double:
 			# Audio.play("sounds/jump_a.ogg, sounds/jump_b.ogg, sounds/jump_c.ogg")
 			
@@ -158,6 +156,7 @@ func handle_controls(_delta):
 			jump_double = false
 			
 		if(jump_single): action_jump()
+		$Audio_Jump.play()
 		
 	# Weapon switching
 	
