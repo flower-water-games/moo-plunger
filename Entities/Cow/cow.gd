@@ -77,10 +77,12 @@ func _physics_process(delta):
 	if air_inflation > air_max_inflation:
 		air_inflation = air_max_inflation
 		_try_to_float()
+		$cow_inflate.play()
 
 func _try_to_float():
 	if is_on_floor():
 		start_floating()
+		$cow_moo.play()
 
 func start_floating():
 	floating = true
