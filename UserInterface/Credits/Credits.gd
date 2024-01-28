@@ -29,7 +29,6 @@ var name_and_titles : Array[Array] = [
 var margin_bottom : float = 48
 
 func _ready():
-	name_and_titles.shuffle()
 	for i in range(name_and_titles.size()):
 		if i > 0:
 			var new_name = label_name.duplicate()
