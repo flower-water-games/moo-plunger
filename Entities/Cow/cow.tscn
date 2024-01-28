@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://dqsbqnge121mu"]
 
-[ext_resource type="Texture2D" uid="uid://8dx702g85mrq" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Diffuse2.png" id="2_jnfod"]
+[ext_resource type="Texture2D" uid="uid://c3sl5skh85ntp" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Diffuse2.png" id="2_jnfod"]
 [ext_resource type="Script" path="res://Entities/Cow/cow.gd" id="2_k6swh"]
-[ext_resource type="Texture2D" uid="uid://puqpbnyc30f0" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Roughness.png" id="3_54ppo"]
-[ext_resource type="Texture2D" uid="uid://bcfq5bxu0lbcv" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Normal.png" id="4_pfvst"]
-[ext_resource type="AudioStream" uid="uid://cgdxjwpcyr06k" path="res://Assets/audio/cowinflate_1.wav" id="5_axxme"]
-[ext_resource type="AudioStream" uid="uid://u580g4c2flpp" path="res://Assets/audio/cowmoo_8.wav" id="6_y23no"]
+[ext_resource type="Texture2D" uid="uid://c3tycvrkf046m" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Roughness.png" id="3_54ppo"]
+[ext_resource type="Texture2D" uid="uid://b01hdypr8xh7x" path="res://Assets/Bokhum/InflatingCowTest/Reexport_cowtest_GGJ_CowTest_Normal.png" id="4_pfvst"]
+[ext_resource type="AudioStream" uid="uid://cnnb0x0p3pqge" path="res://Assets/audio/cowinflate_1.wav" id="5_axxme"]
+[ext_resource type="AudioStream" uid="uid://clae61d60s36l" path="res://Assets/audio/cowmoo_8.wav" id="6_y23no"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1xgl"]
 size = Vector3(2, 2.5, 2.5)

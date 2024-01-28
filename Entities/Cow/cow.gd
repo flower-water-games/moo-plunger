@@ -48,7 +48,9 @@ func _ready():
 	x_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 	z_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
 	y_float_rotation_speed = randf_range(-float_rotation_max, float_rotation_max)
-
+	
+	# Rotate the cow randomly
+	rotation.y = deg_to_rad(randf_range(0.0, 360.0))
 
 func wait_arbitrary_amount_of_time_before_floating():
 	get_tree().create_timer(randf_range(1.0, 10.0)).timeout.connect(_try_to_float)
@@ -67,13 +69,17 @@ func _physics_process(delta):
 		velocity.z *= 0.8
 		velocity.x *= 0.8
 
+	
 	var collision_info = move_and_collide(velocity, true)
 	# Object collided
 	if collision_info:
 		# Bounce off Cows
 		var hit_object = collision_info.get_collider()
 		if hit_object is Cow or hit_object is Player:
-			velocity = velocity.bounce(collision_info.get_normal()) * 0.5
+			var speed_vector = global_position.direction_to(hit_object.position).normalized() #velocity.bounce(collision_info.get_normal()) * 0.5
+			velocity.x -= speed_vector.x
+			velocity.z -= speed_vector.z
+	
 	# Snapping
 	move_and_slide()
 

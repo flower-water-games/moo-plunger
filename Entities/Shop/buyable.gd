@@ -9,6 +9,9 @@ class_name Buyable
 
 @onready var label :Label3D = $Label3D
 
+@onready var item : MeshInstance3D = $MeshInstance3D
+@onready var collision_shape : CollisionObject3D = $CollisionShape3D
+
 var farm_manager : FarmManager
 var shop : Shop
 

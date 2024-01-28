@@ -59,7 +59,11 @@ func update_label():
 
 func switch_shop():
 	if is_shop_available:
-		global_transform.origin = away_position
+		#global_transform.origin = away_position
+		# Remove the items
+		var children = shelf.get_children()
+		for child in children:
+			child.item.queue_free()
 		is_shop_available = false
 		print("shop is closed")
 	else:
