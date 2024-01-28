@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://btcdsq34h0qw2"]
 
 [ext_resource type="Script" path="res://Entities/Plunger/Plunger.gd" id="1_vhs2x"]
-[ext_resource type="PackedScene" uid="uid://ukj8lhclpr8u" path="res://Entities/Plunger/plunger_asset.glb" id="2_no5oy"]
+[ext_resource type="PackedScene" uid="uid://dm5pdxosc0yw0" path="res://Entities/Plunger/plunger_asset.glb" id="2_no5oy"]
 [ext_resource type="PackedScene" uid="uid://bh1lmv3jbkgjv" path="res://Entities/Plunger/super_plunge.tscn" id="3_qrbn0"]
 
 [sub_resource type="Curve" id="Curve_cm83d"]
