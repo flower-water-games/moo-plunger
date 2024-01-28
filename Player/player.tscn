@@ -9,8 +9,11 @@
 [ext_resource type="AudioStream" uid="uid://cd3o1hx06brlf" path="res://Assets/audio/Foosep_1.wav" id="6_ugfw8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri0xv"]
+line_spacing = 10.0
 font = ExtResource("3_8rugt")
 font_size = 72
+outline_size = 48
+outline_color = Color(0.447059, 0.282353, 0.607843, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nrfj3"]
 
@@ -55,7 +58,7 @@ offset_right = 1138.0
 offset_bottom = 970.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "0/16 cows left
+text = "5 cow lives
 0 moles"
 label_settings = SubResource("LabelSettings_ri0xv")
 horizontal_alignment = 2

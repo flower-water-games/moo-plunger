@@ -27,7 +27,8 @@ func _delay_between_spawn():
 		mole_time_to_spawn = 1.6
 	
 	# Spawn moles
-	get_tree().create_timer(randf_range(mole_time_to_spawn-1.0, mole_time_to_spawn+1.0)).timeout.connect(_spawn_mole)
+	var mole_time = randf_range(mole_time_to_spawn-1.0, mole_time_to_spawn+1.0)
+	get_tree().create_timer(mole_time).timeout.connect(_spawn_mole)
 	
 	# Inflate half the cows in the game
 	if mole_count == 60:
@@ -54,7 +55,6 @@ func _half_cows_inflate():
 func _all_cows_inflate():
 	mole_count = 40
 	# Inflate everything
-	_all_cows_inflate()
 	# Inflate all the cows
 	for cow in cow_group.get_children():
 		cow.air_inflation = cow.air_max_inflation

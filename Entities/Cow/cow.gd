@@ -8,6 +8,7 @@ extends CharacterBody3D
 class_name Cow
 
 signal cow_inflated
+# signal cow_dead
 
 var air_inflation : float = 0.0
 var air_max_inflation : float = 100.0
@@ -15,7 +16,7 @@ var air_max_inflation : float = 100.0
 var floating = false
 var gravity = -9.8
 
-var min_float_speed = 0.1
+var min_float_speed = .1
 var float_speed = 1.0
 var last_float_time = 0.0
 var float_interval = 6.0
@@ -35,6 +36,7 @@ var x_float_rotation_speed : float = 0.0
 
 @onready var cow_physics_collider = $PhysicsCollider
 @onready var cow_body_collider = $InflatedArea3D/Collider
+
 
 var cow_default_size = Vector3(2.0, 2.5, 2.5)
 
@@ -84,7 +86,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Is it out of bounds?
-	if position.y > 100:
+	if position.y > 80:
+		# vibes
+		# call signal 
+		Main.emit_signal("cow_dead")
+		print('emit signal dead cow')
 		queue_free()
 		
 	# Inflating the cow
