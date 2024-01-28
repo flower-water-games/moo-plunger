@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://drmg784i77783"]
+[gd_scene load_steps=11 format=3 uid="uid://drmg784i77783"]
 
 [ext_resource type="Script" path="res://Player/FirstPersonPlayer.gd" id="1_uqnlm"]
-[ext_resource type="PackedScene" uid="uid://b0bl8eptpj22j" path="res://UserInterface/AimingCursor/AimingCircle.tscn" id="2_2jy8v"]
+[ext_resource type="Texture2D" uid="uid://bn6cy25uf0xu6" path="res://Assets/Bokhum/ui/CowIcon.png" id="2_ifrar"]
+[ext_resource type="FontFile" uid="uid://ebdn6pjg2amu" path="res://Assets/Bokhum/ui/Sheriff_Bounce.ttf" id="3_8rugt"]
+[ext_resource type="Texture2D" uid="uid://bbbqru4dp05x7" path="res://Assets/Bokhum/ui/MoleIcon.png" id="3_d1sio"]
 [ext_resource type="PackedScene" uid="uid://d0e5eq6gs1qbn" path="res://Entities/PlungerGun/PlungerGun.tscn" id="4_obcav"]
-[ext_resource type="AudioStream" uid="uid://bubr8utiqagym" path="res://Assets/audio/Jump_Cowboy.wav" id="5_lepbt"]
-[ext_resource type="AudioStream" uid="uid://cpu72dv6tefd4" path="res://Assets/audio/Foosep_1.wav" id="6_ugfw8"]
+[ext_resource type="AudioStream" uid="uid://c46qbfid6p6te" path="res://Assets/audio/Jump_Cowboy.wav" id="5_lepbt"]
+[ext_resource type="AudioStream" uid="uid://cd3o1hx06brlf" path="res://Assets/audio/Foosep_1.wav" id="6_ugfw8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri0xv"]
+font = ExtResource("3_8rugt")
 font_size = 48
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nrfj3"]
@@ -23,11 +26,38 @@ jump_strength = 3
 
 [node name="PlayerUI" type="CanvasGroup" parent="."]
 
+[node name="TextureRect" type="TextureRect" parent="PlayerUI"]
+offset_left = 1045.0
+offset_top = 820.0
+offset_right = 1143.0
+offset_bottom = 895.0
+size_flags_horizontal = 3
+texture = ExtResource("2_ifrar")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PlayerUI"]
+offset_left = 1045.0
+offset_top = 877.0
+offset_right = 1145.0
+offset_bottom = 954.0
+texture = ExtResource("3_d1sio")
+expand_mode = 2
+
 [node name="Label" type="Label" parent="PlayerUI"]
-offset_left = 138.0
-offset_top = 809.0
-offset_right = 1748.0
-offset_bottom = 879.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 636.0
+offset_top = 791.0
+offset_right = 1284.0
+offset_bottom = 970.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "cow in!
+0 cows
+14 moles"
 label_settings = SubResource("LabelSettings_ri0xv")
 horizontal_alignment = 1
 
@@ -42,8 +72,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 environment = SubResource("Environment_5f267")
 current = true
 fov = 80.0
-
-[node name="AimingCircle" parent="Head/Camera3D" instance=ExtResource("2_2jy8v")]
 
 [node name="PlungerGun" parent="Head/Camera3D" instance=ExtResource("4_obcav")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336592, -0.304664, -0.309311)

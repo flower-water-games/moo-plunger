@@ -48,4 +48,4 @@ func _on_area_3d_body_exited(body:Node3D):
 		player_UI.text = "oh no cow loose!\n" + make_status_string()
 
 func make_status_string():
-	return "you have " + str(cows_inside) + " cows" + "\n" + "you have " + str(player_currency) + " moles"
+	return str(cows_inside) + " cows\n" + str(player_currency) +" moles" 

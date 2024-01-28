@@ -23,7 +23,6 @@ func _ready():
 	global_transform.origin = away_position
 	shop_timer.connect("timeout", switch_shop)
 	switch_shop()
-	$Audio_Train.play()
 
 	# for each scene in all_upgrades
 	# add to a dictionary of each scene with its name as the key
@@ -59,13 +58,14 @@ func update_label():
 
 func switch_shop():
 	if is_shop_available:
-		#global_transform.origin = away_position
+		global_transform.origin = away_position
 		# Remove the items
 		var children = shelf.get_children()
 		for child in children:
 			child.item.queue_free()
 		is_shop_available = false
 		print("shop is closed")
+		shop_timer.time_left = .1
 	else:
 		# refresh shop here
 		refresh_shop()
