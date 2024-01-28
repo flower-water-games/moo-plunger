@@ -8,10 +8,7 @@ func _input(event):
 			# get_tree().quit()
 			game_over()
 
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			get_tree().change_scene_to_file("res://UserInterface/MainMenu/TitleScreen.tscn")
-			pass
-
 func game_over():
-	print('game over!')
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://UserInterface/MainMenu/TitleScreen.tscn")
 	#get_tree().change_scene("res://Levels/GameOver.tscn")
