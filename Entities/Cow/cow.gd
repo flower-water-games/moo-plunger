@@ -88,7 +88,7 @@ func _physics_process(delta):
 		queue_free()
 		
 	# Inflating the cow
-	if air_inflation > air_max_inflation:
+	if air_inflation >= air_max_inflation:
 		air_inflation = air_max_inflation
 		_try_to_float()
 		$cow_inflate.play()

@@ -37,6 +37,64 @@ environment = SubResource("Environment_bb565")
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
 cow_group = NodePath("../COWS")
 
+[node name="CollisionShape3D" parent="FarmManager/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3458, -0.593085, 10.7405)
+
+[node name="StaticBody3D" parent="level props/brown mug/OldWoodMug" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="level props/red track/curvedTrack/curved_track" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/down/Woodblock_reexport/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/down/Woodblock_reexport2/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/down/Woodblock_reexport3/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/up/Woodblock_reexport/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/up/Woodblock_reexport2/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/up/Woodblock_reexport3/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/down3/Woodblock_reexport2/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/down4/Woodblock_reexport/Cube_036" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/up4/Woodblock_reexport2/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="Cube_035" parent="jenga block/down7/Woodblock_reexport2" index="0"]
+transform = Transform3D(0.999993, 0.00374359, -1.16394e-10, 1.16415e-10, -1.19209e-07, -1, -0.00374371, 0.999994, -1.19209e-07, 0.729911, -14.9057, 8.52544)
+
+[node name="StaticBody3D" parent="jenga block/down7/Woodblock_reexport2/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="StaticBody3D" parent="jenga block/down8/Woodblock_reexport/Cube_035" index="0"]
+collision_layer = 32
+collision_mask = 0
+
 [editable path="Moon_Model"]
 [editable path="PLAYER"]
 [editable path="PLAYER/Head/Camera3D/PlungerGun"]

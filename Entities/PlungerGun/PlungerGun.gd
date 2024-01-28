@@ -57,7 +57,7 @@ func _return_plunger():
 
 func _input(event:InputEvent):
 	# Shooting
-	if Input.is_action_pressed("shoot") && plunger_state == State.DEFAULT:
+	if Input.is_action_just_pressed("shoot") && plunger_state == State.DEFAULT:
 		_shoot_plunger()
 	if Input.is_action_pressed("return") && plunger_state == State.SHOOTING:
 		_return_plunger()
@@ -65,7 +65,7 @@ func _input(event:InputEvent):
 func on_hit(body):
 	if body.is_in_group("cows"):
 		# Ignore the cow if its not floating
-		if body.is_on_floor():
+		if body.is_on_floor() or not body.floating:
 			return
 		$HitSound.play()
 		if plunger_state == State.SHOOTING && body.floating:

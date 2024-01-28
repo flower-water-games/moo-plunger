@@ -161,6 +161,7 @@ run={
 3d_physics/layer_3="Plunger"
 3d_physics/layer_4="Cows"
 3d_physics/layer_5="Moles"
+3d_physics/layer_6="World Except Moles"
 
 [rendering]
 
