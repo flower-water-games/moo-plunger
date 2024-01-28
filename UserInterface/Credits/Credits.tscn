@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UserInterface/Credits/Credits.gd" id="1_bc0py"]
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_modu1"]
-[ext_resource type="FontFile" uid="uid://csojf6nmyu2a2" path="res://Assets/Bokhum/ui/Sheriff_Bounce.ttf" id="3_7jluj"]
+[ext_resource type="FontFile" uid="uid://ebdn6pjg2amu" path="res://Assets/Bokhum/ui/Sheriff_Bounce.ttf" id="3_7jluj"]
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="3_mfeko"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="4_gv5di"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_nqu3a"]
