@@ -35,6 +35,7 @@ var tween:Tween
 
 signal health_updated
 
+@onready var plunger = $Head/Camera3D/PlungerGun
 @onready var player_ui_label : Label = $PlayerUI/Label
 @onready var camera = $Head/Camera3D
 # @onready var raycast = $Head/Camera/RayCast

@@ -18,7 +18,7 @@ ambient_light_energy = 0.0
 collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_uqnlm")
-movement_speed = 4
+movement_speed = 6
 jump_strength = 3
 
 [node name="PlayerUI" type="CanvasGroup" parent="."]

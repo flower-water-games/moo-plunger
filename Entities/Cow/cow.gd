@@ -67,6 +67,13 @@ func _physics_process(delta):
 		velocity.z *= 0.8
 		velocity.x *= 0.8
 
+	var collision_info = move_and_collide(velocity, true)
+	# Object collided
+	if collision_info:
+		# Bounce off Cows
+		if collision_info.get_collider() == Cow:
+			velocity = velocity.bounce(collision_info.get_normal()) * 0.5
+	# Snapping
 	move_and_slide()
 
 	# Is it out of bounds?

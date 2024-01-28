@@ -20,12 +20,14 @@ enum State {PICKING, SEEKING_UNDERGROUND, INFLATING, DYING}
 var mole_state : State = State.PICKING
 
 var shrink_mole_hill : bool = false
+var air_inflation_speed : float = 0.1
 
 func _ready():
 	print("Mole Spawned!")
 	call_deferred("_pick_a_cow")
 	get_tree().create_timer(15.0).timeout.connect(_check_if_stuck)
-	
+
+
 func _check_if_stuck():
 	# If it still hasn't reached the cow it probably got stuck somewhere, so lets just kill it
 	if not mole_state == State.INFLATING:
@@ -72,7 +74,7 @@ func _destroy_mole():
 
 func _inflate_the_cow():
 	if not my_cow == null:
-		my_cow.air_inflation += 0.1
+		my_cow.air_inflation += air_inflation_speed
 		mole_state = State.INFLATING
 
 var pop_out_state = false

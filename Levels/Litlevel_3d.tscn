@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dd8wub23xyevr"]
+[gd_scene load_steps=73 format=3 uid="uid://dd8wub23xyevr"]
 
 [ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/old_scenes/Old-Level3D.tscn" id="1_eilup"]
 [ext_resource type="Texture2D" uid="uid://b6jn51nyi8o6v" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cutnc0i7w7o6n" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
 [ext_resource type="Texture2D" uid="uid://btynh58enfjc1" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Normal.png" id="5_mvvo3"]
 [ext_resource type="Texture2D" uid="uid://c17ov2b2loibo" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Roughness.png" id="6_kbxo1"]
+[ext_resource type="PackedScene" uid="uid://dqsbqnge121mu" path="res://Entities/Cow/cow.tscn" id="7_xvd1k"]
 [ext_resource type="PackedScene" uid="uid://uk7qpabmyxbk" path="res://Assets/paulb/3D models/frog.glb" id="8_bnj41"]
 [ext_resource type="PackedScene" uid="uid://b61qwp16rcuxu" path="res://Assets/paulb/3D models/mug.glb" id="11_m4a1i"]
 [ext_resource type="PackedScene" uid="uid://bmngejncrduu6" path="res://Assets/paulb/3D models/moleMound.glb" id="12_y0p5r"]
@@ -393,16 +394,52 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59302, 3.76606, -25.8817)
 
 [node name="Reexport_cowtest" parent="COWS" index="0"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.06877, -3.38911, 39.6542)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -7.91731, -3.38911, 41.3077)
 
 [node name="Reexport_cowtest2" parent="COWS" index="1"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.22328, -3.37836, 29.6356)
 
 [node name="Reexport_cowtest3" parent="COWS" index="2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.76163, -3.34934, 37.7318)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.52206, -3.34934, 44.2637)
 
-[node name="Reexport_cowtest4" parent="COWS" index="3"]
+[node name="Reexport_cowtest5" parent="COWS" index="3" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 18.1227, -3.34934, 37.7318)
+
+[node name="Reexport_cowtest6" parent="COWS" index="4" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 18.1227, -3.34934, 15.6242)
+
+[node name="Reexport_cowtest4" parent="COWS" index="5"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.5744, -3.34579, 29.3565)
+
+[node name="Reexport_cowtest7" parent="COWS" index="6" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 11.2818, -3.34579, 29.2603)
+
+[node name="Reexport_cowtest8" parent="COWS" index="7" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -7.95833, -3.34579, 26.4906)
+
+[node name="Reexport_cowtest9" parent="COWS" index="8" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 10.9759, -3.34579, 41.3254)
+
+[node name="Reexport_cowtest10" parent="COWS" index="9" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 10.9759, -3.34579, 48.3517)
+
+[node name="Reexport_cowtest11" parent="COWS" index="10" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.407928, -3.34579, 48.3517)
+
+[node name="Reexport_cowtest12" parent="COWS" index="11" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.407928, -3.34579, 19.039)
+
+[node name="Reexport_cowtest13" parent="COWS" index="12" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 16.5838, -3.34579, 31.9392)
+
+[node name="Reexport_cowtest14" parent="COWS" index="13" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.53234, -3.34579, 38.7308)
+
+[node name="Reexport_cowtest15" parent="COWS" index="14" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.37191, -3.34579, 24.9009)
+
+[node name="Reexport_cowtest16" parent="COWS" index="15" instance=ExtResource("7_xvd1k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -5.62596, -3.34579, 32.5646)
 
 [node name="MoleFactory" parent="." index="9" node_paths=PackedStringArray("spawn_area", "cow_group")]
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
