@@ -7,7 +7,7 @@ func _input(event):
 		if event.is_action_pressed("close_game"):
 			# get_tree().quit()
 			game_over()
-			get_tree().change_scene("res://UserInterface/MainMenu/TitleScreen.tscn")
+			get_tree().change_scene_to_file("res://UserInterface/MainMenu/TitleScreen.tscn")
 			pass
 
 func game_over():
