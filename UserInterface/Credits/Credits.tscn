@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://UserInterface/Credits/Credits.gd" id="1_bc0py"]
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_modu1"]
+[ext_resource type="FontFile" uid="uid://ebdn6pjg2amu" path="res://Assets/Bokhum/ui/Sheriff_Bounce.ttf" id="3_7jluj"]
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="3_mfeko"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="4_gv5di"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_nqu3a"]
@@ -13,10 +14,10 @@ bg_color = Color(0.580392, 0.184314, 0.415686, 1)
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_a8fh5"]
-font_size = 24
-
-[sub_resource type="LabelSettings" id="LabelSettings_u1otc"]
-font_size = 24
+font = ExtResource("3_7jluj")
+font_size = 56
+outline_size = 48
+outline_color = Color(0.423529, 0.270588, 0.572549, 1)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -77,7 +78,7 @@ theme_override_constants/separation = 16
 layout_mode = 2
 text = "Title
 "
-label_settings = SubResource("LabelSettings_u1otc")
+label_settings = SubResource("LabelSettings_a8fh5")
 horizontal_alignment = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
