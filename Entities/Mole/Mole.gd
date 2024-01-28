@@ -26,7 +26,13 @@ func _ready():
 	print("Mole Spawned!")
 	call_deferred("_pick_a_cow")
 	get_tree().create_timer(15.0).timeout.connect(_check_if_stuck)
-
+	# Invisible before you land on the ground
+	visible = false
+	# Delete mole if it spawns inside an object
+	var collision_info = move_and_collide(Vector3(0,0,0), true)
+	if not collision_info == null:
+		print("Spawned in wall")
+		queue_free()
 
 func _check_if_stuck():
 	# If it still hasn't reached the cow it probably got stuck somewhere, so lets just kill it
@@ -80,11 +86,16 @@ func _inflate_the_cow():
 var pop_out_state = false
 
 func _process(delta):
+	if is_on_floor():
+		visible = true
+		
 	match mole_state:
 		State.PICKING:
-			print("Picking a cow")
+			#print("Picking a cow")
+			pass
 		State.SEEKING_UNDERGROUND:
-			print("Seeking underground")
+			#print("Seeking underground")
+			pass
 		State.INFLATING:
 			if not pop_out_state:
 				animator.play("Pop_out_Ground")

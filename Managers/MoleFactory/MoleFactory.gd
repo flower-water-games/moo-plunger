@@ -8,12 +8,16 @@ var total_moles_spawned : int = 0
 
 var mole_time_to_spawn : float = 3.0
 
+# Moles get faster
+var mole_inflate_speed_increment : float = 0.05
+var mole_inflate_speed : float = 0.1
+
 func _ready():
 	# Spawn a random mole after X period of time
 	_delay_between_spawn()
 
 func _delay_between_spawn():
-	get_tree().create_timer(randf_range(mole_time_to_spawn-1, mole_time_to_spawn+1)).timeout.connect(_spawn_mole)
+	get_tree().create_timer(randf_range(mole_time_to_spawn-1.0, mole_time_to_spawn+1.0)).timeout.connect(_spawn_mole)
 	
 func _spawn_mole():
 	var mole = mole_scene.instantiate()
@@ -21,6 +25,10 @@ func _spawn_mole():
 	
 	# Provide the cow group from Level3D
 	mole.cow_group = cow_group
+	
+	# Increase the speed over time
+	mole_inflate_speed += mole_inflate_speed_increment
+	mole.air_inflation_speed = mole_inflate_speed
 	
 	var padding = 0.5
 	var random_x = randf_range(padding, spawn_area.shape.size.x - padding)
