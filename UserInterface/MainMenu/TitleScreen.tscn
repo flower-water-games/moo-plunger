@@ -84,7 +84,7 @@ text = "CONTROLS"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer/ControlsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
 button = NodePath("..")
-level_path = "res://UserInterface/Controls/UserControls.tscn"
+level_path = "res://UserInterface/Tutorial/Tutorial.tscn"
 
 [node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer"]
 layout_mode = 2
