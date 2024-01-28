@@ -38,14 +38,14 @@ func add_cow_bonus():
 func _on_area_3d_body_entered(body:Node3D):
 	if body.is_in_group("cows"):
 		cows_inside += 1
-		player_UI.text = "cow in!\n" + make_status_string()
+		# player_UI.text = "cow in!\n" + make_status_string()
 		print('gained a cow')
 
 func _on_area_3d_body_exited(body:Node3D):
 	if body.is_in_group("cows"):
 		cows_inside -= 1
 		print('lost a cow')
-		player_UI.text = "oh no cow loose!\n" + make_status_string()
+		# player_UI.text = "oh no cow loose!\n" + make_status_string()
 
 func make_status_string():
-	return "you have " + str(cows_inside) + " cows" + "\n" + "you have " + str(player_currency) + " moles"
+	return str(cows_inside) + "/16 cows left\n" + str(player_currency) +" moles" 

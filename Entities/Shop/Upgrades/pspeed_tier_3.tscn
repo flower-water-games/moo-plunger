@@ -6,6 +6,8 @@
 item_name = "Epic Plunger"
 cost = 22
 
+[node name="Sprite3D" type="Sprite3D" parent="Label3D" index="0"]
+
 [node name="addcowobjectoid" parent="." index="3"]
 visible = false
 

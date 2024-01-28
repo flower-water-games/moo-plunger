@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf6k2esq4jkqa"]
+[gd_scene load_steps=11 format=3 uid="uid://bf6k2esq4jkqa"]
 
 [ext_resource type="Script" path="res://Entities/Shop/shop.gd" id="1_22ahj"]
 [ext_resource type="PackedScene" uid="uid://bgcqjlcw8uwtc" path="res://Entities/Shop/Upgrades/jump_tier_2.tscn" id="2_1plcn"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://duypdqbqd3hj" path="res://Entities/Shop/train_front_cart.tscn" id="4_t5ew3"]
 [ext_resource type="PackedScene" uid="uid://co0ghyinpsnw6" path="res://Entities/Shop/Upgrades/pspeed_tier_2.tscn" id="5_o6pu4"]
 [ext_resource type="PackedScene" uid="uid://73j8dn10v4k4" path="res://Entities/Shop/Upgrades/pspeed_tier_3.tscn" id="6_hhspi"]
-[ext_resource type="AudioStream" uid="uid://d3gck7mvxw452" path="res://Assets/audio/Train_Shop.wav" id="9_osw1j"]
+[ext_resource type="AudioStream" uid="uid://cwxqyjmei08v" path="res://Assets/audio/Train_Shop.wav" id="9_osw1j"]
+[ext_resource type="FontFile" uid="uid://ebdn6pjg2amu" path="res://Assets/Bokhum/ui/Sheriff_Bounce.ttf" id="9_s0i5o"]
 
 [node name="Shop" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28147, 0.029675, 0.0837297)
@@ -34,12 +35,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54143, 1.29055, -0.122502)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.134753, 0)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 8.0
 autostart = true
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625365, 1.91659)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.17859, 3.59944, 1.91659)
+outline_modulate = Color(0.435294, 0.278431, 0.584314, 1)
 text = "leaving in .... seconds"
+font = ExtResource("9_s0i5o")
+font_size = 72
+outline_size = 45
 
 [node name="Audio_Train" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_osw1j")
