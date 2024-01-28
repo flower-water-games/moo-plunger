@@ -10,7 +10,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri0xv"]
 font = ExtResource("3_8rugt")
-font_size = 48
+font_size = 72
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nrfj3"]
 
@@ -27,19 +27,19 @@ jump_strength = 3
 [node name="PlayerUI" type="CanvasGroup" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="PlayerUI"]
-offset_left = 1045.0
-offset_top = 820.0
-offset_right = 1143.0
-offset_bottom = 895.0
+offset_left = 1132.0
+offset_top = 738.0
+offset_right = 1325.0
+offset_bottom = 882.0
 size_flags_horizontal = 3
 texture = ExtResource("2_ifrar")
 expand_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="PlayerUI"]
-offset_left = 1045.0
-offset_top = 877.0
-offset_right = 1145.0
-offset_bottom = 954.0
+offset_left = 1101.0
+offset_top = 843.0
+offset_right = 1322.0
+offset_bottom = 1016.0
 texture = ExtResource("3_d1sio")
 expand_mode = 2
 
@@ -49,17 +49,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 636.0
+offset_left = 490.0
 offset_top = 791.0
-offset_right = 1284.0
+offset_right = 1138.0
 offset_bottom = 970.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "cow in!
-0 cows
-14 moles"
+text = "0/16 cows left
+0 moles"
 label_settings = SubResource("LabelSettings_ri0xv")
-horizontal_alignment = 1
+horizontal_alignment = 2
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.55, 2.08165e-12)

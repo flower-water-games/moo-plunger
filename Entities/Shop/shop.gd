@@ -20,9 +20,8 @@ var upgrade_purchased_states: Dictionary = {}
 func _ready():
 	initial_position = global_transform.origin
 	away_position = Vector3(-80,  initial_position.y, initial_position.z)
-	global_transform.origin = away_position
-	shop_timer.connect("timeout", switch_shop)
-	switch_shop()
+	# global_transform.origin = away_position
+	shop_timer.connect("timeout", refresh_shop)
 
 	# for each scene in all_upgrades
 	# add to a dictionary of each scene with its name as the key
@@ -54,25 +53,16 @@ func _process(delta):
 
 func update_label():
 	# round time left to whole seconds
-	label.text = str(round(shop_timer.time_left)) + " seconds left!"
+	label.text = "i'll get some new stuff in\n"+ str(round(shop_timer.time_left)) + " seconds!"
 
-func switch_shop():
-	if is_shop_available:
-		global_transform.origin = away_position
-		# Remove the items
-		var children = shelf.get_children()
-		for child in children:
-			child.item.queue_free()
-		is_shop_available = false
-		print("shop is closed")
-		shop_timer.time_left = .1
-	else:
-		# refresh shop here
-		refresh_shop()
-		global_transform.origin = initial_position
-		is_shop_available = true
-		print("shop is available")
-		$Audio_Train.play()
+# func switch_shop():
+# 	refresh_shop()
+# 	# else:
+# 	# 	# refresh shop here
+# 	# 	refresh_shop()
+# 	# 	global_transform.origin = initial_position
+# 	# 	is_shop_available = true
+# 	# 	print("shop is available")
 
 func refresh_shop():
 	# remove all children from shelf

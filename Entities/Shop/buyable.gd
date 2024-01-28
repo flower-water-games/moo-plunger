@@ -28,7 +28,7 @@ func _ready():
 			break
 	
 	shop.register_in_shop(item_name)
-	label.text = item_name + "\n" + str(cost) + " currency"
+	label.text = item_name + "\n" + str(cost) + " moles!"
 
 # abstract function for sublcasses to implement
 func add_effect():
@@ -41,7 +41,7 @@ func buy():
 		farm_manager.player_currency -= cost
 		shop.purchase_item(item_name)
 		add_effect()
-		print("Bought " + item_name + " for " + str(cost) + " currency")
+		# print("Bought " + item_name + " for " + str(cost) + " currency")
 		queue_free()
 	else:
 		print("Not enough money!")
