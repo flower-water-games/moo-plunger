@@ -29,7 +29,6 @@ var sound_appear = load("res://Assets/audio/sfx_mole_rise_out_of_ground.wav")
 var sound_attack = load("res://Assets/audio/sfx_mole_inflate.wav")
 var sound_leaves = load("res://Assets/audio/sfx_mole_goes_into_ground.wav")
 
-
 func _ready():
 	print("Mole Spawned!")
 	call_deferred("_pick_a_cow")

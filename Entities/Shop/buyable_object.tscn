@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dwy4blafe32kc"]
 
 [ext_resource type="Script" path="res://Entities/Shop/Upgrades/jump_tier_2.gd" id="1_7ergn"]
-[ext_resource type="PackedScene" uid="uid://bqpnutb1jgp2j" path="res://Assets/Bokhum/shop/Train_Middle_Carts.glb" id="2_l18tr"]
-[ext_resource type="PackedScene" uid="uid://blfps807ujb8r" path="res://Assets/paulb/3D models/AddCowObject/addcowobjectoid.glb" id="3_vgs8o"]
-[ext_resource type="PackedScene" uid="uid://cc8cxqigafxo5" path="res://Assets/paulb/3D models/MilkGlass/MilkGlass.glb" id="4_1hcsf"]
-[ext_resource type="PackedScene" uid="uid://28abru5jvi8g" path="res://Assets/paulb/3D models/Spring_Shoe/shoeProp.glb" id="5_16psd"]
-[ext_resource type="PackedScene" uid="uid://d28dpiooegyst" path="res://Assets/paulb/3D models/RemoveMoleObject/RemoveMoleObject.glb" id="6_shl2s"]
+[ext_resource type="PackedScene" uid="uid://gia4mbp3rok7" path="res://Assets/Bokhum/shop/Train_Middle_Carts.glb" id="2_l18tr"]
+[ext_resource type="PackedScene" uid="uid://kbwvgnmvpl04" path="res://Assets/paulb/3D models/AddCowObject/addcowobjectoid.glb" id="3_vgs8o"]
+[ext_resource type="PackedScene" uid="uid://75fbwu4ub8kx" path="res://Assets/paulb/3D models/MilkGlass/MilkGlass.glb" id="4_1hcsf"]
+[ext_resource type="PackedScene" uid="uid://8rashl88ylat" path="res://Assets/paulb/3D models/Spring_Shoe/shoeProp.glb" id="5_16psd"]
+[ext_resource type="PackedScene" uid="uid://dev8jbvgwp8ta" path="res://Assets/paulb/3D models/RemoveMoleObject/RemoveMoleObject.glb" id="6_shl2s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ypif"]
 

@@ -1,87 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxjisngfhv840"]
+[gd_scene load_steps=2 format=3 uid="uid://dxjisngfhv840"]
 
-[ext_resource type="PackedScene" uid="uid://6ga2qse1kjm8" path="res://Assets/Bokhum/mole/GGJ_Mole_Animated3.glb" id="1_uv8vy"]
-[ext_resource type="AudioStream" uid="uid://dapmffgf151py" path="res://Assets/audio/sfx mole underground.wav" id="2_sowbi"]
-[ext_resource type="AudioStream" uid="uid://4jvf5u10gat" path="res://Assets/audio/sfx mole goes into ground.wav" id="3_6fmw8"]
-[ext_resource type="AudioStream" uid="uid://5abdm8odk4ax" path="res://Assets/audio/sfx mole chatter 1.wav" id="4_6wl85"]
-
-[sub_resource type="Animation" id="Animation_b6nnq"]
-resource_name = "pop_boing"
-length = 2.0
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_6fmw8")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/0/use_blend = true
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("4_6wl85")
-}],
-"times": PackedFloat32Array(1.1)
-}
-tracks/1/use_blend = true
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1gyj"]
-_data = {
-"pop_boing": SubResource("Animation_b6nnq")
-}
+[ext_resource type="PackedScene" uid="uid://dorw860cmbci0" path="res://Assets/Bokhum/mole/GGJ_Mole_Animated3.glb" id="1_uv8vy"]
 
 [node name="GGJ_Mole_Animated3" instance=ExtResource("1_uv8vy")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(3.72529e-09, 0.462825, -0.0233082)
-bones/0/rotation = Quaternion(-0.225435, 0.0341204, -0.00790026, 0.973629)
-bones/1/position = Vector3(3.72529e-09, 1.02275, -0.204171)
-bones/1/rotation = Quaternion(-0.155583, 1.17758e-07, -1.85469e-08, 0.987823)
+bones/0/rotation = Quaternion(-0.000332771, 0.0350215, 0.00949564, 0.999341)
+bones/1/position = Vector3(0, 0.672527, 0)
 bones/1/scale = Vector3(0.141415, 0.141415, 0.141415)
-bones/2/position = Vector3(-0.523549, 1.15938, 0.297275)
-bones/2/rotation = Quaternion(0.734047, -0.259909, 0.165965, 0.605044)
-bones/3/position = Vector3(-0.336912, 0.32514, 0.0400428)
-bones/3/rotation = Quaternion(0.997522, -0.0202815, 0.0322423, 0.059147)
-bones/4/position = Vector3(0.476086, 1.14027, 0.303447)
-bones/4/rotation = Quaternion(0.734047, 0.259909, -0.165965, 0.605044)
-bones/5/position = Vector3(0.282147, 0.327745, 0.0392012)
-bones/5/rotation = Quaternion(0.997639, 0.0146096, -0.0318875, 0.0590444)
-bones/6/position = Vector3(0.000283241, 1.8821, -0.787854)
-bones/6/rotation = Quaternion(0.94957, 6.96235e-17, 0, 0.313556)
-bones/7/position = Vector3(-0.305629, -0.676764, 1.72022)
-bones/7/rotation = Quaternion(-0.750119, -0.0507338, -0.0341241, 0.65847)
-bones/8/position = Vector3(1.10311e-08, -0.0446878, -0.0730559)
-bones/8/rotation = Quaternion(0.979398, 2.08885e-08, -0.000109051, 0.201938)
-bones/9/position = Vector3(-8.22578e-08, -0.0431249, 2.35794)
-bones/9/scale = Vector3(1, 1, 1)
-bones/11/position = Vector3(-0.0477594, 0.294307, 0.0215676)
+bones/2/rotation = Quaternion(0.819243, -0.282565, 0.123507, 0.483471)
+bones/3/rotation = Quaternion(0.994578, -0.0250509, 0.0286942, -0.0967709)
+bones/4/rotation = Quaternion(0.819243, 0.282565, -0.123507, 0.483471)
+bones/5/rotation = Quaternion(0.994677, 0.0193928, -0.0292262, -0.0968904)
+bones/6/position = Vector3(0.000283241, 1.54981, 1.1743e-07)
+bones/6/rotation = Quaternion(0.999849, -3.85703e-18, 5.81699e-26, -0.0173705)
+bones/7/position = Vector3(-0.00238486, -0.329395, 1.67638e-08)
+bones/7/rotation = Quaternion(-1.86265e-09, -7.65777e-09, 0.000270192, 1)
+bones/8/position = Vector3(4.07283e-10, -0.044688, -0.0730557)
+bones/8/rotation = Quaternion(1, -1.4552e-11, 7.54973e-08, 9.31322e-10)
+bones/11/position = Vector3(-0.0477594, 0.307468, 0.0215676)
 bones/11/scale = Vector3(0.0741823, 0.0741823, 0.0741823)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "Static_Calm"
-
-[node name="Audio_Underground" type="AudioStreamPlayer" parent="." index="2"]
-stream = ExtResource("2_sowbi")
-volume_db = -7.964
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
-volume_db = 11.45
-
-[node name="Mole_up" type="AnimationPlayer" parent="." index="4"]
-libraries = {
-"": SubResource("AnimationLibrary_s1gyj")
-}
