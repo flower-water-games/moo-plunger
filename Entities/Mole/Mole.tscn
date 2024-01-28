@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Entities/Mole/Mole.gd" id="1_yuc33"]
 [ext_resource type="PackedScene" uid="uid://dxjisngfhv840" path="res://Entities/Mole/ggj_mole_animated_3.tscn" id="2_nd4hs"]
-[ext_resource type="AudioStream" uid="uid://cdef5q2g4hpq7" path="res://Assets/audio/sfx mole rise out of ground.wav" id="3_g6wxs"]
-[ext_resource type="AudioStream" uid="uid://c5bo60ej5uhg5" path="res://Assets/audio/sfx mole chatter 3.wav" id="4_gotdu"]
+[ext_resource type="AudioStream" uid="uid://bmsh8kvrbjma2" path="res://Assets/audio/sfx mole rise out of ground.wav" id="3_g6wxs"]
+[ext_resource type="AudioStream" uid="uid://d27mgf747blvv" path="res://Assets/audio/sfx mole chatter 3.wav" id="4_gotdu"]
 
 [sub_resource type="Animation" id="Animation_ka5e2"]
 resource_name = "mole_popout"
@@ -45,7 +45,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sr54f"]
-size = Vector3(1, 1.97949, 1)
+size = Vector3(1.8, 1.8, 1.8)
 
 [node name="Mole" type="CharacterBody3D" groups=["moles"]]
 collision_layer = 16
@@ -93,7 +93,7 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["moles"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.805395, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.674597, 0)
 shape = SubResource("BoxShape3D_sr54f")
 
 [node name="CSGCylinder3D" type="CSGSphere3D" parent="." groups=["moles"]]

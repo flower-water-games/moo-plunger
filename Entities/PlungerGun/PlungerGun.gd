@@ -64,6 +64,9 @@ func _input(event:InputEvent):
 
 func on_hit(body):
 	if body.is_in_group("cows"):
+		# Ignore the cow if its not floating
+		if body.is_on_floor():
+			return
 		$HitSound.play()
 		if plunger_state == State.SHOOTING && body.floating:
 			# Set the current_cow to the body that was hit

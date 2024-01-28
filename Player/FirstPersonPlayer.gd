@@ -4,6 +4,8 @@ class_name Player
 @export_subgroup("Properties")
 @export var movement_speed = 5
 @export var jump_strength = 8
+@export var run_speed_amplifier : float = 1.8
+var speed_increase : float = run_speed_amplifier
 
 # @export_subgroup("Weapons")
 # @export var weapons: Array[Weapon] = []
@@ -130,10 +132,14 @@ func handle_controls(_delta):
 		
 		input_mouse = Vector2.ZERO
 	
+	# Run speed movemen
+	speed_increase = run_speed_amplifier if Input.is_action_pressed("run") else 1.0
+	
+	
 	# Movement
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
-	movement_velocity = Vector3(input.x, 0, input.y).normalized() * movement_speed
+	movement_velocity = Vector3(input.x, 0, input.y).normalized() * (movement_speed * speed_increase)
 	
 	# Rotation
 	
@@ -151,8 +157,6 @@ func handle_controls(_delta):
 	if Input.is_action_just_pressed("jump"):
 		# if jump_single or jump_double:
 			# Audio.play("sounds/jump_a.ogg, sounds/jump_b.ogg, sounds/jump_c.ogg")
-			
-		
 		if jump_double:
 			
 			gravity = -jump_strength

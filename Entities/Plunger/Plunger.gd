@@ -26,6 +26,5 @@ func _on_area_3d_body_entered(body):
 	emit_signal("cow_hit", body)
 
 func _on_area_3d_area_entered(area):
-	if not velocity == Vector3.ZERO:
-		if area.get_parent().is_in_group("cows"):
-			emit_signal("cow_hit", area.get_parent())
+	if area.get_parent().is_in_group("cows"):
+		emit_signal("cow_hit", area.get_parent())
