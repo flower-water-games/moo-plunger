@@ -22,6 +22,13 @@ var mole_state : State = State.PICKING
 var shrink_mole_hill : bool = false
 var air_inflation_speed : float = 0.1
 
+@onready var audio_player : AudioStreamPlayer3D = $GGJ_Mole_Animated3/AudioStreamPlayer
+
+var sound_underground = load("res://Assets/audio/sfx_mole_underground.wav")
+var sound_appear = load("res://Assets/audio/sfx_mole_rise_out_of_ground.wav")
+var sound_attack = load("res://Assets/audio/sfx_mole_inflate.wav")
+var sound_leaves = load("res://Assets/audio/sfx_mole_goes_into_ground.wav")
+
 func _ready():
 	print("Mole Spawned!")
 	call_deferred("_pick_a_cow")
@@ -65,6 +72,10 @@ func _pick_a_cow():
 		# Flip around 180 because the Mole is facing backwards
 		rotation.y += deg_to_rad(180) 
 		
+		# Start digging
+		audio_player.stream = sound_underground
+		audio_player.play()
+		
 	else:
 		# Search for another cow after a X second delay
 		get_tree().create_timer(2.0).timeout.connect(_pick_a_cow)
@@ -74,6 +85,8 @@ func _cow_has_inflated():
 	get_tree().create_timer(5.0).timeout.connect(_destroy_mole)
 	my_cow == null
 	animator.play("Back_underground")
+	audio_player.stream = sound_leaves
+	audio_player.play()
 
 func _destroy_mole():
 	queue_free()
@@ -91,20 +104,22 @@ func _process(delta):
 		
 	match mole_state:
 		State.PICKING:
-			#print("Picking a cow")
 			pass
 		State.SEEKING_UNDERGROUND:
-			#print("Seeking underground")
 			pass
 		State.INFLATING:
 			if not pop_out_state:
 				animator.play("Pop_out_Ground")
+				audio_player.stream = sound_appear
+				audio_player.play()
 				pop_out_state = true
 
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"Pop_out_Ground":
 			animator.play("banging_pump_loop")
+			audio_player.stream = sound_attack
+			audio_player.play()
 		"Back_underground":
 			shrink_mole_hill = true
 
@@ -146,3 +161,9 @@ func _physics_process(delta):
 	if shrink_mole_hill:
 		if mole_armature.scale.y > 0.1:
 			mole_armature.scale *= 0.8
+
+
+func _on_audio_stream_player_finished():
+	if mole_state == State.SEEKING_UNDERGROUND:
+		audio_player.stream = sound_underground
+		audio_player.play()

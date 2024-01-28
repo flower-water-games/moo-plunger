@@ -1,48 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs8i3pek0clrx"]
+[gd_scene load_steps=5 format=3 uid="uid://bs8i3pek0clrx"]
 
 [ext_resource type="Script" path="res://Entities/Mole/Mole.gd" id="1_yuc33"]
 [ext_resource type="PackedScene" uid="uid://dxjisngfhv840" path="res://Entities/Mole/ggj_mole_animated_3.tscn" id="2_nd4hs"]
-[ext_resource type="AudioStream" uid="uid://bmsh8kvrbjma2" path="res://Assets/audio/sfx mole rise out of ground.wav" id="3_g6wxs"]
-[ext_resource type="AudioStream" uid="uid://d27mgf747blvv" path="res://Assets/audio/sfx mole chatter 3.wav" id="4_gotdu"]
-
-[sub_resource type="Animation" id="Animation_ka5e2"]
-resource_name = "mole_popout"
-length = 1.6
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.304022,
-"start_offset": 0.134848,
-"stream": ExtResource("3_g6wxs")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/0/use_blend = true
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("4_gotdu")
-}],
-"times": PackedFloat32Array(0.9)
-}
-tracks/1/use_blend = true
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gtug5"]
-_data = {
-"mole_popout": SubResource("Animation_ka5e2")
-}
+[ext_resource type="AudioStream" uid="uid://22pg6tm875f2" path="res://Assets/audio/sfx_mole_underground.wav" id="3_qlcc5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sr54f"]
 size = Vector3(1.8, 1.8, 1.8)
@@ -54,43 +14,12 @@ script = ExtResource("1_yuc33")
 [node name="GGJ_Mole_Animated3" parent="." groups=["moles"] instance=ExtResource("2_nd4hs")]
 transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 2.01783, -0.211627, 2.08165e-12)
 
-[node name="Skeleton3D" parent="GGJ_Mole_Animated3/Armature" index="0"]
-bones/0/position = Vector3(2.38419e-07, 0.0841183, 0)
-bones/0/rotation = Quaternion(-0.000332771, 0.0350215, 0.00949564, 0.999341)
-bones/0/scale = Vector3(1, 1, 1)
-bones/1/position = Vector3(0, 0.672527, 0)
-bones/1/scale = Vector3(0.141415, 0.141415, 0.141415)
-bones/2/position = Vector3(-0.523549, 0.648412, 0.519168)
-bones/2/scale = Vector3(1, 1, 1)
-bones/3/position = Vector3(-0.336911, -0.0663746, 0.0179626)
-bones/3/scale = Vector3(1, 1, 1)
-bones/4/position = Vector3(0.476087, 0.628332, 0.519168)
-bones/4/scale = Vector3(1, 1, 1)
-bones/5/position = Vector3(0.282147, -0.0636364, 0.0179626)
-bones/5/rotation = Quaternion(0.994677, 0.0193928, -0.0292262, -0.0968904)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/position = Vector3(0.000283241, 1.54981, 1.1743e-07)
-bones/6/rotation = Quaternion(0.999849, -3.85703e-18, 5.81699e-26, -0.0173705)
-bones/6/scale = Vector3(1, 1, 1)
-bones/7/position = Vector3(-0.00238486, -0.329395, 1.67638e-08)
-bones/7/rotation = Quaternion(-1.86265e-09, -7.65777e-09, 0.000270192, 1)
-bones/8/position = Vector3(4.07283e-10, -0.044688, -0.0730557)
-bones/8/rotation = Quaternion(1, -1.4552e-11, 7.54973e-08, 9.31322e-10)
-bones/9/position = Vector3(2.38419e-07, -0.0431249, 2.35794)
-bones/9/scale = Vector3(1, 1, 1)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/position = Vector3(-0.0477594, 0.307468, 0.0215676)
-
 [node name="AnimationPlayer" parent="GGJ_Mole_Animated3" index="1"]
 autoplay = "Underground_movement"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GGJ_Mole_Animated3"]
-volume_db = -18.611
-
-[node name="Audio" type="AnimationPlayer" parent="GGJ_Mole_Animated3"]
-libraries = {
-"": SubResource("AnimationLibrary_gtug5")
-}
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="GGJ_Mole_Animated3"]
+stream = ExtResource("3_qlcc5")
+max_distance = 40.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["moles"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.674597, 0)
