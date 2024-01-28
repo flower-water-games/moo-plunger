@@ -5,9 +5,6 @@
 
 [node name="Level3D" instance=ExtResource("1_6twev")]
 
-[node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
-player_camera = NodePath("../Head/Camera3D")
-
 [node name="MoleFactory" parent="." index="6" node_paths=PackedStringArray("spawn_area", "cow_group")]
 spawn_area = NodePath("../FarmManager/Area3D/CollisionShape3D")
 cow_group = NodePath("../COWS")

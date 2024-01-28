@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Player/FirstPersonPlayer.gd" id="1_uqnlm"]
 [ext_resource type="PackedScene" uid="uid://b0bl8eptpj22j" path="res://UserInterface/AimingCursor/AimingCircle.tscn" id="2_2jy8v"]
 [ext_resource type="PackedScene" uid="uid://d0e5eq6gs1qbn" path="res://Entities/PlungerGun/PlungerGun.tscn" id="4_obcav"]
-[ext_resource type="AudioStream" uid="uid://bubr8utiqagym" path="res://Assets/audio/Jump_Cowboy.wav" id="5_lepbt"]
-[ext_resource type="AudioStream" uid="uid://cpu72dv6tefd4" path="res://Assets/audio/Foosep_1.wav" id="6_ugfw8"]
+[ext_resource type="AudioStream" uid="uid://dyyyut0j36d8j" path="res://Assets/audio/Jump_Cowboy.wav" id="5_lepbt"]
+[ext_resource type="AudioStream" uid="uid://d350afrggelo0" path="res://Assets/audio/Foosep_1.wav" id="6_ugfw8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri0xv"]
 font_size = 48
