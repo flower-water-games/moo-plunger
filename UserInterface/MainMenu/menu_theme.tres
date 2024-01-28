@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://hhr48gturshh"]
+
+[ext_resource type="FontFile" uid="uid://bs350y6xhwxxw" path="res://Assets/paulb/ts_ui/Sheriff_Bounce.otf" id="1_ngbd4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bivkv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0g46b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bbaaj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w02mx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8nhud"]
+
+[resource]
+default_font = ExtResource("1_ngbd4")
+Button/colors/font_color = Color(0.411765, 0.239216, 0.572549, 1)
+Button/colors/font_focus_color = Color(0.682353, 0.568627, 0.85098, 1)
+Button/colors/font_hover_color = Color(0.7076, 0.5655, 0.87, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 10
+Button/fonts/font = ExtResource("1_ngbd4")
+Button/styles/disabled = SubResource("StyleBoxEmpty_bivkv")
+Button/styles/focus = SubResource("StyleBoxEmpty_0g46b")
+Button/styles/hover = SubResource("StyleBoxEmpty_bbaaj")
+Button/styles/normal = SubResource("StyleBoxEmpty_w02mx")
+Button/styles/pressed = SubResource("StyleBoxEmpty_8nhud")

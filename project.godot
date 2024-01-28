@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Ggj 24"
-run/main_scene="res://UserInterface/MainMenu/MainMenu.tscn"
+config/name="Cattle Quest"
+config/version="1.0.0"
+run/main_scene="res://UserInterface/MainMenu/TitleScreen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/bg_color=Color(0.266667, 0.0431373, 0.862745, 1)
+boot_splash/bg_color=Color(0.882599, 0.951232, 0.992863, 1)
+boot_splash/image="res://Assets/paulb/PNG_300ppi/COLOR.png"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,6 +26,8 @@ Main="*res://AutoloadScripts/Main.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
