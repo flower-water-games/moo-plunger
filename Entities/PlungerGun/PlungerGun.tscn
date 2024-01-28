@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://d0e5eq6gs1qbn"]
 
 [ext_resource type="Script" path="res://Entities/PlungerGun/PlungerGun.gd" id="1_7mqab"]
-[ext_resource type="PackedScene" uid="uid://brwhh72eejt10" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
-[ext_resource type="AudioStream" uid="uid://c12itdk63uuxa" path="res://Assets/audio/Plunger_Hit.wav" id="3_w5idg"]
-[ext_resource type="AudioStream" uid="uid://d3g08xjrk0qn6" path="res://Assets/audio/Plunger_Hit_Wet.wav" id="4_mtuyf"]
+[ext_resource type="PackedScene" uid="uid://ift7gm4lg7vu" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
+[ext_resource type="AudioStream" uid="uid://dikk20i2y2xdo" path="res://Assets/audio/Plunger_Hit.wav" id="3_w5idg"]
+[ext_resource type="AudioStream" uid="uid://erhn3x18c08u" path="res://Assets/audio/Plunger_Hit_Wet.wav" id="4_mtuyf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxkoh"]
 

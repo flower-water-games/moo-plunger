@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwy4blafe32kc"]
+[gd_scene load_steps=10 format=3 uid="uid://dwy4blafe32kc"]
 
 [ext_resource type="Script" path="res://Entities/Shop/Upgrades/jump_tier_2.gd" id="1_7ergn"]
-[ext_resource type="PackedScene" uid="uid://gia4mbp3rok7" path="res://Assets/Bokhum/shop/Train_Middle_Carts.glb" id="2_l18tr"]
+[ext_resource type="PackedScene" uid="uid://bqpnutb1jgp2j" path="res://Assets/Bokhum/shop/Train_Middle_Carts.glb" id="2_l18tr"]
+[ext_resource type="PackedScene" uid="uid://blfps807ujb8r" path="res://Assets/paulb/3D models/AddCowObject/addcowobjectoid.glb" id="3_vgs8o"]
+[ext_resource type="PackedScene" uid="uid://cc8cxqigafxo5" path="res://Assets/paulb/3D models/MilkGlass/MilkGlass.glb" id="4_1hcsf"]
+[ext_resource type="PackedScene" uid="uid://28abru5jvi8g" path="res://Assets/paulb/3D models/Spring_Shoe/shoeProp.glb" id="5_16psd"]
+[ext_resource type="PackedScene" uid="uid://d28dpiooegyst" path="res://Assets/paulb/3D models/RemoveMoleObject/RemoveMoleObject.glb" id="6_shl2s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ypif"]
 
@@ -29,6 +33,7 @@ bones/4/rotation = Quaternion(0.5, -0.5, 0.5, -0.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0803411, 1.38793, -0.174354)
+visible = false
 mesh = SubResource("SphereMesh_qv0a5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" groups=["buyable"]]
@@ -39,5 +44,17 @@ shape = SubResource("SphereShape3D_cvsy6")
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0427666, 0.226501, 0.955832)
 text = "this is a buyable object"
+
+[node name="addcowobjectoid" parent="." instance=ExtResource("3_vgs8o")]
+transform = Transform3D(0.231867, 0, -0.972748, 0, 1, 0, 0.972748, 0, 0.231867, 0.664239, 1.35831, 0)
+
+[node name="MilkGlass" parent="." instance=ExtResource("4_1hcsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.269767, 0.787485, -2.08979)
+
+[node name="shoeProp" parent="." instance=ExtResource("5_16psd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.330453, 0.784637, -1.15094)
+
+[node name="RemoveMoleObject" parent="." instance=ExtResource("6_shl2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45634, 0)
 
 [editable path="Train_Middle_Carts"]
