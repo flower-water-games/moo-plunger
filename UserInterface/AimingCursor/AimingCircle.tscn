@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0bl8eptpj22j"]
+[gd_scene load_steps=2 format=3 uid="uid://b0bl8eptpj22j"]
 
-[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_p2abm"]
-[ext_resource type="Texture2D" uid="uid://bndkvopms008a" path="res://UserInterface/AimingCursor/AimingCircle64x64.png" id="2_paig0"]
+[ext_resource type="Texture2D" uid="uid://ibyysfwcshar" path="res://UserInterface/AimingCursor/AimingCircle64x64.png" id="2_paig0"]
 
 [node name="AimingCircle" type="Control"]
 layout_mode = 3
@@ -10,10 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("1_p2abm")]
-set_node = NodePath("../CenterContainer")
-reset_size = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0

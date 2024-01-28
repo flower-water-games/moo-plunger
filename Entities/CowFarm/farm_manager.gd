@@ -11,8 +11,10 @@ class_name FarmManager
 
 var cost_per_cow = 10.0
 var player_UI : Label
+var cow_lives = 5
 
 func _ready():
+	Main.cow_dead.connect(cow_dead)
 	var level = get_tree().current_scene
 	for child in level.get_children():
 		if child is Player:
@@ -33,19 +35,31 @@ func add_currency(amount):
 
 func add_cow_bonus():
 	player_currency += cows_inside * cost_per_cow
-	player_UI.text = "you got a bonus!\n" + make_status_string()
+	player_UI.text =  make_status_string()
 
 func _on_area_3d_body_entered(body:Node3D):
 	if body.is_in_group("cows"):
 		cows_inside += 1
-		player_UI.text = "cow in!\n" + make_status_string()
+		# player_UI.text = "cow in!\n" + make_status_string()
 		print('gained a cow')
 
 func _on_area_3d_body_exited(body:Node3D):
 	if body.is_in_group("cows"):
 		cows_inside -= 1
 		print('lost a cow')
-		player_UI.text = "oh no cow loose!\n" + make_status_string()
+		player_UI.text =  make_status_string()
+
+func cow_dead():
+	player_UI.text = make_status_string()
+	cow_lives -= 1
+	player_UI.text = "one cow is gone!\n" + make_status_string()
+	if cow_lives <= 0:
+		Main.game_over()
+
+
 
 func make_status_string():
-	return "you have " + str(cows_inside) + " cows" + "\n" + "you have " + str(player_currency) + " moles"
+	return str(cow_lives) + " lives left\n" + str(player_currency) +" moles" 
+
+func update_ui():
+	player_UI.text = make_status_string()

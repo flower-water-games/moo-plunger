@@ -89,9 +89,9 @@ func _physics_process(delta):
 	
 	#Movement sound
 	
-	if is_on_floor():
-		if abs(velocity.x) > 1 or abs(velocity.z) > 1:
-			$Audio_Walk.play()
+	# if is_on_floor():
+	# 	if abs(velocity.x) > 1 or abs(velocity.z) > 1:
+			# $Audio_Walk.play()
 	
 	# Landing after jump or falling
 	
