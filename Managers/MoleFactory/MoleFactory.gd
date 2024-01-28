@@ -23,7 +23,7 @@ func _delay_between_spawn():
 	if mole_count > 15:
 		mole_time_to_spawn = 2.0
 	if mole_count > 40:
-		mole_time_to_spawn = 1.5
+		mole_time_to_spawn = 1.8
 	get_tree().create_timer(randf_range(mole_time_to_spawn-1.0, mole_time_to_spawn+1.0)).timeout.connect(_spawn_mole)
 	
 func _spawn_mole():
