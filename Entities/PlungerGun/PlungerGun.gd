@@ -10,7 +10,8 @@ var plunger_scene = preload("res://Entities/Plunger/Plunger.tscn")
 @export var max_distance_from_player : int = 30
 
 
-@onready var plunger_end : Node3D = $PlungerEnd
+@onready var plunger_end : Node3D = $GGJ_PlungerGunwithHands_Model/PopGunBase/PlungerEnd
+
 
 var farm_manager : FarmManager
 var shop : Shop
@@ -97,6 +98,7 @@ func _physics_process(delta):
 	match plunger_state:
 		State.DEFAULT:
 			world_plunger.global_transform = plunger_end.global_transform
+			world_plunger.rotation.x += deg_to_rad(10.0)
 			world_plunger.scale = Vector3(1, 1, 1) # Reset scale
 			world_plunger.speed = 0
 			world_plunger._apply_force(Vector3.ZERO, 0)
@@ -130,7 +132,7 @@ func _physics_process(delta):
 			# Flip plunger around
 			world_plunger.scale = Vector3(1, 1, -1)
 			# Return it to the player
-			if world_plunger.global_position.distance_to(plunger_end.global_position) < 1:
+			if world_plunger.global_position.distance_to(plunger_end.global_position) < 2.0:
 				plunger_state = State.DEFAULT
 
 func _handle_cow_retrieval():

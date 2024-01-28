@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://d0e5eq6gs1qbn"]
 
 [ext_resource type="Script" path="res://Entities/PlungerGun/PlungerGun.gd" id="1_7mqab"]
-[ext_resource type="PackedScene" uid="uid://ift7gm4lg7vu" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
-[ext_resource type="AudioStream" uid="uid://dikk20i2y2xdo" path="res://Assets/audio/Plunger_Hit.wav" id="3_w5idg"]
-[ext_resource type="AudioStream" uid="uid://erhn3x18c08u" path="res://Assets/audio/Plunger_Hit_Wet.wav" id="4_mtuyf"]
+[ext_resource type="PackedScene" uid="uid://brwhh72eejt10" path="res://Assets/Bokhum/plunger_base/GGJ_PlungerGunwithHands_Model.glb" id="2_kc3w1"]
+[ext_resource type="AudioStream" uid="uid://c12itdk63uuxa" path="res://Assets/audio/Plunger_Hit.wav" id="3_w5idg"]
+[ext_resource type="AudioStream" uid="uid://d3g08xjrk0qn6" path="res://Assets/audio/Plunger_Hit_Wet.wav" id="4_mtuyf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxkoh"]
 
@@ -42,9 +42,6 @@ _data = {
 [node name="PlayerWeapon" type="Node3D"]
 script = ExtResource("1_7mqab")
 
-[node name="PlungerEnd" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0833481, -0.858994)
-
 [node name="PlungerGun" type="CSGBox3D" parent="."]
 visible = false
 layers = 2
@@ -56,6 +53,9 @@ transform = Transform3D(8.12915e-07, -0.0388228, 0.144889, -5.06035e-06, 0.14488
 
 [node name="PopGunBase" parent="GGJ_PlungerGunwithHands_Model" index="0"]
 transform = Transform3D(0.175353, 0.858619, 0.0332118, -0.797908, 0.176177, -0.310748, -0.310873, 0.032132, 0.816321, 0.398128, -0.845911, 6.25849e-07)
+
+[node name="PlungerEnd" type="Node3D" parent="GGJ_PlungerGunwithHands_Model/PopGunBase" index="0"]
+transform = Transform3D(-0.818151, -7.42696, -1.51978, -0.126139, 1.54653, -7.4429, 7.58184, -0.77571, -0.287826, 0.762505, 6.29852, 0.131954)
 
 [node name="Plane_001" parent="GGJ_PlungerGunwithHands_Model" index="1"]
 transform = Transform3D(-0.041282, -0.0731921, -0.606931, -0.00409085, 0.546634, -0.0813666, 0.600944, -0.00130669, -0.0422472, 1.00652, 0.567933, 0.750594)

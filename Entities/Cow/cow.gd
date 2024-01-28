@@ -71,7 +71,8 @@ func _physics_process(delta):
 	# Object collided
 	if collision_info:
 		# Bounce off Cows
-		if collision_info.get_collider() == Cow:
+		var hit_object = collision_info.get_collider()
+		if hit_object is Cow or hit_object is Player:
 			velocity = velocity.bounce(collision_info.get_normal()) * 0.5
 	# Snapping
 	move_and_slide()
