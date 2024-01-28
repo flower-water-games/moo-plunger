@@ -5,17 +5,15 @@ var name_and_titles : Array[Array] = [
 	["freshwater games", "frogGODs"],
 	["Lyndon", "Developer, Artist"], 
 	["AlexRC", "Developer, PM"], 
-	["many cows", "moo.moo()"],
 	["CM", "Developer"],
 	["David Gibson McLean","Composer"],
+	["Paul Barbato", "Design Generalist"],
 	["Tyler Gonelli", "Sound design"],
-	["Lori Kinney", "Animation and Audio"],
+	["Lori Kinney", "Animation and Audio Dev"],
 	["cows", "moooo"],
 	["Jesse Sheehan", "QA/Playtesting, Copywriting"],
 	["Carlos Ochoa", "Concept Artist, 3D Artist, Illustrator"],
 	["Alexander Harder", "Sound Design"],
-	["some bovines", "moo"],
-	["Paul Barbato", "Design Generalist"],
 	]
 
 
