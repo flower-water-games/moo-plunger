@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ciyos6eg464us"]
+[gd_scene load_steps=9 format=3 uid="uid://ciyos6eg464us"]
 
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="1_q0q8w"]
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_ywf2j"]
@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cctiwq6gbh5h5" path="res://Assets/paulb/ts_ui/logo.png" id="4_5pyik"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="4_16vr2"]
 [ext_resource type="Theme" path="res://UserInterface/MainMenu/menu_theme.tres" id="5_thfi0"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w7er4"]
-texture = ExtResource("3_14gg5")
 
 [sub_resource type="LabelSettings" id="LabelSettings_x21xl"]
 font_size = 24
@@ -30,7 +27,10 @@ set_node = NodePath("../PanelContainer")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_w7er4")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("3_14gg5")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
