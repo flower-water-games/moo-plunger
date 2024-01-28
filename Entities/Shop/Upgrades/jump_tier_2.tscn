@@ -8,4 +8,16 @@ item_name = "Jump Tier 2"
 [node name="Label3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00434494, 1.15337)
 
+[node name="addcowobjectoid" parent="." index="3"]
+visible = false
+
+[node name="MilkGlass" parent="." index="4"]
+visible = false
+
+[node name="shoeProp" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161635, 0.707505, -1.15094)
+
+[node name="RemoveMoleObject" parent="." index="6"]
+visible = false
+
 [editable path="Train_Middle_Carts"]

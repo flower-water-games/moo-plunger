@@ -6,4 +6,16 @@
 item_name = "Ted Lasso"
 cost = 10
 
+[node name="addcowobjectoid" parent="." index="3"]
+transform = Transform3D(0.231867, 0, -0.972748, 0, 1, 0, 0.972748, 0, 0.231867, 0.0619241, 1.35831, 0)
+
+[node name="MilkGlass" parent="." index="4"]
+visible = false
+
+[node name="shoeProp" parent="." index="5"]
+visible = false
+
+[node name="RemoveMoleObject" parent="." index="6"]
+visible = false
+
 [editable path="Train_Middle_Carts"]

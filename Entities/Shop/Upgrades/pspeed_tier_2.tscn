@@ -6,4 +6,16 @@
 item_name = "Fast Plunger"
 cost = 10
 
+[node name="addcowobjectoid" parent="." index="3"]
+visible = false
+
+[node name="MilkGlass" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0560467, 0.787485, -2.08979)
+
+[node name="shoeProp" parent="." index="5"]
+visible = false
+
+[node name="RemoveMoleObject" parent="." index="6"]
+visible = false
+
 [editable path="Train_Middle_Carts"]
