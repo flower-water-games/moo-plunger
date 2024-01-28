@@ -10,11 +10,10 @@ func _ready():
 func _go_to_level():
 	print("go to: " + level_path)
 	if web_build:
-		match OS.get_name():
-			"Web":
-				get_tree().change_scene_to_file("res://Levels/web_lit_level.tscn")
-				print("Web")
-	else:
-		get_tree().change_scene_to_file(level_path)
-		print("Not Web")
+		if OS.get_name() == "Web":
+			get_tree().change_scene_to_file("res://Levels/web_lit_level.tscn")
+			print("Web")
+			return
+	get_tree().change_scene_to_file(level_path)
+	print("Not Web")
 
