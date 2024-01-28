@@ -14,23 +14,6 @@ script = ExtResource("1_yuc33")
 [node name="GGJ_Mole_Animated3" parent="." groups=["moles"] instance=ExtResource("2_nd4hs")]
 transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 2.01783, -0.211627, 2.08165e-12)
 
-[node name="Skeleton3D" parent="GGJ_Mole_Animated3/Armature" index="0"]
-bones/0/rotation = Quaternion(-0.000332771, 0.0350215, 0.00949564, 0.999341)
-bones/1/position = Vector3(0, 0.672527, 0)
-bones/1/scale = Vector3(0.141415, 0.141415, 0.141415)
-bones/2/rotation = Quaternion(0.819243, -0.282565, 0.123507, 0.483471)
-bones/3/rotation = Quaternion(0.994578, -0.0250509, 0.0286942, -0.0967709)
-bones/4/rotation = Quaternion(0.819243, 0.282565, -0.123507, 0.483471)
-bones/5/rotation = Quaternion(0.994677, 0.0193928, -0.0292262, -0.0968904)
-bones/6/position = Vector3(0.000283241, 1.54981, 1.1743e-07)
-bones/6/rotation = Quaternion(0.999849, -3.85703e-18, 5.81699e-26, -0.0173705)
-bones/7/position = Vector3(-0.00238486, -0.329395, 1.67638e-08)
-bones/7/rotation = Quaternion(-1.86265e-09, -7.65777e-09, 0.000270192, 1)
-bones/8/position = Vector3(4.07283e-10, -0.044688, -0.0730557)
-bones/8/rotation = Quaternion(1, -1.4552e-11, 7.54973e-08, 9.31322e-10)
-bones/11/position = Vector3(-0.0477594, 0.307468, 0.0215676)
-bones/11/scale = Vector3(0.0741823, 0.0741823, 0.0741823)
-
 [node name="AnimationPlayer" parent="GGJ_Mole_Animated3" index="1"]
 autoplay = "Underground_movement"
 
