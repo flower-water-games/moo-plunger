@@ -1,31 +1,31 @@
 [gd_scene load_steps=71 format=3 uid="uid://dd8wub23xyevr"]
 
 [ext_resource type="PackedScene" uid="uid://horxawj2lkdq" path="res://Levels/old_scenes/Old-Level3D.tscn" id="1_eilup"]
-[ext_resource type="Texture2D" uid="uid://cjt0dsl54d13m" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
-[ext_resource type="Texture2D" uid="uid://b7c6504ehgsk" path="res://Assets/paulb/3D models/Moon/Moon_Model_GGJ_Moon_Diffuse.png" id="3_11p3y"]
-[ext_resource type="Texture2D" uid="uid://cfbqi1u3l7lmo" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
-[ext_resource type="Texture2D" uid="uid://dw8gyh121wf2s" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Normal.png" id="5_mvvo3"]
-[ext_resource type="Texture2D" uid="uid://2qkn3cnp70l8" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Roughness.png" id="6_kbxo1"]
-[ext_resource type="PackedScene" uid="uid://c2uxwk62u4qr" path="res://Assets/paulb/3D models/frog.glb" id="8_bnj41"]
-[ext_resource type="PackedScene" uid="uid://euif4brr8yaj" path="res://Assets/paulb/3D models/mug.glb" id="11_m4a1i"]
-[ext_resource type="PackedScene" uid="uid://br2prg3rt86gm" path="res://Assets/paulb/3D models/moleMound.glb" id="12_y0p5r"]
-[ext_resource type="Texture2D" uid="uid://bifn2uqp46eeg" path="res://Assets/paulb/3D models/moleMound_moleMound_baseColor.png" id="13_3cyfj"]
-[ext_resource type="PackedScene" uid="uid://bqs02i3a8awi2" path="res://Assets/paulb/3D models/curvedTrack.glb" id="13_e3gl6"]
-[ext_resource type="PackedScene" uid="uid://dlhxtyo0eqfql" path="res://Assets/paulb/white_track.glb" id="13_jslqa"]
-[ext_resource type="PackedScene" uid="uid://btcrejhtncyri" path="res://Assets/paulb/black_track.glb" id="14_lkjvl"]
-[ext_resource type="Texture2D" uid="uid://dwmvu7g8xrqax" path="res://Assets/paulb/black_track_straight_wooden_rail_MAT_baseColor.png" id="17_7njq1"]
-[ext_resource type="PackedScene" uid="uid://cc8cxqigafxo5" path="res://Assets/paulb/3D models/MilkGlass/MilkGlass.glb" id="17_hx7mf"]
-[ext_resource type="PackedScene" uid="uid://28abru5jvi8g" path="res://Assets/paulb/3D models/Spring_Shoe/shoeProp.glb" id="18_0u8d7"]
-[ext_resource type="Texture2D" uid="uid://l3neabsd1u3" path="res://Assets/paulb/3D models/Woodblock/Woodblock_reexport_Woodblock_Diffuse.png" id="19_ip01x"]
-[ext_resource type="PackedScene" uid="uid://c5yn7lhqeyv7l" path="res://Assets/paulb/3D models/Woodblock/Woodblock_reexport.glb" id="19_opf1b"]
-[ext_resource type="Texture2D" uid="uid://b5qsdoeoeafhc" path="res://Assets/paulb/3D models/Woodblock/Woodblock_reexport_Woodblock_Diffuse_2.png" id="20_qvxb5"]
-[ext_resource type="PackedScene" uid="uid://dj115thpyarm3" path="res://Assets/paulb/tv.glb" id="21_wl08p"]
-[ext_resource type="Texture2D" uid="uid://bghfwen6lmsj7" path="res://Assets/paulb/3D models/Woodblock/Woodblock_reexport_Woodblock_normal.png" id="21_x5bfk"]
-[ext_resource type="PackedScene" uid="uid://cpnbk0lepsw7r" path="res://Assets/paulb/3D models/Train_Carts/Back Train Cart/BackTrainExported.glb" id="22_mkto3"]
-[ext_resource type="PackedScene" uid="uid://7owesy35ixnx" path="res://Assets/paulb/3D models/Train_Carts/Front Train Cart/FrontTrainExported.glb" id="23_7puua"]
-[ext_resource type="PackedScene" uid="uid://b4cxc0m8wc1vo" path="res://Assets/paulb/3D models/Train_Carts/Middle Train Cart/MiddleTrainExported.glb" id="24_s1py7"]
-[ext_resource type="PackedScene" uid="uid://dr21qr81qejt0" path="res://Assets/paulb/3D models/rock.glb" id="25_w2igy"]
-[ext_resource type="AudioStream" uid="uid://hb8cymq8tu47" path="res://Assets/audio/Workin' Man (Full Version).wav" id="26_5cx6w"]
+[ext_resource type="Texture2D" uid="uid://b6jn51nyi8o6v" path="res://Assets/paulb/DBG.png" id="2_vjih6"]
+[ext_resource type="Texture2D" uid="uid://2fgdqgh5fjm" path="res://Assets/paulb/3D models/Moon/Moon_Model_GGJ_Moon_Diffuse.png" id="3_11p3y"]
+[ext_resource type="Texture2D" uid="uid://cutnc0i7w7o6n" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_emission.png" id="4_nkycs"]
+[ext_resource type="Texture2D" uid="uid://btynh58enfjc1" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Normal.png" id="5_mvvo3"]
+[ext_resource type="Texture2D" uid="uid://c17ov2b2loibo" path="res://Assets/paulb/3D models/Moon/GGJ_Moon_Roughness.png" id="6_kbxo1"]
+[ext_resource type="PackedScene" uid="uid://uk7qpabmyxbk" path="res://Assets/paulb/3D models/frog.glb" id="8_bnj41"]
+[ext_resource type="PackedScene" uid="uid://b61qwp16rcuxu" path="res://Assets/paulb/3D models/mug.glb" id="11_m4a1i"]
+[ext_resource type="PackedScene" uid="uid://bmngejncrduu6" path="res://Assets/paulb/3D models/moleMound.glb" id="12_y0p5r"]
+[ext_resource type="Texture2D" uid="uid://bx5v4pxfs6d7r" path="res://Assets/paulb/3D models/moleMound_moleMound_baseColor.png" id="13_3cyfj"]
+[ext_resource type="PackedScene" uid="uid://l8cdxd1p021i" path="res://Assets/paulb/3D models/curvedTrack.glb" id="13_e3gl6"]
+[ext_resource type="PackedScene" uid="uid://bpembo3khoxih" path="res://Assets/paulb/white_track.glb" id="13_jslqa"]
+[ext_resource type="PackedScene" uid="uid://brdp06pq27fuc" path="res://Assets/paulb/black_track.glb" id="14_lkjvl"]
+[ext_resource type="Texture2D" uid="uid://cvufdk8ae43ls" path="res://Assets/paulb/black_track_straight_wooden_rail_MAT_baseColor.png" id="17_7njq1"]
+[ext_resource type="PackedScene" uid="uid://75fbwu4ub8kx" path="res://Assets/paulb/3D models/MilkGlass/MilkGlass.glb" id="17_hx7mf"]
+[ext_resource type="PackedScene" uid="uid://8rashl88ylat" path="res://Assets/paulb/3D models/Spring_Shoe/shoeProp.glb" id="18_0u8d7"]
+[ext_resource type="Texture2D" uid="uid://dnd0unppbej8c" path="res://Assets/paulb/3D models/Woodblock/Woodblock_reexport_Woodblock_Diffuse.png" id="19_ip01x"]
+[ext_resource type="PackedScene" uid="uid://8esp0g0ii3tu" path="res://Assets/paulb/3D models/Woodblock/Woodblock_reexport.glb" id="19_opf1b"]
+[ext_resource type="Texture2D" uid="uid://bend468akpys2" path="res://Assets/paulb/3D models/Woodblock/Woodblock_reexport_Woodblock_Diffuse_2.png" id="20_qvxb5"]
+[ext_resource type="PackedScene" uid="uid://dpayaupf5w3y3" path="res://Assets/paulb/tv.glb" id="21_wl08p"]
+[ext_resource type="Texture2D" uid="uid://k8nc7tmu1l88" path="res://Assets/paulb/3D models/Woodblock/Woodblock_reexport_Woodblock_normal.png" id="21_x5bfk"]
+[ext_resource type="PackedScene" uid="uid://2rcjwuf1eq3o" path="res://Assets/paulb/3D models/Train_Carts/Back Train Cart/BackTrainExported.glb" id="22_mkto3"]
+[ext_resource type="PackedScene" uid="uid://csjdjyp0orur0" path="res://Assets/paulb/3D models/Train_Carts/Front Train Cart/FrontTrainExported.glb" id="23_7puua"]
+[ext_resource type="PackedScene" uid="uid://c7myfpf14ue7s" path="res://Assets/paulb/3D models/Train_Carts/Middle Train Cart/MiddleTrainExported.glb" id="24_s1py7"]
+[ext_resource type="PackedScene" uid="uid://byq58a1eukoqc" path="res://Assets/paulb/3D models/rock.glb" id="25_w2igy"]
+[ext_resource type="AudioStream" uid="uid://qmdg83qkb3t7" path="res://Assets/audio/Workin' Man (Full Version).wav" id="26_5cx6w"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p5q3h"]
 panorama = ExtResource("2_vjih6")
@@ -366,9 +366,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xt5b0")
 
 [node name="Camera3D" parent="PLAYER/Head" index="0"]
 environment = SubResource("Environment_6axua")
-
-[node name="SubViewportContainer" parent="PLAYER" index="3" node_paths=PackedStringArray("player_camera")]
-player_camera = NodePath("../Head/Camera3D")
 
 [node name="FENCE1" parent="FENCE" index="0"]
 transform = Transform3D(10.995, 0, 0, 0, 1.8, 0, 0, 0, 0.25, -12.3625, 4.00072, 3.276)
@@ -1092,15 +1089,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8433, -0.0311356, -0.0627
 [node name="rock" parent="." index="15" instance=ExtResource("25_w2igy")]
 transform = Transform3D(110.989, 0, -205.241, 0, 252.78, 0, 455.431, 0, 50.0171, 9.23241, -13.3655, 4.26546)
 
-[node name="Cylinder_002" parent="rock" index="0"]
-lod_bias = 49.484
-gi_mode = 2
+[node name="StaticBody3D" type="StaticBody3D" parent="rock" index="0"]
+transform = Transform3D(0.0617474, 0, 0, 0, 0.0617474, 0, 7.45058e-09, 0, 0.0617474, 0.0301257, -0.103613, -0.00825427)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="rock/Cylinder_002" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rock/Cylinder_002/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rock/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 1.1683e-08, 0, 1, 0, -7.00317e-08, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_qkhd2")
+
+[node name="Cylinder_002" parent="rock" index="1"]
+lod_bias = 49.484
+gi_mode = 2
 
 [node name="Music_Vocal" parent="." index="16"]
 stream = ExtResource("26_5cx6w")

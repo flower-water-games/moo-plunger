@@ -12,16 +12,25 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var cow_group : Node3D
 var my_cow = null
 
+@onready var mole_armature : Node3D = $GGJ_Mole_Animated3/Armature
 @onready var animator : AnimationPlayer = $GGJ_Mole_Animated3/AnimationPlayer
 var is_being_retrieved = false
 enum State {PICKING, SEEKING_UNDERGROUND, INFLATING, DYING}
 
 var mole_state : State = State.PICKING
 
+var shrink_mole_hill : bool = false
+
 func _ready():
 	print("Mole Spawned!")
 	call_deferred("_pick_a_cow")
-	animator.connect("animation_finished", _can_be_animated_again)
+	get_tree().create_timer(15.0).timeout.connect(_check_if_stuck)
+	
+func _check_if_stuck():
+	# If it still hasn't reached the cow it probably got stuck somewhere, so lets just kill it
+	if not mole_state == State.INFLATING:
+		shrink_mole_hill = true
+		get_tree().create_timer(5.0).timeout.connect(_destroy_mole)
 
 func _pick_a_cow():
 	mole_state = State.PICKING
@@ -40,23 +49,33 @@ func _pick_a_cow():
 		my_cow.cow_inflated.connect(_cow_has_inflated)
 		mole_state = State.SEEKING_UNDERGROUND
 		
+		# Rotate node A to look at node B with the given up vector
+		look_at(my_cow.global_transform.origin, Vector3(0, 1, 0))
+		# Reset the x, y rotation
+		rotation.x = 0.0
+		rotation.z = 0.0
+		# Flip around 180 because the Mole is facing backwards
+		rotation.y += deg_to_rad(180) 
+		
 	else:
 		# Search for another cow after a X second delay
 		get_tree().create_timer(2.0).timeout.connect(_pick_a_cow)
 
 func _cow_has_inflated():
 	# Destroy mole after 5 seconds
-	get_tree().create_timer(3.0).timeout.connect(_destroy_mole)
+	get_tree().create_timer(5.0).timeout.connect(_destroy_mole)
+	my_cow == null
+	animator.play("Back_underground")
 
 func _destroy_mole():
 	queue_free()
 
 func _inflate_the_cow():
 	if not my_cow == null:
-		my_cow.air_inflation += 1.0
+		my_cow.air_inflation += 0.1
 		mole_state = State.INFLATING
 
-var animated = false
+var pop_out_state = false
 
 func _process(delta):
 	match mole_state:
@@ -65,14 +84,16 @@ func _process(delta):
 		State.SEEKING_UNDERGROUND:
 			print("Seeking underground")
 		State.INFLATING:
-			if not animated:
+			if not pop_out_state:
 				animator.play("Pop_out_Ground")
-				animated = true
-				$GGJ_Mole_Animated3/Audio.play("mole_popout")
+				pop_out_state = true
 
-func _can_be_animated_again():
-	animated = false
-
+func _on_animation_player_animation_finished(anim_name):
+	match anim_name:
+		"Pop_out_Ground":
+			animator.play("banging_pump_loop")
+		"Back_underground":
+			shrink_mole_hill = true
 
 func _physics_process(delta):
 	if is_being_retrieved:
@@ -89,18 +110,26 @@ func _physics_process(delta):
 	if not my_cow == null:
 		# Move towards cow
 		if global_position.distance_to(my_cow.global_position) > 3.0:
-			var direction_to_cow = global_position.direction_to(my_cow.global_position)
-			velocity.x = direction_to_cow.x * 10.0
-			velocity.z = direction_to_cow.z * 10.0
+			if my_cow.is_on_floor():
+				var direction_to_cow = global_position.direction_to(my_cow.global_position)
+				velocity.x = direction_to_cow.x * 10.0
+				velocity.z = direction_to_cow.z * 10.0
+
 		else:
 			# Slow down moles
 			velocity.x *= 0.8
 			velocity.z *= 0.8
 			# Inflate the cow
 			_inflate_the_cow()
-		
+			
+	# Move the mole
 	move_and_slide()
 	
+	# out of bounds
 	if position.y < -40.0:
 		print("Mole out of bounds")
 		queue_free()
+
+	if shrink_mole_hill:
+		if mole_armature.scale.y > 0.1:
+			mole_armature.scale *= 0.8

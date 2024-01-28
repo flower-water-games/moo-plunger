@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Entities/Mole/Mole.gd" id="1_yuc33"]
 [ext_resource type="PackedScene" uid="uid://dxjisngfhv840" path="res://Entities/Mole/ggj_mole_animated_3.tscn" id="2_nd4hs"]
-[ext_resource type="AudioStream" uid="uid://cdef5q2g4hpq7" path="res://Assets/audio/sfx mole rise out of ground.wav" id="3_g6wxs"]
-[ext_resource type="AudioStream" uid="uid://c5bo60ej5uhg5" path="res://Assets/audio/sfx mole chatter 3.wav" id="4_gotdu"]
+[ext_resource type="AudioStream" uid="uid://lulb887du10k" path="res://Assets/audio/sfx mole rise out of ground.wav" id="3_g6wxs"]
+[ext_resource type="AudioStream" uid="uid://4ced28v2c6iy" path="res://Assets/audio/sfx mole chatter 3.wav" id="4_gotdu"]
 
 [sub_resource type="Animation" id="Animation_ka5e2"]
 resource_name = "mole_popout"
@@ -61,10 +61,13 @@ bones/0/scale = Vector3(1, 1, 1)
 bones/1/position = Vector3(0, 0.672527, 0)
 bones/1/scale = Vector3(0.141415, 0.141415, 0.141415)
 bones/2/position = Vector3(-0.523549, 0.648412, 0.519168)
+bones/2/rotation = Quaternion(0.819243, -0.282565, 0.123507, 0.483471)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/position = Vector3(-0.336911, -0.0663746, 0.0179626)
+bones/3/rotation = Quaternion(0.994578, -0.0250509, 0.0286942, -0.0967709)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(0.476087, 0.628332, 0.519168)
+bones/4/rotation = Quaternion(0.819243, 0.282565, -0.123507, 0.483471)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/position = Vector3(0.282147, -0.0636364, 0.0179626)
 bones/5/rotation = Quaternion(0.994677, 0.0193928, -0.0292262, -0.0968904)
@@ -80,6 +83,7 @@ bones/9/position = Vector3(2.38419e-07, -0.0431249, 2.35794)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/position = Vector3(-0.0477594, 0.307468, 0.0215676)
+bones/11/scale = Vector3(0.0741823, 0.0741823, 0.0741823)
 
 [node name="AnimationPlayer" parent="GGJ_Mole_Animated3" index="1"]
 autoplay = "Underground_movement"
@@ -98,5 +102,7 @@ shape = SubResource("BoxShape3D_sr54f")
 
 [node name="CSGCylinder3D" type="CSGSphere3D" parent="." groups=["moles"]]
 visible = false
+
+[connection signal="animation_finished" from="GGJ_Mole_Animated3/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="GGJ_Mole_Animated3"]

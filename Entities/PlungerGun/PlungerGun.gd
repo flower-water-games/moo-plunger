@@ -31,9 +31,13 @@ func _ready():
 	get_tree().get_root().add_child(world_plunger)
 	world_plunger.connect("cow_hit", on_hit)
 
-	farm_manager = get_node("/root/Level3D/FarmManager") as FarmManager
-	shop = get_node("/root/Level3D/Shop") as Shop
-	player_UI = get_node("/root/Level3D/PLAYER/PlayerUI/Label")
+	for child in get_tree().current_scene.get_children():
+		if child is FarmManager:
+			farm_manager = child
+		if child is Shop:
+			shop = child
+		if child is Player:
+			player_UI = child.player_ui_label
 
 func _shoot_plunger():
 	if plunger_state == State.DEFAULT:
