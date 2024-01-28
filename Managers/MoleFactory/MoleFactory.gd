@@ -12,11 +12,18 @@ var mole_time_to_spawn : float = 3.0
 var mole_inflate_speed_increment : float = 0.05
 var mole_inflate_speed : float = 0.1
 
+var mole_count : int = 0
+
 func _ready():
 	# Spawn a random mole after X period of time
 	_delay_between_spawn()
 
 func _delay_between_spawn():
+	mole_count += 1
+	if mole_count > 15:
+		mole_time_to_spawn = 2.0
+	if mole_count > 40:
+		mole_time_to_spawn = 1.5
 	get_tree().create_timer(randf_range(mole_time_to_spawn-1.0, mole_time_to_spawn+1.0)).timeout.connect(_spawn_mole)
 	
 func _spawn_mole():
