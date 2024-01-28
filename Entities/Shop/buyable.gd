@@ -41,6 +41,7 @@ func buy():
 		farm_manager.player_currency -= cost
 		shop.purchase_item(item_name)
 		add_effect()
+		farm_manager.update_ui()
 		# print("Bought " + item_name + " for " + str(cost) + " currency")
 		queue_free()
 	else:

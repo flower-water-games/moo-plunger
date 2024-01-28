@@ -2,14 +2,23 @@ extends Control
 
 var name_and_titles : Array[Array] = [
 	["Name", "Title"],
-	["PaulB", "Frog God"],
-	["CM", "Developer"],
-	["Bokhum","3D Artist"],
-	["Jesse Sheehan", "QA, etc"],
-	["Lori Kinney", "Animation, QA"], 
+	["freshwater games", "frogGODs"],
 	["Lyndon", "Developer, Artist"], 
 	["AlexRC", "Developer, PM"], 
+	["many cows", "moo.moo()"],
+	["CM", "Developer"],
+	["David Gibson McLean","Composer"],
+	["Tyler Gonelli", "Sound design"],
+	["Lori Kinney", "Animation and Audio"],
+	["cows", "moooo"],
+	["Jesse Sheehan", "QA/Playtesting, Copywriting"],
+	["Carlos Ochoa", "Concept Artist, 3D Artist, Illustrator"],
+	["Alexander Harder", "Sound Design"],
+	["some bovines", "moo"],
+	["Paul Barbato", "Design Generalist"],
 	]
+
+
 
 @onready var hsplit_container : HSplitContainer = $MarginContainer/HBoxContainer/HSplitContainer
 @onready var label_name : Label = $MarginContainer/HBoxContainer/HSplitContainer/VBoxContainerName/Name
@@ -22,6 +31,7 @@ var name_and_titles : Array[Array] = [
 var margin_bottom : float = 48
 
 func _ready():
+	name_and_titles.shuffle()
 	for i in range(name_and_titles.size()):
 		if i > 0:
 			var new_name = label_name.duplicate()

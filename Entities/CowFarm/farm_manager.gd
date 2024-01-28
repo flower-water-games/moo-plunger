@@ -60,3 +60,6 @@ func cow_dead():
 
 func make_status_string():
 	return str(cow_lives) + " lives left\n" + str(player_currency) +" moles" 
+
+func update_ui():
+	player_UI.text = make_status_string()
