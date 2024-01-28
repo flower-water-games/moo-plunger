@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @export_subgroup("Properties")
 @export var movement_speed = 5
@@ -34,6 +35,8 @@ var tween:Tween
 
 signal health_updated
 
+@onready var plunger = $Head/Camera3D/PlungerGun
+@onready var player_ui_label : Label = $PlayerUI/Label
 @onready var camera = $Head/Camera3D
 # @onready var raycast = $Head/Camera/RayCast
 # @onready var muzzle = $Head/Camera/SubViewportContainer/SubViewport/CameraItem/Muzzle

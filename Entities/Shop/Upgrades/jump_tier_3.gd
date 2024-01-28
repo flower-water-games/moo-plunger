@@ -4,8 +4,9 @@ var player;
 
 func _ready():
 	super()
-	player = get_node("/root/Level3D/PLAYER")
-	pass
+	for child in get_tree().current_scene.get_children():
+		if child is Player:
+			player = child
 
 func add_effect():
 	player.jump_strength += 8

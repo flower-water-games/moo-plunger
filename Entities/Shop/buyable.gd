@@ -13,11 +13,20 @@ var farm_manager : FarmManager
 var shop : Shop
 
 func _ready():
-	farm_manager = get_node("/root/Level3D/FarmManager") as FarmManager
-	shop = get_node("/root/Level3D/Shop") as Shop
+	var level = get_tree().current_scene
+	
+	for child in level.get_children():
+		if child is FarmManager:
+			farm_manager = child as FarmManager
+			break
+	
+	for child in level.get_children():
+		if child is Shop:
+			shop = child as Shop
+			break
+	
 	shop.register_in_shop(item_name)
 	label.text = item_name + "\n" + str(cost) + " currency"
-	pass
 
 # abstract function for sublcasses to implement
 func add_effect():

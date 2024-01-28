@@ -13,7 +13,11 @@ var cost_per_cow = 10.0
 var player_UI : Label
 
 func _ready():
-	player_UI = get_node("/root/Level3D/PLAYER/PlayerUI/Label")
+	var level = get_tree().current_scene
+	for child in level.get_children():
+		if child is Player:
+			player_UI = child.player_ui_label #get_node("/root/Level3D/PLAYER/PlayerUI/Label")
+			break
 	# in godot 4 set the timer to call add_cow_bonus
 	#bonus_timer.connect("timeout", add_cow_bonus)
 
