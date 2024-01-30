@@ -8,7 +8,7 @@ on:
             - workflows
 #
 jobs:
-    # job id, can be anything
+    #godot default export
     export_game:
       # Always use ubuntu-latest for this action
       runs-on: ubuntu-latest
@@ -19,69 +19,92 @@ jobs:
       steps:
         # Always include the checkout step so that 
         # your project is available for Godot to export
-      - name: checkout
-        uses: actions/checkout@v3.3.0
-    
-      - name: export game
-        id: export
-        # Use latest version (see releases for all versions)
-        uses: firebelley/godot-export@v5.2.1
-        with:
-          # Defining all the required inputs
-          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.3/dev2/Godot_v4.3-dev2_linux.x86_64.zip
-          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.3/dev2/Godot_v4.3-dev2_export_templates.tpz
-          relative_project_path: ./
-          archive_output: true
-      - uses: actions/upload-artifact@v3
-        with:
-            name: godot-export
-            path: ${{ steps.export.outputs.archive_directory }}
-      - name: Download Exports
-        uses: actions/download-artifact@v2
-        with:
+        - name: checkout
+          uses: actions/checkout@v3.3.0
+      
+        - name: export game
+          id: export
+          # Use latest version (see releases for all versions)
+          uses: firebelley/godot-export@v5.2.1
+          with:
+            # Defining all the required inputs
+            godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.3/dev2/Godot_v4.3-dev2_linux.x86_64.zip
+            godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.3/dev2/Godot_v4.3-dev2_export_templates.tpz
+            relative_project_path: ./
+            archive_output: true
+        - uses: actions/upload-artifact@v3
+          with:
+              name: godot-export
+              path: ${{ steps.export.outputs.archive_directory }}
+    # deploy to itch step web / windows / linux
+    deploy_web:
+      needs: export_game
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main' && github.event.inputs.deploy_web == 'true'
+      steps:
+        - uses: actions/download-artifact@v2
+          with:
             name: godot-export
             path: ./
-      - name: Deploy - Itch.io - web
-        if: github.ref == 'refs/heads/main'
-        uses: KikimoraGames/itch-publish@v0.0.3
-        with:
-            butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-            gameData: ./Web.zip
-            itchUsername: carlos-michael
-            itchGameId: moo
-            buildChannel: web
-            buildNumber: ${{ github.run_number }}
-      - name: Deploy - Itch.io - windows
-        if: github.ref == 'refs/heads/main'
-        uses: KikimoraGames/itch-publish@v0.0.3
-        with:
-            butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-            gameData: ./win.zip
-            itchUsername: carlos-michael
-            itchGameId: moo
-            buildChannel: windows
-            buildNumber: windows:${{ github.run_number }}
-      - name: Deploy - Itch.io - linux
-        if: github.ref == 'refs/heads/main'
-        uses: KikimoraGames/itch-publish@v0.0.3
-        with:
-            butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-            gameData: ./LinuxX11.zip
-            itchUsername: carlos-michael
-            itchGameId: ggj24
-            buildChannel: linux
-            buildNumber: linux:${{ github.run_number }}
+        - name: Deploy - Itch.io - web
+          uses: KikimoraGames/itch-publish@v0.0.3
+          with:
+              butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+              gameData: ./Web.zip
+              itchUsername: carlos-michael
+              itchGameId: moo
+              buildChannel: web
+              buildNumber: ${{ github.run_number }}
+    deploy_windows:
+      needs: export_game
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main' && github.event.inputs.deploy_windows == 'true'
+      steps:
+        - uses: actions/download-artifact@v2
+          with:
+            name: godot-export
+            path: ./
+        - name: Deploy - Itch.io - windows
+          uses: KikimoraGames/itch-publish@v0.0.3
+          with:
+              butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+              gameData: ./win.zip
+              itchUsername: carlos-michael
+              itchGameId: moo
+              buildChannel: windows
+              buildNumber: windows:${{ github.run_number }}
+    deploy_linux:
+      needs: export_game
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main' && github.event.inputs.deploy_linux == 'true'
+      steps:
+        - uses: actions/download-artifact@v2
+          with:
+            name: godot-export
+            path: ./
+        - name: Deploy - Itch.io - linux
+          uses: KikimoraGames/itch-publish@v0.0.3
+          with:
+              butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+              gameData: ./LinuxX11.zip
+              itchUsername: carlos-michael
+              itchGameId: ggj24
+              buildChannel: linux
+              buildNumber: linux:${{ github.run_number }}
 
-      - name: Discord notification
-        uses: sarisia/actions-status-discord@v1
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: "build and deploy successful"
-          description: "A mooo build is up on https://carlos-michael.itch.io/ggj24"
-          color: 0x0000ff
-          username: fresh water builds
-  
-
+  # send_discord_notification:
+  #   needs: [deploy_web, deploy_windows, deploy_linux]
+  #   runs-on: ubuntu-latest
+  #   if: always()
+  #   steps:
+  #     - name: Discord notification
+  #       uses: sarisia/actions-status-discord@v1
+  #       with:
+  #         webhook: ${{ secrets.DISCORD_WEBHOOK }}
+  #         title: "Build and deploy successful"
+  #         description: "A build is up on https://carlos-michael.itch.io/ggj24"
+  #         color: 0x0000ff
+  #         username: fresh water builds
 
 
     #   - name: Deploy - Itch.io Playtest
