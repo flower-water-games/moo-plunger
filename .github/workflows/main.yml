@@ -40,7 +40,7 @@ jobs:
     deploy_web:
       needs: export_game
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main' && github.event.inputs.deploy_web == 'true'
+      if: github.ref == 'refs/heads/main'
       steps:
         - uses: actions/download-artifact@v2
           with:
@@ -58,7 +58,7 @@ jobs:
     deploy_windows:
       needs: export_game
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main' && github.event.inputs.deploy_windows == 'true'
+      if: github.ref == 'refs/heads/main'
       steps:
         - uses: actions/download-artifact@v2
           with:
@@ -76,7 +76,7 @@ jobs:
     deploy_linux:
       needs: export_game
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main' && github.event.inputs.deploy_linux == 'true'
+      if: github.ref == 'refs/heads/main'
       steps:
         - uses: actions/download-artifact@v2
           with:
