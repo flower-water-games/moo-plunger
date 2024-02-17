@@ -31,6 +31,7 @@ offset_bottom = 40.0
 [node name="TextureRect" type="TextureRect" parent="PanelContainer"]
 layout_mode = 2
 texture = ExtResource("3_14gg5")
+stretch_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2

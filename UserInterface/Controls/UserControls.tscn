@@ -36,6 +36,9 @@ reset_size = false
 [node name="ModalWindow" parent="." instance=ExtResource("2_vhhjy")]
 window_title = "Controls"
 
+[node name="FitToWindow" parent="ModalWindow" index="0" node_paths=PackedStringArray("set_node")]
+set_node = NodePath("../MarginContainer")
+
 [node name="Label" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "Controls"
 
@@ -132,7 +135,8 @@ layout_mode = 2
 button = "B"
 description = "to Escape"
 
-[node name="CloseButton" parent="ModalWindow" index="2" node_paths=PackedStringArray("close_window")]
+[node name="CloseButton" parent="ModalWindow" index="2" node_paths=PackedStringArray("parent_container", "close_window")]
+parent_container = NodePath("../MarginContainer/CenterContainer/PanelContainer")
 close_window = NodePath("../..")
 
 [node name="ButtonGoToLevel" parent="ModalWindow/CloseButton" index="0" node_paths=PackedStringArray("button") instance=ExtResource("3_kgmny")]

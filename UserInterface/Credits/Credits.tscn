@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dicaqroxpvawy"]
+[gd_scene load_steps=9 format=3 uid="uid://dicaqroxpvawy"]
 
 [ext_resource type="Script" path="res://UserInterface/Credits/Credits.gd" id="1_bc0py"]
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_modu1"]
@@ -6,9 +6,6 @@
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="3_mfeko"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="4_gv5di"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_nqu3a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74yg0"]
-bg_color = Color(0.580392, 0.184314, 0.415686, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mlyg7"]
 font_size = 32
@@ -26,9 +23,8 @@ offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("1_bc0py")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_74yg0")
 
 [node name="FitToWindow2" parent="PanelContainer" node_paths=PackedStringArray("set_node") instance=ExtResource("1_modu1")]
 set_node = NodePath("..")
