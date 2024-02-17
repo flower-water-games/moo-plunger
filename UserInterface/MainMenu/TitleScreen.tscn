@@ -2,157 +2,200 @@
 
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="1_q0q8w"]
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_ywf2j"]
-[ext_resource type="Texture2D" uid="uid://citg3k383qper" path="res://Assets/paulb/ts_ui/ts_bg.png" id="3_14gg5"]
+[ext_resource type="Texture2D" uid="uid://5beab15up5cm" path="res://Assets/paulb/ts_ui/ts_bg.png" id="3_14gg5"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="3_b3302"]
-[ext_resource type="Texture2D" uid="uid://cctiwq6gbh5h5" path="res://Assets/paulb/ts_ui/logo.png" id="4_5pyik"]
+[ext_resource type="Texture2D" uid="uid://0sp25k3kn7i" path="res://Assets/paulb/ts_ui/logo.png" id="4_5pyik"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="4_16vr2"]
-[ext_resource type="Theme" path="res://UserInterface/MainMenu/menu_theme.tres" id="5_thfi0"]
+[ext_resource type="Theme" uid="uid://hhr48gturshh" path="res://UserInterface/MainMenu/menu_theme.tres" id="5_thfi0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x21xl"]
 font_size = 24
 
 [node name="TitleScreen" type="Control"]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_stretch_ratio = 0.0
 theme = ExtResource("1_q0q8w")
 
 [node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("2_ywf2j")]
 set_node = NodePath("../PanelContainer")
+fit_width = false
+fit_height = false
+reset_size = false
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer"]
 layout_mode = 2
 texture = ExtResource("3_14gg5")
+expand_mode = 3
 stretch_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer"]
+top_level = true
+layout_direction = 3
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
+size_flags_stretch_ratio = 6.2
+alignment = 2
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.42
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 64
 
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/MarginContainer"]
+[node name="title" type="CenterContainer" parent="PanelContainer/HFlowContainer/MarginContainer"]
+clip_contents = true
 layout_mode = 2
-dragger_visibility = 2
+size_flags_stretch_ratio = 11.13
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-size_flags_stretch_ratio = 2.0
-texture = ExtResource("4_5pyik")
-expand_mode = 3
-
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="SetSelectedButton" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer" node_paths=PackedStringArray("button") instance=ExtResource("3_b3302")]
-button = NodePath("../../../../HFlowContainer/CenterContainer/VBoxContainer/StartButton")
-
-[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("5_thfi0")
-text = "START"
-
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
-button = NodePath("..")
-level_path = "res://Levels/Litlevel_3d.tscn"
-web_build = true
-
-[node name="ControlsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("5_thfi0")
-text = "CONTROLS"
-
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer/ControlsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
-button = NodePath("..")
-level_path = "res://UserInterface/Tutorial/Tutorial.tscn"
-
-[node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("5_thfi0")
-text = "CREDITS"
-
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer/CreditsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
-button = NodePath("..")
-level_path = "res://UserInterface/Credits/Credits.tscn"
-
-[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/MarginContainer"]
-visible = false
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HFlowContainer/MarginContainer/title"]
+custom_minimum_size = Vector2(700, 400)
 layout_direction = 3
 layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/MarginContainer/HFlowContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer2"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
+size_flags_stretch_ratio = 5.44
 texture = ExtResource("4_5pyik")
-expand_mode = 1
+expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer2"]
+[node name="Label" type="Label" parent="PanelContainer/HFlowContainer/MarginContainer/title"]
 visible = false
 layout_mode = 2
 text = "cow wrangling game
 godot 4.3-dev2"
 label_settings = SubResource("LabelSettings_x21xl")
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/HFlowContainer"]
+[node name="UI items" type="CenterContainer" parent="PanelContainer/HFlowContainer/MarginContainer/title"]
+visible = false
+clip_contents = true
+layout_direction = 3
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+size_flags_vertical = 8
+size_flags_stretch_ratio = 5.16
 theme = ExtResource("5_thfi0")
+use_top_left = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HFlowContainer/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/separation = 16
+alignment = 1
 
-[node name="SetSelectedButton" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer/VBoxContainer" node_paths=PackedStringArray("button") instance=ExtResource("3_b3302")]
+[node name="SetSelectedButton" parent="PanelContainer/HFlowContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("button") instance=ExtResource("3_b3302")]
 button = NodePath("../StartButton")
 
-[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="PanelContainer/HFlowContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("5_thfi0")
 text = "START"
+icon_alignment = 1
 
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
+[node name="ButtonGoToLevel" parent="PanelContainer/HFlowContainer/MarginContainer/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
 button = NodePath("..")
 level_path = "res://Levels/web_lit_level.tscn"
 
-[node name="ControlsButton" type="Button" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer/VBoxContainer"]
+[node name="ControlsButton" type="Button" parent="PanelContainer/HFlowContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "CONTROLS"
+icon_alignment = 1
 
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer/VBoxContainer/ControlsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
+[node name="ButtonGoToLevel" parent="PanelContainer/HFlowContainer/MarginContainer/VBoxContainer/ControlsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
 button = NodePath("..")
 level_path = "res://UserInterface/Controls/UserControls.tscn"
 
-[node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="PanelContainer/HFlowContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "CREDITS"
+icon_alignment = 1
 
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/HFlowContainer/CenterContainer/VBoxContainer/CreditsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
+[node name="ButtonGoToLevel" parent="PanelContainer/HFlowContainer/MarginContainer/VBoxContainer/CreditsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
+button = NodePath("..")
+level_path = "res://UserInterface/Credits/Credits.tscn"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 3.31
+dragger_visibility = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PanelContainer/HFlowContainer/VSplitContainer"]
+visible = false
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+size_flags_stretch_ratio = 5.74
+stretch_mode = 0
+alignment_horizontal = 0
+alignment_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer"]
+custom_minimum_size = Vector2(256.18, 256)
+layout_mode = 2
+size_flags_stretch_ratio = 2.99
+texture = ExtResource("4_5pyik")
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="PanelContainer/HFlowContainer/VSplitContainer"]
+clip_contents = true
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 16
+
+[node name="SetSelectedButton" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer" node_paths=PackedStringArray("button") instance=ExtResource("3_b3302")]
+button = NodePath("../../../../MarginContainer/VBoxContainer/StartButton")
+
+[node name="StartButton" type="Button" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 1.72
+theme = ExtResource("5_thfi0")
+text = "START"
+vertical_icon_alignment = 0
+
+[node name="ButtonGoToLevel" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer/StartButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
+button = NodePath("..")
+level_path = "res://Levels/Litlevel_3d.tscn"
+web_build = true
+
+[node name="ControlsButton" type="Button" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_thfi0")
+text = "CONTROLS"
+alignment = 0
+icon_alignment = 2
+vertical_icon_alignment = 0
+
+[node name="ButtonGoToLevel" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer/ControlsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
+button = NodePath("..")
+level_path = "res://UserInterface/Tutorial/Tutorial.tscn"
+
+[node name="CreditsButton" type="Button" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_thfi0")
+text = "CREDITS"
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ButtonGoToLevel" parent="PanelContainer/HFlowContainer/VSplitContainer/AspectRatioContainer2/VBoxContainer/CreditsButton" node_paths=PackedStringArray("button") instance=ExtResource("4_16vr2")]
 button = NodePath("..")
 level_path = "res://UserInterface/Credits/Credits.tscn"
