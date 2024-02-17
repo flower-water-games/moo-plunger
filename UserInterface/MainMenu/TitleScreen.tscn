@@ -28,7 +28,7 @@ fit_width = false
 fit_height = false
 reset_size = false
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="CenterContainer" parent="."]
 layout_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer"]
