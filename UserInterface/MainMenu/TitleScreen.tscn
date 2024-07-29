@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="3_b3302"]
 [ext_resource type="Texture2D" uid="uid://cctiwq6gbh5h5" path="res://Assets/paulb/ts_ui/logo.png" id="4_5pyik"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="4_16vr2"]
-[ext_resource type="Theme" path="res://UserInterface/MainMenu/menu_theme.tres" id="5_thfi0"]
+[ext_resource type="Theme" uid="uid://hhr48gturshh" path="res://UserInterface/MainMenu/menu_theme.tres" id="5_thfi0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x21xl"]
 font_size = 24
@@ -29,13 +29,14 @@ fit_height = false
 reset_size = false
 
 [node name="PanelContainer" type="CenterContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
+localize_numeral_system = false
 texture = ExtResource("3_14gg5")
-expand_mode = 3
-stretch_mode = 2
+expand_mode = 2
 
 [node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer"]
 top_level = true
